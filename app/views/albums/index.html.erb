@@ -1,0 +1,22 @@
+<h1>Albums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><% if album.album_art.present? %><%= image_tag album.album_art %><% end %></td>
+        <td><%= album.title %></td>
+        <td><%= album.artist.try(:name) %></td>
+        <td><%= album.year %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
