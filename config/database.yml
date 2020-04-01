@@ -12,8 +12,8 @@ development:
 test:
   <<: *default
   database: musiclist_test
-  username: musiclist
-  password: musiclist_test
+  #username: musiclist
+  #password: musiclist_test
   host: <%= ENV.fetch('DATABASE_HOST', 'localhost') %>
 
 production:
