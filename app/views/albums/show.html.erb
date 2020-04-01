@@ -1,0 +1,14 @@
+<h1>Album</h1>
+
+<div class="md:flex md:items-start px-3 py-2 md:px-6 mdpy-4">
+  <%= image_tag "https://via.placeholder.com/512", class: "block mx-0 flex-shrink-0 h-16 w-16 sm:h-64 sm:w-64", alt: @album.title %>
+  <div class="mt-0 ml-4 text-left">
+    <p class="text-4xl leading-tight"><%= @album.title %> <% if @album.year.present? %>(<%= @album.year %>)<% end %></p>
+    <p class="text-xl leading-tight text-gray-600"><%= @album.artist.try(:name) %></p>
+    <div class="my-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet libero a mauris dapibus aliquet nec non metus. Pellentesque elementum leo at lectus dictum ultricies. In hac habitasse platea dictumst. Aliquam molestie elit id ex sollicitudin, et faucibus tortor blandit. Curabitur hendrerit urna nec cursus sollicitudin. Sed tincidunt elit diam, vitae convallis nisl ultricies rhoncus. Aliquam turpis turpis, accumsan ac interdum consectetur, porttitor vitae augue. Aliquam at ante urna. Duis vitae tellus tellus. Fusce in augue justo. Praesent maximus justo vitae pretium condimentum. Ut elementum molestie arcu, eu cursus justo malesuada vel.</p>
+      <p>Fusce sed orci elementum, imperdiet velit id, iaculis sapien. Donec egestas lacus magna, quis ornare eros commodo quis. Aenean dapibus et velit ac ultricies. Nunc pulvinar auctor porttitor. Duis quis orci sollicitudin, iaculis purus ut, bibendum dui. Ut in ex volutpat urna efficitur posuere in mattis nulla. Mauris lacus nibh, mattis vel leo in, venenatis lacinia nunc. Nullam ultricies porta dui, quis suscipit nulla facilisis sed. Nam id malesuada ex. Pellentesque vulputate bibendum consequat. Nullam convallis placerat congue. Donec eget tempor ipsum.</p>
+      <p>Aliquam commodo magna tellus, eget venenatis arcu vestibulum sed. Morbi eget nibh eu eros fermentum aliquet non nec est. Nunc auctor consectetur mauris ac condimentum. Fusce luctus sodales ipsum in fermentum. Suspendisse libero purus, rhoncus vel tempor posuere, blandit a lectus. Suspendisse facilisis elementum massa facilisis consequat. Quisque in nisi molestie nulla facilisis pulvinar sit amet vitae ligula.</p>
+    </div>
+  </div>
+</div>

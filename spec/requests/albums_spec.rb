@@ -26,4 +26,12 @@ RSpec.describe "/albums", type: :request do
       expect(response).to be_successful
     end
   end
+
+  describe "GET /albums/1" do
+    it "renders a successful response" do
+      album = create(:album)
+      get album_url(album)
+      expect(response).to be_successful
+    end
+  end
 end

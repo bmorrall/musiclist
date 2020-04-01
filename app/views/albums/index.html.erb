@@ -2,12 +2,14 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
 <% @albums.each do |album| %>
-  <div class="flex items-center px-3 py-2 md:px-6 mdpy-4">
+  <div class="flex items-center px-3 py-2 md:px-6 mdpy-4 hover:bg-blue-200">
+    <%= link_to album_path(album) do %>
       <%= image_tag "https://via.placeholder.com/100", class: "block mx-0 flex-shrink-0 h-16 w-16 sm:h-24 sm:w-24", alt: album.title %>
-      <div class="mt-0 ml-4 text-left">
-        <p class="text-xl leading-tight"><%= album.title %> <% if album.year.present? %>(<%= album.year %>)<% end %></p>
-        <p class="text-m leading-tight text-gray-600"><%= album.artist.try(:name) %></p>
-      </div>
+    <% end %>
+    <div class="mt-0 ml-4 text-left">
+      <p class="text-xl leading-tight"><%= album.title %> <% if album.year.present? %>(<%= album.year %>)<% end %></p>
+      <p class="text-m leading-tight text-gray-600"><%= album.artist.try(:name) %></p>
     </div>
+  </div>
 <% end %>
 </div>
