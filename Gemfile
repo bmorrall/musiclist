@@ -51,5 +51,6 @@ gem 'lograge'
 gem 'logstash-event'
 gem 'rubocop-rails', require: false
 gem 'factory_bot_rails', group: [:development, :test]
+gem 'faker', group: [:development, :test]
 gem 'rspec-rails', '~> 4.0.0', group: [:development, :test]
 gem 'shoulda-matchers', group: :test
