@@ -1,0 +1,16 @@
+version: '2.0'
+services:
+  sut:
+    build: .
+    command: bash -c "bundle exec rake db:migrate && bundle exec rake"
+    depends_on:
+      - db
+    environment:
+      - RAILS_ENV=test
+      - DATABASE_HOST=db
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=musiclist_test
+      - POSTGRES_USER=musiclist
+      - POSTGRES_PASSWORD=musiclist_test

@@ -1,0 +1,31 @@
+version: '2.0'
+services:
+  app:
+    build: .
+    environment:
+      - DATABASE_URL=postgres://musiclist:bXVzaWNsaXN0X2FwcGxpY2F0aW9u@db/musiclist_production
+    depends_on:
+      - db
+    volumes:
+    - static-assets:/musiclist_application/public
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=musiclist_production
+      - POSTGRES_USER=musiclist
+      - POSTGRES_PASSWORD=bXVzaWNsaXN0X2FwcGxpY2F0aW9u
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build:
+      context: ./docker/web/
+    depends_on:
+      - app
+    ports:
+      - 80:80
+    volumes:
+      - static-assets:/musiclist_application/public
+      - web-logs:/musiclist_application/log
+volumes:
+  static-assets: {}
+  web-logs: {}

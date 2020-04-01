@@ -1,0 +1,10 @@
+/.bundle
+/.git
+/docker
+/docker-compose.yml
+/docker-compose.test.yml
+/log
+/node_modules
+/public/assets
+/tmp
+/vendor/bundle
