@@ -46,6 +46,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'lograge'
 gem 'logstash-event'
@@ -55,4 +56,8 @@ gem 'faker', group: [:development, :test]
 gem 'rspec-rails', '~> 4.0.0', group: [:development, :test]
 gem 'shoulda-matchers', group: :test
 
+gem 'capybara', group: :test
+gem 'climate_control', group: :test
 gem 'simplecov', group: :test
+gem 'vcr', group: :test
+gem 'webmock', group: :test
