@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/bmorrall/rockstart.git
-  revision: 25089ada08bf0e9026c2731e426a437379da3cb6
+  revision: fd0eb4b3f9c64dd675fc0a4b3c359b1661c4c6cd
   specs:
-    rockstart (0.1.0)
+    rockstart (0.1.1)
       rails (~> 6.0.2, >= 6.0.2.2)
 
 GEM
