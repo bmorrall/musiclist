@@ -16,6 +16,17 @@ RSpec.describe AlbumLookup do
     end
   end
 
+  describe ".get_info" do
+    it "returns information for an album", :vcr do
+      info = described_class.get_info(album: "The Beatles (White Album)", artist: "The Beatles")
+      expect(info.name).to eq "The Beatles (White Album)"
+      expect(info.artist).to eq "The Beatles"
+      expect(info.url).to eq "https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)"
+      expect(info.wiki.content).to include('The Beatles or “The White album” as it became better known was released on 22nd November, 1968')
+      expect(info.tags.first).to eq "classic rock"
+    end
+  end
+
   describe "#search" do
     subject(:album_lookup) { described_class.new(lastfm) }
 
