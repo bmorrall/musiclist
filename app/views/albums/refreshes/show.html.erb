@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @album.artist.name %> - <%= @album.title %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Artist</th>
+      <td>&nbsp;</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr class="<%= album.artist == @album.artist.name ? 'bg-blue-200' : '' %>">
+        <td><%= link_to album.name, album.url, rel: :external, target: :_blank, class: "font-semibold text-gray-900 hover:underline" %></td>
+        <td><%= album.artist %></td>
+        <td><%= link_to "Update", album_refresh_path(@album, lookup: { artist: album.artist, album: album.name }), method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

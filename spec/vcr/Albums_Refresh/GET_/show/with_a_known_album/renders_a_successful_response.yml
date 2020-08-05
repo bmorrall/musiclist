@@ -1,0 +1,556 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?album=The%20White%20Album&api_key=<LASTFM_API_KEY>&method=album.search
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Wed, 05 Aug 2020 06:57:45 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Cteonnt-Length:
+      - '32579'
+      Connection:
+      - keep-alive
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '3298'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><results for="The White Album"><opensearch:Query role="request" searchTerms="The White Album" startPage="1"></opensearch:Query>
+        <opensearch:totalResults>29930</opensearch:totalResults>
+        <opensearch:startIndex>0</opensearch:startIndex>
+        <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+        <albummatches><album><name>The Black and White Album</name>
+        <artist>The Hives</artist>
+        <url>https://www.last.fm/music/The+Hives/The+Black+and+White+Album</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/6d17941a3e3441d7b254c81e7211a3e1.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/6d17941a3e3441d7b254c81e7211a3e1.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/6d17941a3e3441d7b254c81e7211a3e1.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/6d17941a3e3441d7b254c81e7211a3e1.png</image>
+        <streamable>0</streamable>
+        <mbid>d5aa8a52-f795-41b2-87c6-fdb1975fdb39</mbid>
+        </album>
+        <album><name>The Beatles (White Album)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/210f365a483c4e1085a701764a9dcce9.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/210f365a483c4e1085a701764a9dcce9.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/210f365a483c4e1085a701764a9dcce9.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/210f365a483c4e1085a701764a9dcce9.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (The White Album)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(The+White+Album)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/59e40d830d1c4206b6d392a09d94f2b4.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/59e40d830d1c4206b6d392a09d94f2b4.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/59e40d830d1c4206b6d392a09d94f2b4.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/59e40d830d1c4206b6d392a09d94f2b4.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>White Album</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/14e1e3d0b3a44c738d5ef6047be59e7e.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/14e1e3d0b3a44c738d5ef6047be59e7e.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/14e1e3d0b3a44c738d5ef6047be59e7e.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/14e1e3d0b3a44c738d5ef6047be59e7e.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (White Album) [Disc 1]</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)+%5BDisc+1%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/c92f7c9481a04eb39cda64433ef59a49.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/c92f7c9481a04eb39cda64433ef59a49.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/c92f7c9481a04eb39cda64433ef59a49.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/c92f7c9481a04eb39cda64433ef59a49.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (White Album) [Disc 2]</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)+%5BDisc+2%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/d1a3754648b4486b844aab2c14e72662.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/d1a3754648b4486b844aab2c14e72662.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/d1a3754648b4486b844aab2c14e72662.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/d1a3754648b4486b844aab2c14e72662.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles [White Album] Disc 1</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+%5BWhite+Album%5D+Disc+1</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/a0e7b8b16a7b45a7bd4f0ca08745208d.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/a0e7b8b16a7b45a7bd4f0ca08745208d.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/a0e7b8b16a7b45a7bd4f0ca08745208d.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/a0e7b8b16a7b45a7bd4f0ca08745208d.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles [White Album] (Disc 1)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+%5BWhite+Album%5D+(Disc+1)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/741c573b2d654c0f89df1c658f63580d.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/741c573b2d654c0f89df1c658f63580d.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/741c573b2d654c0f89df1c658f63580d.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/741c573b2d654c0f89df1c658f63580d.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles [White Album]</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+%5BWhite+Album%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/9bcc8aa809274ff0bc016a32ef63a33d.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/9bcc8aa809274ff0bc016a32ef63a33d.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/9bcc8aa809274ff0bc016a32ef63a33d.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/9bcc8aa809274ff0bc016a32ef63a33d.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>Baby Sleep White Noise: Ultimate Album to Help Babies Sleep Through the Night</name>
+        <artist>Natural White Noise Relaxation</artist>
+        <url>https://www.last.fm/music/Natural+White+Noise+Relaxation/Baby+Sleep+White+Noise:+Ultimate+Album+to+Help+Babies+Sleep+Through+the+Night</url>
+        <image size="small"></image>
+        <image size="medium"></image>
+        <image size="large"></image>
+        <image size="extralarge"></image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles [White Album] (Dis</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+%5BWhite+Album%5D+(Dis</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/83de99165f5a496991ee518e2596790f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/83de99165f5a496991ee518e2596790f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/83de99165f5a496991ee518e2596790f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/83de99165f5a496991ee518e2596790f.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles [White Album] Disc 2</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+%5BWhite+Album%5D+Disc+2</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/3fb7c764de4744c5a52906e536123cba.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/3fb7c764de4744c5a52906e536123cba.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/3fb7c764de4744c5a52906e536123cba.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/3fb7c764de4744c5a52906e536123cba.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (White Album) [Disc 1] [2009 Stereo Remaster]</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)+%5BDisc+1%5D+%5B2009+Stereo+Remaster%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/b789aed80e214ca2b59fbca35b168927.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/b789aed80e214ca2b59fbca35b168927.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/b789aed80e214ca2b59fbca35b168927.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/b789aed80e214ca2b59fbca35b168927.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles [White Album] CD1</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+%5BWhite+Album%5D+CD1</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/4c515bfd0af541abaf2b3ad41befe230.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/4c515bfd0af541abaf2b3ad41befe230.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/4c515bfd0af541abaf2b3ad41befe230.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/4c515bfd0af541abaf2b3ad41befe230.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (The White Album) (disc 1)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(The+White+Album)+(disc+1)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/3c924acf75e84087bd15fd35389d28e0.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/3c924acf75e84087bd15fd35389d28e0.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/3c924acf75e84087bd15fd35389d28e0.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/3c924acf75e84087bd15fd35389d28e0.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album</name>
+        <artist>Lewis Black</artist>
+        <url>https://www.last.fm/music/Lewis+Black/The+White+Album</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/e3dbee6db3e3762f1a61c2ef57ab9f84.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/e3dbee6db3e3762f1a61c2ef57ab9f84.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/e3dbee6db3e3762f1a61c2ef57ab9f84.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/e3dbee6db3e3762f1a61c2ef57ab9f84.png</image>
+        <streamable>0</streamable>
+        <mbid>6f69b7f5-0e7c-44ff-b25b-3bf525261e4f</mbid>
+        </album>
+        <album><name>White Album (Disc 1)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album+(Disc+1)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/5dc96081334345ca9654c02e326eb816.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/5dc96081334345ca9654c02e326eb816.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/5dc96081334345ca9654c02e326eb816.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/5dc96081334345ca9654c02e326eb816.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Black &amp; White Album</name>
+        <artist>The Hives</artist>
+        <url>https://www.last.fm/music/The+Hives/The+Black+&amp;+White+Album</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/fc4a1c303a2c410689b5f21cc6c5d9d0.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/fc4a1c303a2c410689b5f21cc6c5d9d0.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/fc4a1c303a2c410689b5f21cc6c5d9d0.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/fc4a1c303a2c410689b5f21cc6c5d9d0.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (White Album) [Disc 2] [2009 Stereo Remaster]</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)+%5BDisc+2%5D+%5B2009+Stereo+Remaster%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/95f56c60673543e7b091e15de625d8fb.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/95f56c60673543e7b091e15de625d8fb.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/95f56c60673543e7b091e15de625d8fb.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/95f56c60673543e7b091e15de625d8fb.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (White Album / Super Deluxe)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album+%2F+Super+Deluxe)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/248b2cf9482954b01c20696b1277b49a.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/248b2cf9482954b01c20696b1277b49a.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/248b2cf9482954b01c20696b1277b49a.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/248b2cf9482954b01c20696b1277b49a.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (White Album) [Super Deluxe]</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)+%5BSuper+Deluxe%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/26d10de1612174c88ddcc46ce731c8ed.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/26d10de1612174c88ddcc46ce731c8ed.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/26d10de1612174c88ddcc46ce731c8ed.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/26d10de1612174c88ddcc46ce731c8ed.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>White Album - CD 1</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album+-+CD+1</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/a88357edc89a4361abbac45523b117ad.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/a88357edc89a4361abbac45523b117ad.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/a88357edc89a4361abbac45523b117ad.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/a88357edc89a4361abbac45523b117ad.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album (Disc 1)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+White+Album+(Disc+1)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/407b4b329c1c4d9ba3c7ebfa60ec1458.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/407b4b329c1c4d9ba3c7ebfa60ec1458.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/407b4b329c1c4d9ba3c7ebfa60ec1458.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/407b4b329c1c4d9ba3c7ebfa60ec1458.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles [White Album] CD2</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+%5BWhite+Album%5D+CD2</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/1a21b3b60d4c4057a61742b5fb6752cf.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/1a21b3b60d4c4057a61742b5fb6752cf.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/1a21b3b60d4c4057a61742b5fb6752cf.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/1a21b3b60d4c4057a61742b5fb6752cf.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>White Album CD 1</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album+CD+1</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/7b5dd9ef011f459f934ed9199910e35a.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/7b5dd9ef011f459f934ed9199910e35a.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/7b5dd9ef011f459f934ed9199910e35a.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/7b5dd9ef011f459f934ed9199910e35a.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (White Album) [Disc 1] [2009 Mono Remaster]</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)+%5BDisc+1%5D+%5B2009+Mono+Remaster%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/cdb917651dd94396a68fe2977b4836b1.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/cdb917651dd94396a68fe2977b4836b1.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/cdb917651dd94396a68fe2977b4836b1.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/cdb917651dd94396a68fe2977b4836b1.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>White Album CD 2</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album+CD+2</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/9d3679bddd73431c98442c5f273ffb2e.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/9d3679bddd73431c98442c5f273ffb2e.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/9d3679bddd73431c98442c5f273ffb2e.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/9d3679bddd73431c98442c5f273ffb2e.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>White Album [disc 1]</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album+%5Bdisc+1%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/7df36a11e9234f18cf97f53fc61f5b16.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/7df36a11e9234f18cf97f53fc61f5b16.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/7df36a11e9234f18cf97f53fc61f5b16.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/7df36a11e9234f18cf97f53fc61f5b16.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album (Remix Project)</name>
+        <artist>Hillsong United</artist>
+        <url>https://www.last.fm/music/Hillsong+United/The+White+Album+(Remix+Project)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/6e36f0e65af04010c08aaf81a865f6ae.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/6e36f0e65af04010c08aaf81a865f6ae.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/6e36f0e65af04010c08aaf81a865f6ae.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/6e36f0e65af04010c08aaf81a865f6ae.png</image>
+        <streamable>0</streamable>
+        <mbid>ce5fddb6-1550-4e2f-8a1a-58dee81b666a</mbid>
+        </album>
+        <album><name>The Beatles (The White Album) (Disc Two)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(The+White+Album)+(Disc+Two)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/0a0c144258c24714b27de29a2d525fc8.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/0a0c144258c24714b27de29a2d525fc8.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/0a0c144258c24714b27de29a2d525fc8.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/0a0c144258c24714b27de29a2d525fc8.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>White Album (CD 1)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album+(CD+1)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/de0627ee966c4fe386797980e2716d25.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/de0627ee966c4fe386797980e2716d25.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/de0627ee966c4fe386797980e2716d25.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/de0627ee966c4fe386797980e2716d25.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album (Disc 2)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+White+Album+(Disc+2)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/39988093bf2f4649bff53590228a59fc.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/39988093bf2f4649bff53590228a59fc.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/39988093bf2f4649bff53590228a59fc.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/39988093bf2f4649bff53590228a59fc.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles [White Album] (Disc 2)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+%5BWhite+Album%5D+(Disc+2)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/093d297af23f43589bd78f9938339714.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/093d297af23f43589bd78f9938339714.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/093d297af23f43589bd78f9938339714.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/093d297af23f43589bd78f9938339714.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (The White Album) (disc 2)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(The+White+Album)+(disc+2)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2597c90b8b1a4f939a15e76664b8bcc6.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2597c90b8b1a4f939a15e76664b8bcc6.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2597c90b8b1a4f939a15e76664b8bcc6.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2597c90b8b1a4f939a15e76664b8bcc6.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album (remastered)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+White+Album+(remastered)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/abfd079618f542e990f354e72c12b213.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/abfd079618f542e990f354e72c12b213.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/abfd079618f542e990f354e72c12b213.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/abfd079618f542e990f354e72c12b213.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album (CD 2)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+White+Album+(CD+2)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/5ad6e01445d64136a79be4b354034d95.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/5ad6e01445d64136a79be4b354034d95.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/5ad6e01445d64136a79be4b354034d95.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/5ad6e01445d64136a79be4b354034d95.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album CD1</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+White+Album+CD1</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/0703503dc2864f88ada509683d2938ec.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/0703503dc2864f88ada509683d2938ec.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/0703503dc2864f88ada509683d2938ec.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/0703503dc2864f88ada509683d2938ec.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (The White Album) (Remastered)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(The+White+Album)+(Remastered)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/bbc82e6205b1463e9f194e06d7a5fe1e.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/bbc82e6205b1463e9f194e06d7a5fe1e.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/bbc82e6205b1463e9f194e06d7a5fe1e.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/bbc82e6205b1463e9f194e06d7a5fe1e.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>White Album (Disc 2)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album+(Disc+2)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/a6a76b99e965486f97d0e5800dd3310d.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/a6a76b99e965486f97d0e5800dd3310d.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/a6a76b99e965486f97d0e5800dd3310d.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/a6a76b99e965486f97d0e5800dd3310d.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album (Lightning To The Nations)</name>
+        <artist>Diamond Head</artist>
+        <url>https://www.last.fm/music/Diamond+Head/The+White+Album+(Lightning+To+The+Nations)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/a4104ef57a64419a813ddbc3df4861ed.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/a4104ef57a64419a813ddbc3df4861ed.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/a4104ef57a64419a813ddbc3df4861ed.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/a4104ef57a64419a813ddbc3df4861ed.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles [White Album] (1 of 2)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+%5BWhite+Album%5D+(1+of+2)</url>
+        <image size="small"></image>
+        <image size="medium"></image>
+        <image size="large"></image>
+        <image size="extralarge"></image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>White Album - Disc 1</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album+-+Disc+1</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/627dcdf78c7b4f84acd5605e391dc2de.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/627dcdf78c7b4f84acd5605e391dc2de.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/627dcdf78c7b4f84acd5605e391dc2de.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/627dcdf78c7b4f84acd5605e391dc2de.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (White Album) (Disc 1)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)+(Disc+1)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/f87addc4d9e89add2057f067dd140f8e.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/f87addc4d9e89add2057f067dd140f8e.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/f87addc4d9e89add2057f067dd140f8e.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/f87addc4d9e89add2057f067dd140f8e.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The Beatles (White Album) [Disc 2] [2009 Mono Remaster]</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)+%5BDisc+2%5D+%5B2009+Mono+Remaster%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/5d12823098b249e683042901796fc1c6.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/5d12823098b249e683042901796fc1c6.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/5d12823098b249e683042901796fc1c6.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/5d12823098b249e683042901796fc1c6.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>White Album - (Disc One)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/White+Album+-+(Disc+One)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/311160e78f604638a11cf783b00a6f3d.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/311160e78f604638a11cf783b00a6f3d.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/311160e78f604638a11cf783b00a6f3d.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/311160e78f604638a11cf783b00a6f3d.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+White+Album</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/f5887321b7f84347a9d90a5ea22b027d.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/f5887321b7f84347a9d90a5ea22b027d.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/f5887321b7f84347a9d90a5ea22b027d.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/f5887321b7f84347a9d90a5ea22b027d.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album (24 BIT Remastered)</name>
+        <artist>The Beatles</artist>
+        <url>https://www.last.fm/music/The+Beatles/The+White+Album+(24+BIT+Remastered)</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/9c269c03c52446ada5851b67dd2f728e.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/9c269c03c52446ada5851b67dd2f728e.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/9c269c03c52446ada5851b67dd2f728e.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/9c269c03c52446ada5851b67dd2f728e.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album</name>
+        <artist>Berner</artist>
+        <url>https://www.last.fm/music/Berner/The+White+Album</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/4ff5354fe8074291bea9f80afffc1af3.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/4ff5354fe8074291bea9f80afffc1af3.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/4ff5354fe8074291bea9f80afffc1af3.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/4ff5354fe8074291bea9f80afffc1af3.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>The White Album [Remix Project]</name>
+        <artist>Hillsong United</artist>
+        <url>https://www.last.fm/music/Hillsong+United/The+White+Album+%5BRemix+Project%5D</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/97ad48f59a244cf2cc226fab5400422c.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/97ad48f59a244cf2cc226fab5400422c.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/97ad48f59a244cf2cc226fab5400422c.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/97ad48f59a244cf2cc226fab5400422c.png</image>
+        <streamable>0</streamable>
+        <mbid></mbid>
+        </album>
+        <album><name>Album Vakansi</name>
+        <artist>White Shoes &amp; The Couples Company</artist>
+        <url>https://www.last.fm/music/White+Shoes+&amp;+The+Couples+Company/Album+Vakansi</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/167805dc9de64bee978cc6b1b7279e11.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/167805dc9de64bee978cc6b1b7279e11.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/167805dc9de64bee978cc6b1b7279e11.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/167805dc9de64bee978cc6b1b7279e11.png</image>
+        <streamable>0</streamable>
+        <mbid>bb423df9-a47b-4a07-8b6a-76a79328cc69</mbid>
+        </album>
+        </albummatches>
+        </results>
+        </lfm>
+  recorded_at: Wed, 05 Aug 2020 06:57:45 GMT
+recorded_with: VCR 6.0.0
