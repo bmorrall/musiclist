@@ -1,3 +1,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.album-description p {
+  @apply mb-3;
+}
+.album-description a {
+  @apply text-red-600;
+}
+
+.album-description a:hover {
+  @apply underline;
+}

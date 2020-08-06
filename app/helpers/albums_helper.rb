@@ -9,4 +9,10 @@ module AlbumsHelper
   def album_detail_image(album)
     (album.lastfm_url? && album.album_art) || "https://via.placeholder.com/512"
   end
+
+  def album_simple_format(text)
+    content_tag(:div, class: "album-description") do
+      simple_format(text)
+    end
+  end
 end
