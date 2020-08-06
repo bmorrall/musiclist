@@ -1,4 +1,4 @@
-class CreateMetaData < ActiveRecord::Migration
+class CreateMetaData < ActiveRecord::Migration[4.2]
   def change
     create_table :meta_data do |t|
       t.string :source
@@ -7,6 +7,8 @@ class CreateMetaData < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :meta_data, :item_id
+    safety_assured do
+      add_index :meta_data, :item_id
+    end
   end
 end

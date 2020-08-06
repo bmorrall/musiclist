@@ -1,12 +1,14 @@
-class MoveAdminNotesToComments < ActiveRecord::Migration
+class MoveAdminNotesToComments < ActiveRecord::Migration[4.2]
   def self.up
     remove_index  :admin_notes, [:admin_user_type, :admin_user_id]
     rename_table  :admin_notes, :active_admin_comments
     rename_column :active_admin_comments, :admin_user_type, :author_type
     rename_column :active_admin_comments, :admin_user_id, :author_id
     add_column    :active_admin_comments, :namespace, :string
-    add_index     :active_admin_comments, [:namespace]
-    add_index     :active_admin_comments, [:author_type, :author_id]
+    safety_assured do
+      add_index     :active_admin_comments, [:namespace]
+      add_index     :active_admin_comments, [:author_type, :author_id]
+    end
 
     # Update all the existing comments to the default namespace
     # say "Updating any existing comments to the #{ActiveAdmin.application.default_namespace} namespace."
@@ -20,6 +22,8 @@ class MoveAdminNotesToComments < ActiveRecord::Migration
     rename_column :active_admin_comments, :author_id, :admin_user_id
     rename_column :active_admin_comments, :author_type, :admin_user_type
     rename_table  :active_admin_comments, :admin_notes
-    add_index     :admin_notes, [:admin_user_type, :admin_user_id]
+    safety_assured do
+      add_index     :admin_notes, [:admin_user_type, :admin_user_id]
+    end
   end
 end

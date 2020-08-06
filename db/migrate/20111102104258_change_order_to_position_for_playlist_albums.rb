@@ -1,4 +1,4 @@
-class ChangeOrderToPositionForPlaylistAlbums < ActiveRecord::Migration
+class ChangeOrderToPositionForPlaylistAlbums < ActiveRecord::Migration[4.2]
   def up
     rename_column :playlist_albums, :order, :position
   end
