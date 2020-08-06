@@ -23,6 +23,7 @@ if (process.env.RAILS_ENV === "production") {
         './app/javascript/**/*.js',
         './app/javascript/**/*.vue',
         './app/javascript/**/*.jsx',
+        './config/initializers/simple_form*.rb',
       ],
       defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
     })
