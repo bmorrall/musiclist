@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_070950) do
+ActiveRecord::Schema.define(version: 2020_08_06_040032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_070950) do
     t.string "year", limit: 255
     t.text "editions"
     t.text "description"
+    t.string "lastfm_url"
   end
 
   create_table "artists", id: :serial, force: :cascade do |t|
