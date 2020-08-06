@@ -17,6 +17,7 @@ module Albums
         title: info.name,
         genre: info.tags.first,
         year: info.tags.detect { |t| t =~ /\A(19|20)\d{2}\z/ },
+        album_art: info.image.default,
         description: info.wiki.content
       )
       redirect_to @album, notice: "Album updated successfully."

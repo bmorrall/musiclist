@@ -23,6 +23,7 @@ class AlbumLookup
 
   def get_info(artist:, album:)
     res = lastfm.album.get_info(album: album, artist: artist)
+    res["image"] = OpenStruct.new(build_image_hash(res["image"]))
     res["tags"] = res.dig("tags", "tag").map { |tag| tag["name"] }
     res["wiki"] = OpenStruct.new(res["wiki"])
     OpenStruct.new(res)
@@ -36,4 +37,10 @@ class AlbumLookup
   private
 
   attr_reader :lastfm
+
+  def build_image_hash(res_image)
+    res_image.each_with_object({}) do |tag, h|
+      h[tag["size"].presence || "default"] = tag["content"]
+    end
+  end
 end

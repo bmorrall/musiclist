@@ -46,6 +46,7 @@ RSpec.describe "Albums::Refresh", type: :request do
           expect(album.title).to eq "The Beatles (White Album)"
           expect(album.genre).to eq "classic rock"
           expect(album.year).to be_blank
+          expect(album.album_art).to eq "https://lastfm.freetls.fastly.net/i/u/300x300/210f365a483c4e1085a701764a9dcce9.png"
           expect(album.description).to include('The Beatles or “The White album” as it became better known was released on 22nd November, 1968')
         end
 

@@ -24,6 +24,9 @@ RSpec.describe AlbumLookup do
       expect(info.url).to eq "https://www.last.fm/music/The+Beatles/The+Beatles+(White+Album)"
       expect(info.wiki.content).to include('The Beatles or “The White album” as it became better known was released on 22nd November, 1968')
       expect(info.tags.first).to eq "classic rock"
+      expect(info.image.small).to eq "https://lastfm.freetls.fastly.net/i/u/34s/210f365a483c4e1085a701764a9dcce9.png"
+      expect(info.image.default).to eq "https://lastfm.freetls.fastly.net/i/u/300x300/210f365a483c4e1085a701764a9dcce9.png"
+      expect(info.image.extralarge).to eq "https://lastfm.freetls.fastly.net/i/u/300x300/210f365a483c4e1085a701764a9dcce9.png"
     end
   end
 
