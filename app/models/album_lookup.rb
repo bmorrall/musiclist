@@ -23,8 +23,10 @@ class AlbumLookup
 
   def get_info(artist:, album:)
     res = lastfm.album.get_info(album: album, artist: artist)
+    res_tags = res.dig("tags", "tag") || []
     res["image"] = OpenStruct.new(build_image_hash(res["image"]))
-    res["tags"] = res.dig("tags", "tag").map { |tag| tag["name"] }
+    res["year"] = filter_year(res_tags)
+    res["tags"] = filter_tags(res_tags)
     res["wiki"] = OpenStruct.new(res["wiki"])
     OpenStruct.new(res)
   end
@@ -36,11 +38,32 @@ class AlbumLookup
 
   private
 
+  USELESS_TAGS = [
+    "albums I own",
+    "favorite albums",
+    "gotanygoodmusic",
+    "role certo",
+    "rs500 album",
+    "singer-songwriter"
+  ].freeze
+
   attr_reader :lastfm
 
   def build_image_hash(res_image)
     res_image.each_with_object({}) do |tag, h|
       h[tag["size"].presence || "default"] = tag["content"]
     end
+  end
+
+  def filter_year(tags)
+    tags.map { |tag| tag["name"] }
+        .detect { |t| t =~ /\A(19|20)\d{2}\z/ }
+  end
+
+  def filter_tags(tags)
+    tags.map { |tag| tag["name"] }
+        .reject { |t| t =~ /\A\d{2}s\z/ } # 50s, 60s, etc
+        .reject { |t| t =~ /\A(19|20)\d{2}\z/ } # 1996, 2001, etc
+        .reject { |t| USELESS_TAGS.include?(t) }
   end
 end

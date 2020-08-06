@@ -16,7 +16,7 @@ module Albums
       @album.update!(
         title: info.name,
         genre: info.tags.first,
-        year: info.tags.detect { |t| t =~ /\A(19|20)\d{2}\z/ },
+        year: info.year,
         album_art: info.image.default,
         lastfm_url: info.url,
         description: info.wiki.content

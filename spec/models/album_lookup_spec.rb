@@ -28,6 +28,18 @@ RSpec.describe AlbumLookup do
       expect(info.image.default).to eq "https://lastfm.freetls.fastly.net/i/u/300x300/210f365a483c4e1085a701764a9dcce9.png"
       expect(info.image.extralarge).to eq "https://lastfm.freetls.fastly.net/i/u/300x300/210f365a483c4e1085a701764a9dcce9.png"
     end
+
+    it "rejects the album year from tags", :vcr do
+      info = described_class.get_info(album: "Pet Sounds", artist: "The Beach Boys")
+      expect(info.tags.first).to eq "pop"
+      expect(info.year).to eq "1966"
+    end
+
+    it "rejects the albums I own from genre ", :vcr do
+      info = described_class.get_info(album: "Sea Change", artist: "Beck")
+      expect(info.tags.first).to eq "acoustic"
+      expect(info.year).to eq "2002"
+    end
   end
 
   describe "#search" do

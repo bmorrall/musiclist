@@ -1,0 +1,189 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?album=Sea%20Change&api_key=<LASTFM_API_KEY>&artist=Beck&method=album.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 06 Aug 2020 07:39:05 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Connection:
+      - keep-alive
+      Cteonnt-Length:
+      - '8159'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '2236'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><album><name>Sea Change</name>
+        <artist>Beck</artist>
+        <mbid>09dc8894-bb52-4edd-a31b-e74e30753a44</mbid>
+        <url>https://www.last.fm/music/Beck/Sea+Change</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/f82e16247f73436c97f3fd6e6691d382.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/f82e16247f73436c97f3fd6e6691d382.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/f82e16247f73436c97f3fd6e6691d382.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/f82e16247f73436c97f3fd6e6691d382.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/f82e16247f73436c97f3fd6e6691d382.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/f82e16247f73436c97f3fd6e6691d382.png</image>
+        <listeners>694919</listeners>
+        <playcount>10118757</playcount>
+        <tracks><track rank="1"><name>The Golden Age</name>
+        <url>https://www.last.fm/music/Beck/_/The+Golden+Age</url>
+        <duration>276</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="2"><name>Paper Tiger</name>
+        <url>https://www.last.fm/music/Beck/_/Paper+Tiger</url>
+        <duration>275</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="3"><name>Guess I&apos;m Doing Fine</name>
+        <url>https://www.last.fm/music/Beck/_/Guess+I%27m+Doing+Fine</url>
+        <duration>289</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="4"><name>Lonesome Tears</name>
+        <url>https://www.last.fm/music/Beck/_/Lonesome+Tears</url>
+        <duration>337</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="5"><name>Lost Cause</name>
+        <url>https://www.last.fm/music/Beck/_/Lost+Cause</url>
+        <duration>227</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="6"><name>End of the Day</name>
+        <url>https://www.last.fm/music/Beck/_/End+of+the+Day</url>
+        <duration>303</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="7"><name>It&apos;s All in Your Mind</name>
+        <url>https://www.last.fm/music/Beck/_/It%27s+All+in+Your+Mind</url>
+        <duration>185</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="8"><name>Round the Bend</name>
+        <url>https://www.last.fm/music/Beck/_/Round+the+Bend</url>
+        <duration>315</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="9"><name>Already Dead</name>
+        <url>https://www.last.fm/music/Beck/_/Already+Dead</url>
+        <duration>178</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="10"><name>Sunday Sun</name>
+        <url>https://www.last.fm/music/Beck/_/Sunday+Sun</url>
+        <duration>284</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="11"><name>Little One</name>
+        <url>https://www.last.fm/music/Beck/_/Little+One</url>
+        <duration>266</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        <track rank="12"><name>Side of the Road</name>
+        <url>https://www.last.fm/music/Beck/_/Side+of+the+Road</url>
+        <duration>203</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Beck</name>
+        <mbid>a8baaa41-50f1-4f63-979e-717c14979dfb</mbid>
+        <url>https://www.last.fm/music/Beck</url>
+        </artist>
+        </track>
+        </tracks>
+        <tags><tag><name>albums I own</name>
+        <url>https://www.last.fm/tag/albums+I+own</url>
+        </tag>
+        <tag><name>favorite albums</name>
+        <url>https://www.last.fm/tag/favorite+albums</url>
+        </tag>
+        <tag><name>singer-songwriter</name>
+        <url>https://www.last.fm/tag/singer-songwriter</url>
+        </tag>
+        <tag><name>acoustic</name>
+        <url>https://www.last.fm/tag/acoustic</url>
+        </tag>
+        <tag><name>2002</name>
+        <url>https://www.last.fm/tag/2002</url>
+        </tag>
+        </tags>
+        <wiki><published>04 Apr 2009, 10:33</published>
+        <summary>&#10;Beck has always been known for his ever-changing moods -- particularly since they often arrived one after another on one album, sometimes within one song -- yet the shift between the neon glitz of Midnite Vultures and the lush, somber Sea Change is startling, and not just because it finds him in full-on singer/songwriter mode, abandoning all of the postmodern pranksterism of its predecessor. What&apos;s startling about Sea Change is how it brings everything that&apos;s run beneath the surface of Beck&apos;s music to the forefront &lt;a href=&quot;http://www.last.fm/music/Beck/Sea+Change&quot;&gt;Read more on Last.fm&lt;/a&gt;.</summary>
+        <content>&#10;Beck has always been known for his ever-changing moods -- particularly since they often arrived one after another on one album, sometimes within one song -- yet the shift between the neon glitz of Midnite Vultures and the lush, somber Sea Change is startling, and not just because it finds him in full-on singer/songwriter mode, abandoning all of the postmodern pranksterism of its predecessor. What&apos;s startling about Sea Change is how it brings everything that&apos;s run beneath the surface of Beck&apos;s music to the forefront, as if he&apos;s unafraid to not just reveal emotions, but to elliptically examine them in this wonderfully melancholy song cycle. If, on most albums prior to this, Beck&apos;s music was a sonic kaleidoscope -- each song shifting familiar and forgotten sounds into colorful, unpredictable combinations -- this discards genre-hopping in favor of focus, and the concentration pays off gloriously, resulting in not just his best album, but one of the greatest late-night, brokenhearted albums in pop. This, as many reviews and promotional interviews have noted, is indeed a breakup album, but it&apos;s not a bitter listen; it has a wearily beautiful sound, a comforting, consoling sadness. His words are often evocative, but not nearly as evocative as the music itself, which is rooted equally in country-rock (not alt-country), early-&apos;70s singer/songwriterism, and baroque British psychedelia. With producer Nigel Godrich, Beck has created a warm, enveloping sound, with his acoustic guitar supported by grand string arrangements straight out of Paul Buckmaster, eerie harmonies, and gentle keyboards among other subtler touches that give this record a richness that unveils more with each listen. Surely, some may bemoan the absence of the careening, free-form experimentalism of Odelay, but Beck&apos;s gifts as a songwriter, singer, and musician have never been as brilliant as they are here. As Sea Change is playing, it feels as if Beck singing to you alone, revealing painful, intimate secrets that mirror your own. It&apos;s a genuine masterpiece in an era with too damn few of them. &lt;a href=&quot;http://www.last.fm/music/Beck/Sea+Change&quot;&gt;Read more on Last.fm&lt;/a&gt;. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.</content>
+        </wiki>
+        </album>
+        </lfm>
+  recorded_at: Thu, 06 Aug 2020 07:39:05 GMT
+recorded_with: VCR 6.0.0
