@@ -4,11 +4,12 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.includes(:artist)
+    @albums = policy_scope(Album).includes(:artist)
+                                 .order("artists.name, title")
   end
 
   # GET /albums/1
   def show
-    @album = Album.find(params[:id])
+    @album = policy_scope(Album).find(params[:id])
   end
 end
