@@ -11,7 +11,7 @@
 
   <body>
     <% flash.each do |type, message| -%>
-    <p id="<%= type %>"><%= message %></p>
+    <p class="alert-<%= type %>"><%= message %></p>
     <% end -%>
 
     <%= yield %>
