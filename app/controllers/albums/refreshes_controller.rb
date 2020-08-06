@@ -1,6 +1,11 @@
 module Albums
   class RefreshesController < ::ApplicationController
-    before_action :fetch_album
+    include PunditErrorHandling
+
+    before_action :authenticate_user!
+    before_action :assign_album
+    before_action :authorize_refresh!
+    after_action :verify_policy_scoped
 
     def show
       @albums = AlbumLookup.search(@album.title)
@@ -17,10 +22,20 @@ module Albums
       redirect_to @album, notice: "Album updated successfully."
     end
 
+    protected
+
+    def authorize_refresh!
+      authorize @album, :refresh?
+    end
+
+    def authentication_failed_redirect_path_for(_resource)
+      album_url(_resource)
+    end
+
     private
 
-    def fetch_album
-      @album = Album.find(params[:album_id])
+    def assign_album
+      @album = policy_scope(Album).find(params[:album_id])
     end
 
     def lookup_params

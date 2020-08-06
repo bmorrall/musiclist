@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 04 Aug 2020 06:35:08 GMT
+      - Thu, 06 Aug 2020 01:35:10 GMT
       Content-Type:
       - text/xml; charset=UTF-8
       Cteonnt-Length:
@@ -40,13 +40,13 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '3299'
+      - '3298'
     body:
       encoding: ASCII-8BIT
       string: |
         <?xml version="1.0" encoding="UTF-8" ?>
         <lfm status="ok"><results for="The White Album"><opensearch:Query role="request" searchTerms="The White Album" startPage="1"></opensearch:Query>
-        <opensearch:totalResults>29929</opensearch:totalResults>
+        <opensearch:totalResults>29930</opensearch:totalResults>
         <opensearch:startIndex>0</opensearch:startIndex>
         <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
         <albummatches><album><name>The Black and White Album</name>
@@ -552,5 +552,5 @@ http_interactions:
         </albummatches>
         </results>
         </lfm>
-  recorded_at: Tue, 04 Aug 2020 06:35:08 GMT
+  recorded_at: Thu, 06 Aug 2020 01:35:10 GMT
 recorded_with: VCR 6.0.0
