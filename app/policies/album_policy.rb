@@ -14,7 +14,7 @@ class AlbumPolicy < ApplicationPolicy
   end
 
   def update?
-    false
+    user.admin?
   end
 
   def destroy?
@@ -26,7 +26,7 @@ class AlbumPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    super
+    user.admin? ? %i[title year description] : super
   end
 
   # Safe scope for Album

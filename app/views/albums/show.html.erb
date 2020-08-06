@@ -1,5 +1,3 @@
-<h1>Album</h1>
-
 <div class="md:flex md:items-start px-3 py-2 md:px-6 mdpy-4">
   <%= image_tag album_detail_image(@album), class: "block mx-4 md:mx-0 flex-shrink-0 h-64 sm:w-64", alt: @album.title %>
   <div class="mt-0 ml-4 text-left">
@@ -11,4 +9,14 @@
     </div>
     <% end %>
   </div>
+</div>
+
+<div class="px-3 py-2 md:px-6 mdpy-4">
+  <% if policy(@album).edit? -%>
+  <%= link_to 'Edit', edit_album_path(@album) %> |
+  <% end -%>
+  <% if policy(@album).refresh? -%>
+  <%= link_to 'Refresh', album_refresh_path(@album) %> |
+  <% end -%>
+  <%= link_to 'Back', albums_path %>
 </div>

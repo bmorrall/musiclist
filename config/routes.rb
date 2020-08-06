@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "auth/failure" => "auth#failure"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :albums, only: [:index, :show] do
+  resources :albums, only: [:index, :show, :edit, :update] do
     resource :refresh, module: :albums, only: [:show, :create]
   end
 

@@ -1,4 +1,6 @@
 class Album < ApplicationRecord
+  audited only: %i[title year description]
+
   belongs_to :artist
 
   validates :title, presence: true

@@ -47,14 +47,17 @@ RSpec.describe AlbumPolicy, type: :policy do
     it { is_expected.to permit_action(:index) }
     it { is_expected.to permit_action(:show) }
     it { is_expected.to forbid_actions(%i[new create]) }
-    it { is_expected.to forbid_actions(%i[edit update]) }
+    it { is_expected.to permit_actions(%i[edit update]) }
     it { is_expected.to forbid_action(:destroy) }
 
     it { is_expected.to permit_action(:refresh) }
 
     # it { is_expected.to permit_mass_assignment_of(:name).for_action(:create) }
 
-    # it { is_expected.to permit_mass_assignment_of(:name).for_action(:update) }
+    it { is_expected.to permit_mass_assignment_of(:title).for_action(:update) }
+    it { is_expected.to permit_mass_assignment_of(:year).for_action(:update) }
+    it { is_expected.to permit_mass_assignment_of(:description).for_action(:update) }
+
     # it { is_expected.to forbid_mass_assignment_of(:birthdate).for_action(:update) }
 
     it "returns all items in scope" do

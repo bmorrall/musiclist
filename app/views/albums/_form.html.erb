@@ -1,0 +1,18 @@
+
+<%= simple_form_for(@album) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :artist, collection: Artist.where(id: @album.artist_id), include_blank: false %>
+    <%= f.input :title %>
+    <%= f.input :year %>
+    <%= f.input :album_art, readonly: true, disabled: true %>
+    <%= f.input :lastfm_url, readonly: true, disabled: true %>
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
