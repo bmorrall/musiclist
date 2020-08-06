@@ -2,7 +2,12 @@
   <%= image_tag album_detail_image(@album), class: "block mx-4 md:mx-0 flex-shrink-0 h-64 sm:w-64", alt: @album.title %>
   <div class="mt-0 ml-4 text-left">
     <p class="text-4xl leading-tight"><%= @album.title %> <% if @album.year.present? %>(<%= @album.year %>)<% end %></p>
-    <p class="text-xl leading-tight text-gray-600"><%= @album.artist.try(:name) %></p>
+    <p class="text-xl leading-tight text-gray-600">
+      <%= @album.artist.try(:name) %>
+      <% if @album.genre? -%>
+      &ndash; <%= @album.genre %>
+      <% end -%>
+    </p>
     <% if @album.description? %>
     <div class="my-4">
       <%= simple_format(@album.description) %>

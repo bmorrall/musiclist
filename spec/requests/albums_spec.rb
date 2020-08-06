@@ -156,7 +156,7 @@ RSpec.describe "Albums", type: :request do
   describe "PATCH /albums/:id" do
     context "with valid parameters" do
       let(:new_attributes) do
-        attributes_for(:album).slice(:title, :year, :description)
+        attributes_for(:album).slice(:title, :year, :genre, :description)
       end
 
       context "with an authenticated admin" do
@@ -173,6 +173,7 @@ RSpec.describe "Albums", type: :request do
           album.reload
           expect(album.title).to eq(new_attributes[:title])
           expect(album.year).to eq(new_attributes[:year])
+          expect(album.genre).to eq(new_attributes[:genre])
           expect(album.description).to eq(new_attributes[:description])
         end
 
