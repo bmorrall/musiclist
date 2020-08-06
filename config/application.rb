@@ -21,6 +21,25 @@ Bundler.require(*Rails.groups)
 
 module Musiclist
   class Application < Rails::Application
+    if ENV["RAILS_SERVE_STATIC_FILES"].present?
+      config.middleware.insert_after ActionDispatch::Static, Rack::Deflater
+      config.static_cache_control = "public, max-age=#{2.days.to_i}"
+    else
+      config.middleware.insert_after Rack::Sendfile, Rack::Deflater
+    end
+    # Use memory_store cache for testing and default configurations
+    config.cache_store = :memory_store
+    # Treat Pundit authentication failures as forbidden
+    config.action_dispatch.rescue_responses["Pundit::NotAuthorizedError"] = :forbidden
+    config.active_job.queue_adapter = :sidekiq
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.javascripts false
+      g.scaffold_stylesheet false
+      g.stylesheets false
+      g.resource_route :musiclist_resource_route
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 

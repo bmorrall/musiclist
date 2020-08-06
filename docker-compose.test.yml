@@ -5,12 +5,20 @@ services:
     command: bash -c "bundle exec rake db:migrate && bundle exec rake"
     depends_on:
       - db
+      - mailcatcher
     environment:
       - RAILS_ENV=test
-      - DATABASE_HOST=db
+      - ROLLBAR_ENV=test-docker
+      - SMTP_SERVER=mailcatcher
+      - SMTP_PORT=1025
+      - TEST_DATABASE_URL=postgres://musiclist:musiclist_test@db/musiclist_test
+    env_file:
+      - ./.env.test
   db:
     image: postgres
     environment:
       - POSTGRES_DB=musiclist_test
       - POSTGRES_USER=musiclist
       - POSTGRES_PASSWORD=musiclist_test
+  mailcatcher:
+    image: sj26/mailcatcher

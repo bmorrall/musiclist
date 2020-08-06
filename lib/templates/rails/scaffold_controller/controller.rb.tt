@@ -1,0 +1,101 @@
+<% if namespaced? -%>
+require_dependency "<%= namespaced_path %>/application_controller"
+
+<% end -%>
+<% module_namespacing do -%>
+class <%= controller_class_name %>Controller < ApplicationController
+<%-
+  # Generate scaffold with name or title, and a `slug:uniq` field to enable friendly_id
+  using_friendly_id = attributes_names.any? { |name| %w(name title).include?(name) } &&
+    attributes_names.any? { |name| %w(slug).include?(name) }
+-%>
+  include PunditErrorHandling
+
+  before_action :authenticate_user!
+  before_action :assign_<%= singular_table_name %>, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized
+  after_action :verify_policy_scoped, except: [:new, :create]
+
+  # GET <%= route_url %>
+  # GET <%= route_url %>/page/1
+  def index
+    authorize <%= class_name %>
+    @<%= plural_table_name %> = policy_scope(<%= class_name %>).page params[:page]
+  end
+
+  # GET <%= route_url %>/1
+  def show
+    authorize @<%= singular_table_name %>
+  end
+
+  # GET <%= route_url %>/new
+  def new
+    @<%= singular_table_name %> = <%= orm_class.build(class_name) %>
+    authorize @<%= singular_table_name %>
+  end
+
+  # GET <%= route_url %>/1/edit
+  def edit
+    authorize @<%= singular_table_name %>
+  end
+
+  # POST <%= route_url %>
+  def create
+    @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
+    authorize @<%= singular_table_name %>
+
+    if @<%= orm_instance.save %>
+      redirect_to <%= redirect_resource_name %>, notice: <%= "'#{human_name} was successfully created.'" %>
+    else
+      render :new
+    end
+  end
+
+  # PATCH/PUT <%= route_url %>/1
+  def update
+    authorize @<%= singular_table_name %>
+
+    if @<%= orm_instance.update("#{singular_table_name}_params") %>
+      redirect_to <%= redirect_resource_name %>, notice: <%= "'#{human_name} was successfully updated.'" %>
+    else
+      render :edit
+    end
+  end
+
+  # DELETE <%= route_url %>/1
+  def destroy
+    authorize @<%= singular_table_name %>
+
+    @<%= orm_instance.destroy %>
+    redirect_to <%= index_helper %>_url, notice: <%= "'#{human_name} was successfully destroyed.'" %>
+  end
+
+  protected
+
+  def authentication_failed_redirect_path_for(_resource)
+    if @<%= singular_table_name %> && policy(@<%= singular_table_name %>).show?
+      @<%= singular_table_name %>
+    elsif policy(<%= class_name %>).index?
+      <%= index_helper %>_url
+    else
+      super
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def assign_<%= singular_table_name %>
+      <%-
+        finder_class = "policy_scope(#{class_name})"
+        # Use friendly_id for slug lookup
+        finder_class += ".friendly" if using_friendly_id
+      -%>
+      @<%= singular_table_name %> = <%= orm_class.find(finder_class, "params[:id]") %>
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def <%= "#{singular_table_name}_params" %>
+      permitted_attributes(@<%= singular_table_name %> || <%= class_name %>)
+    end
+end
+<% end -%>

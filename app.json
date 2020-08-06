@@ -1,0 +1,34 @@
+{
+  "name": "musiclist",
+  "addons": [
+    {
+      "plan": "auth0:free",
+      "options": {
+        "type": "rails"
+      }
+    },
+    "cloudcube:free",
+    "heroku-postgresql:hobby-dev",
+    "heroku-redis:hobby-dev",
+    "memcachier:dev",
+    "papertrail:choklad",
+    "rollbar:free",
+  ],
+  "env": {
+    "DB_CONNECT_TIMEOUT": "5",
+    "OKCOMPUTER_USERNAME": {
+      "description": "The username for accessing the /health endpoint.",
+      "value": "okcomputer"
+    },
+    "OKCOMPUTER_PASSWORD": {
+      "description": "The password for accessing the /health endpoint.",
+      "generator": "secret"
+    },
+    "RAILS_ENV": "production",
+    "ROLLBAR_ENV": "development-heroku",
+  },
+  "stack": "heroku-18",
+  "scripts": {
+    "postdeploy": "./bin/hooks-postdeploy"
+  },
+}

@@ -1,7 +1,14 @@
+<%-
+  resource_path = name.underscore.pluralize
+  permitted_attributes = attributes.reject { |a| a.name == "slug" }
+  permitted_params = permitted_attributes.map { |a| ":#{a.name}" }.join(", ")
+-%>
+# frozen_string_literal: true
+
 require "rails_helper"
 
 <% module_namespacing do -%>
-RSpec.describe "/<%= name.underscore.pluralize %>", <%= type_metatag(:request) %> do
+RSpec.describe "/<%= controller_class_name %>", <%= type_metatag(:request) %> do
   # This should return the minimal set of values that should be in the headers
   # in order to pass any filters (e.g. authentication) defined in
   # <%= controller_class_name %>Controller, or in your router and rack
@@ -11,7 +18,7 @@ RSpec.describe "/<%= name.underscore.pluralize %>", <%= type_metatag(:request) %
   end
 
 <% unless options[:singleton] -%>
-  describe "GET /index" do
+  describe "GET /<%= resource_path %>" do
     it "renders a successful response" do
       create(:<%= file_name %>)
       get <%= index_helper %>_url, headers: valid_headers, as: :json
@@ -20,7 +27,7 @@ RSpec.describe "/<%= name.underscore.pluralize %>", <%= type_metatag(:request) %
   end
 <% end -%>
 
-  describe "GET /show" do
+  describe "GET /<%= resource_path %>/:id" do
     it "renders a successful response" do
       <%= file_name %> = create(:<%= file_name %>)
       get <%= show_helper.tr('@', '') %>, as: :json
@@ -28,10 +35,14 @@ RSpec.describe "/<%= name.underscore.pluralize %>", <%= type_metatag(:request) %
     end
   end
 
-  describe "POST /create" do
+  describe "POST /<%= resource_path %>" do
     context "with valid parameters" do
       let(:valid_attributes) do
+        <%- if permitted_attributes.any? -%>
+        attributes_for(:<%= ns_file_name %>).slice(<%= permitted_params %>)
+        <%- else -%>
         skip("Add a hash of attributes valid for your model")
+        <%- end -%>
       end
 
       it "creates a new <%= class_name %>" do
@@ -70,18 +81,29 @@ RSpec.describe "/<%= name.underscore.pluralize %>", <%= type_metatag(:request) %
     end
   end
 
-  describe "PATCH /update" do
+  describe "PATCH /<%= resource_path %>/:id" do
     context "with valid parameters" do
       let(:new_attributes) do
+        <%- if permitted_attributes.any? -%>
+        attributes_for(:<%= ns_file_name %>).slice(<%= permitted_params %>)
+        <%- else -%>
         skip("Add a hash of attributes valid for your model")
+        <%- end -%>
       end
 
       it "updates the requested <%= ns_file_name %>" do
         <%= file_name %> = create(:<%= file_name %>)
         patch <%= show_helper.tr('@', '') %>,
               params: { <%= singular_table_name %>: invalid_attributes }, headers: valid_headers, as: :json
+
         <%= file_name %>.reload
+        <%- if permitted_attributes.any? -%>
+        <%- permitted_attributes.each do |attribute| -%>
+        expect(<%= file_name %>.<%= attribute.name %>).to eq(new_attributes[:<%= attribute.name %>])
+        <%- end -%>
+        <%- else -%>
         skip("Add assertions for updated state")
+        <%- end -%>
       end
 
       it "renders a JSON response with the <%= ns_file_name %>" do
@@ -108,7 +130,7 @@ RSpec.describe "/<%= name.underscore.pluralize %>", <%= type_metatag(:request) %
     end
   end
 
-  describe "DELETE /destroy" do
+  describe "DELETE /<%= resource_path %>/:id" do
     it "destroys the requested <%= ns_file_name %>" do
       <%= file_name %> = create(:<%= file_name %>)
       expect do

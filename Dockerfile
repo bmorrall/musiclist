@@ -21,7 +21,8 @@ WORKDIR /musiclist_application
 
 # Install gems
 ADD Gemfile* /musiclist_application/
-RUN bundle config set deployment 'true' \
+RUN gem install bundler:2.1.4 \
+    && bundle config set deployment 'true' \
     && bundle config set without 'development' \
     && bundle install
 
@@ -31,8 +32,9 @@ ADD . /musiclist_application
 # Perform post-installation tasks
 RUN bundle exec rake tmp:create \
     && bundle exec rake assets:precompile \
+    && bundle exec rake assets:clean \
     && bundle exec rake tmp:clear
 
 # Start the application server
 EXPOSE 3000
-CMD ["bundle", "exec", "rails", "server", "-p", "3000", "-b", "0.0.0.0"]
+CMD ["bin/web"]

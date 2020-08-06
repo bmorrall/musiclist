@@ -1,0 +1,32 @@
+# frozen_string_literal: true
+
+FactoryBot.define do
+  factory :user do
+    uid { SecureRandom.hex(10) }
+
+    name { [nickname, Faker::Name.last_name].join(" ") }
+    nickname { Faker::Name.first_name }
+    image { "https://s.gravatar.com/avatar/55502f40dc8b7c769880b10874abc9d0?s=480" }
+    roles { [] }
+
+    skip_create
+    initialize_with do
+      require "utils/auth0"
+      filtered_attributes = Utils::Auth0.filter_userinfo(
+        provider: "factory_bot",
+        uid: attributes[:uid],
+        info: attributes.except(:uid, :roles).stringify_keys,
+        extra: {
+          raw_info: {
+            "http://musiclist/roles" => roles
+          }
+        }
+      )
+      new(filtered_attributes)
+    end
+
+    trait :admin do
+      roles { %w[admin] }
+    end
+  end
+end

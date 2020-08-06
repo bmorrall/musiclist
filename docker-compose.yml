@@ -1,31 +1,56 @@
 version: '2.0'
 services:
-  app:
+  web:
     build: .
-    environment:
-      - DATABASE_URL=postgres://musiclist:bXVzaWNsaXN0X2FwcGxpY2F0aW9u@db/musiclist_production
+    env_file:
+      - ./.env
+      - ./.env.docker
     depends_on:
       - db
+      - memcached
+      - redis
     volumes:
     - static-assets:/musiclist_application/public
+    - local-storage:/musiclist_application/storage
   db:
     image: postgres
-    environment:
-      - POSTGRES_DB=musiclist_production
-      - POSTGRES_USER=musiclist
-      - POSTGRES_PASSWORD=bXVzaWNsaXN0X2FwcGxpY2F0aW9u
+    env_file:
+      - ./.env.docker-db
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
-  web:
+  mailcatcher:
+    image: sj26/mailcatcher
+    ports:
+      - 1080:1080
+  memcached:
+    image: memcached:alpine
+  redis:
+    image: redis:alpine
+  worker:
+    build: .
+    command: ./bin/worker
+    env_file:
+      - ./.env
+      - ./.env.docker
+    depends_on:
+      - db
+      - memcached
+      - redis
+  web-nginx:
     build:
       context: ./docker/web/
     depends_on:
-      - app
+      - web
     ports:
       - 80:80
+      - 443:443
+      - 8000:443 # for development
     volumes:
+      - ./certs/localhost:/musiclist_application/certs
       - static-assets:/musiclist_application/public
+      - local-storage:/musiclist_application/storage
       - web-logs:/musiclist_application/log
 volumes:
   static-assets: {}
+  local-storage: {}
   web-logs: {}

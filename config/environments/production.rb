@@ -1,4 +1,26 @@
 Rails.application.configure do
+  config.action_controller.default_url_options = { host: ENV["APP_HOST"] }
+  config.action_controller.asset_host = ENV.fetch("ASSET_HOST") { ENV["APP_HOST"] }
+  config.action_mailer.default_url_options = { host: ENV["APP_HOST"] }
+  config.action_mailer.delivery_method = :smtp
+  config.active_storage.service = if ENV["CLOUDCUBE_ACCESS_KEY_ID"].present?
+                                    :cloudcube
+                                  else
+                                    :local # fallback option
+                                  end
+  # Use Memcached for Rails cache store
+  memcache_servers = ENV.fetch("MEMCACHE_SERVERS") { ENV.fetch("MEMCACHIER_SERVERS", "") }
+  config.cache_store = :mem_cache_store,
+                       memcache_servers.split(","),
+                       {
+                         username: ENV["MEMCACHIER_USERNAME"],
+                         password: ENV["MEMCACHIER_PASSWORD"],
+                         failover: true,
+                         socket_timeout: 1.5,
+                         socket_failure_delay: 0.2,
+                         down_retry_delay: 60,
+                         pool_size: ENV.fetch("RAILS_MAX_THREADS") { 5 }
+                       }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -34,9 +56,12 @@ Rails.application.configure do
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
+  unless ENV['RAILS_SERVE_STATIC_FILES'].present?
+    config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
+  end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  # config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
@@ -44,7 +69,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = ENV["ALLOW_INSECURE_HTTP"].to_i != 1
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.

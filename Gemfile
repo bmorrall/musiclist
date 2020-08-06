@@ -45,7 +45,7 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'lastfm'
@@ -58,8 +58,32 @@ gem 'faker', group: [:development, :test]
 gem 'rspec-rails', '~> 4.0.0', group: [:development, :test]
 gem 'shoulda-matchers', group: :test
 
-gem 'capybara', group: :test
 gem 'climate_control', group: :test
 gem 'simplecov', group: :test
 gem 'vcr', group: :test
 gem 'webmock', group: :test
+
+gem 'namae'
+gem 'omniauth-auth0', '~> 2.2'
+gem 'omniauth-rails_csrf_protection', '~> 0.1'
+gem 'dalli'
+gem 'connection_pool'
+gem 'zero_downtime_migrations'
+gem 'aws-sdk-s3', require: false
+gem 'sidekiq'
+gem 'pundit'
+gem 'pundit-matchers', group: :test
+gem 'simple_form'
+gem 'title', github: 'calebthompson/title'
+gem 'acts_as_list'
+gem 'audited', '~> 4.9'
+gem 'friendly_id'
+gem 'kaminari'
+gem 'rollbar', '~> 2.25.0'
+gem 'okcomputer'
+gem 'rubocop-rails', require: false, group: [:development, :test]
+gem 'brakeman', group: [:development, :test]
+gem 'bundler-audit', github: 'rubysec/bundler-audit', group: [:development, :test]
+gem 'ip_anonymizer'
+gem 'rack-attack'
+gem 'capybara', '>= 2.15', group: :test

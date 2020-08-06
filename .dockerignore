@@ -1,5 +1,7 @@
 /.bundle
 /.git
+/.env
+/.env.*
 /docker
 /docker-compose.yml
 /docker-compose.test.yml
@@ -8,3 +10,7 @@
 /public/assets
 /tmp
 /vendor/bundle
+
+# Development Scripts
+bin/setup-localhost
+localhostCA.*

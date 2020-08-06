@@ -5,6 +5,22 @@ GIT
     rockstart (0.1.1)
       rails (~> 6.0.2, >= 6.0.2.2)
 
+GIT
+  remote: https://github.com/calebthompson/title.git
+  revision: 7bda0243341e3b8a9e9f1d084bce3abc6ce278da
+  specs:
+    title (0.0.7)
+      i18n
+      rails (>= 3.1)
+
+GIT
+  remote: https://github.com/rubysec/bundler-audit.git
+  revision: 15a1d9b8f28141cc87f5d6dbe13bdd937b317591
+  specs:
+    bundler-audit (0.7.0.1)
+      bundler (>= 1.2.0, < 3)
+      thor (>= 0.18, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,12 +79,33 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    acts_as_list (1.0.1)
+      activerecord (>= 4.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    ast (2.4.0)
+    ast (2.4.1)
+    audited (4.9.0)
+      activerecord (>= 4.2, < 6.1)
+    aws-eventstream (1.1.0)
+    aws-partitions (1.351.0)
+    aws-sdk-core (3.104.3)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.239.0)
+      aws-sigv4 (~> 1.1)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.36.0)
+      aws-sdk-core (~> 3, >= 3.99.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.75.0)
+      aws-sdk-core (~> 3, >= 3.104.1)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.1)
+    aws-sigv4 (1.2.1)
+      aws-eventstream (~> 1, >= 1.0.2)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
+    brakeman (4.9.0)
     builder (3.2.4)
     byebug (11.1.1)
     capybara (3.32.1)
@@ -81,9 +118,11 @@ GEM
       xpath (~> 3.2)
     climate_control (0.2.0)
     concurrent-ruby (1.1.6)
+    connection_pool (2.2.3)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.6)
+    dalli (2.7.10)
     diff-lcs (1.3)
     docile (1.3.2)
     dotenv (2.7.5)
@@ -98,18 +137,37 @@ GEM
       railties (>= 4.2.0)
     faker (2.11.0)
       i18n (>= 1.6, < 2)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
+    friendly_id (5.3.0)
+      activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashdiff (1.0.1)
+    hashie (4.1.0)
     httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    jaro_winkler (1.5.4)
+    ip_anonymizer (0.1.1)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    jmespath (1.4.0)
+    jwt (2.2.1)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     lastfm (1.27.3)
       httparty
       xml-simple
@@ -139,18 +197,45 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.1)
     msgpack (1.3.3)
+    multi_json (1.15.0)
     multi_xml (0.6.0)
+    multipart-post (2.1.1)
+    namae (1.0.1)
     nio4r (2.5.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
-    parallel (1.19.1)
-    parser (2.7.0.5)
-      ast (~> 2.4.0)
+    oauth2 (1.4.4)
+      faraday (>= 0.8, < 2.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    okcomputer (1.18.2)
+    omniauth (1.9.1)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
+    omniauth-auth0 (2.3.1)
+      omniauth-oauth2 (~> 1.5)
+    omniauth-oauth2 (1.6.0)
+      oauth2 (~> 1.1)
+      omniauth (~> 1.9)
+    omniauth-rails_csrf_protection (0.1.2)
+      actionpack (>= 4.2)
+      omniauth (>= 1.3.1)
+    parallel (1.19.2)
+    parser (2.7.1.4)
+      ast (~> 2.4.1)
     pg (1.2.3)
     public_suffix (4.0.4)
     puma (4.3.3)
       nio4r (~> 2.0)
+    pundit (2.1.0)
+      activesupport (>= 3.0.0)
+    pundit-matchers (1.6.0)
+      rspec-rails (>= 3.0.0)
     rack (2.2.3)
+    rack-attack (6.3.1)
+      rack (>= 1.0, < 3)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -186,10 +271,12 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.1)
     regexp_parser (1.7.0)
     request_store (1.5.0)
       rack (>= 1.4)
     rexml (3.2.4)
+    rollbar (2.25.1)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
     rspec-expectations (3.9.1)
@@ -207,14 +294,17 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.2)
-    rubocop (0.80.1)
-      jaro_winkler (~> 1.5.1)
+    rubocop (0.88.0)
       parallel (~> 1.10)
-      parser (>= 2.7.0.1)
+      parser (>= 2.7.1.1)
       rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.7)
       rexml
+      rubocop-ast (>= 0.1.0, < 1.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 1.7)
+      unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-ast (0.3.0)
+      parser (>= 2.7.1.4)
     rubocop-rails (2.5.0)
       activesupport
       rack (>= 1.1)
@@ -234,6 +324,13 @@ GEM
       tilt
     shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
+    sidekiq (6.1.1)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
+    simple_form (5.0.2)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -257,7 +354,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
-    unicode-display_width (1.6.1)
+    unicode-display_width (1.7.0)
     vcr (6.0.0)
     web-console (4.0.1)
       actionview (>= 6.0.0)
@@ -279,40 +376,63 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.0)
+    zero_downtime_migrations (0.0.7)
+      activerecord
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list
+  audited (~> 4.9)
+  aws-sdk-s3
   bootsnap (>= 1.4.2)
+  brakeman
+  bundler-audit!
   byebug
-  capybara
+  capybara (>= 2.15)
   climate_control
+  connection_pool
+  dalli
   dotenv-rails
   factory_bot_rails
   faker
+  friendly_id
+  ip_anonymizer
   jbuilder (~> 2.7)
+  kaminari
   lastfm
   listen (>= 3.0.5, < 3.2)
   lograge
   logstash-event
+  namae
+  okcomputer
+  omniauth-auth0 (~> 2.2)
+  omniauth-rails_csrf_protection (~> 0.1)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
+  pundit
+  pundit-matchers
+  rack-attack
   rails (~> 6.0.2, >= 6.0.2.2)
   rockstart!
+  rollbar (~> 2.25.0)
   rspec-rails (~> 4.0.0)
   rubocop-rails
   sass-rails (>= 6)
   shoulda-matchers
+  sidekiq
+  simple_form
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
+  title!
   turbolinks (~> 5)
-  tzinfo-data
   vcr
   web-console (>= 3.3.0)
   webmock
   webpacker (~> 4.0)
+  zero_downtime_migrations
 
 RUBY VERSION
    ruby 2.7.0p0

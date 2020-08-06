@@ -33,3 +33,14 @@
 yarn-debug.log*
 .yarn-integrity
 coverage/
+
+# localhost certificate authority
+localhostCA.*
+
+# Generated SSL Certificates
+certs/
+
+brakeman
+
+# Docker Configuration
+docker/certs
