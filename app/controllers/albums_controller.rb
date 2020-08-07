@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   def index
     authorize Album
-    @albums = policy_scope(Album).includes(:artist)
+    @albums = policy_scope(Album).includes(:artist, :album_status)
                                  .order("artists.name, title")
     @albums = present(@albums, AlbumDecorator)
   end

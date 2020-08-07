@@ -9,6 +9,18 @@ class AlbumDecorator
 
   delegate :to_param, to: :album
 
+  def small_played_button
+    if played?
+      v.small_album_played_button
+    else
+      v.small_album_unplayed_button
+    end
+  end
+
+  def played?
+    @album.album_status.try(:played?) && true
+  end
+
   # Pundit policy object
   def policy
     v.policy(album)

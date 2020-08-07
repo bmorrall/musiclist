@@ -3,6 +3,8 @@ class Album < ApplicationRecord
 
   belongs_to :artist
 
+  has_one :album_status
+
   validates :title, presence: true
   validates :artist_id, presence: true
 
