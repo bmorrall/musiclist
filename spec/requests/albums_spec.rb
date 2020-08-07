@@ -17,6 +17,14 @@ RSpec.describe "Albums", type: :request do
         expect(response).to be_successful
         expect(response.body).to have_link(href: album_path(album))
       end
+
+      it "renders multiple albums" do
+        create(:album_status, purchased: true, played: true)
+        create(:album_status, purchased: false, played: false)
+
+        get albums_url
+        expect(response).to be_successful
+      end
     end
 
     context "with an authenticated user" do
@@ -69,6 +77,20 @@ RSpec.describe "Albums", type: :request do
 
       it "renders a successful response" do
         album = create(:album)
+        get album_url(album)
+        expect(response).to be_successful
+      end
+
+      it "renders played and purchased albums" do
+        album_status = create(:album_status, purchased: true, played: true)
+        album = album_status.album
+        get album_url(album)
+        expect(response).to be_successful
+      end
+
+      it "renders unplayed and unpurchased albums" do
+        album_status = create(:album_status, purchased: false, played: false)
+        album = album_status.album
         get album_url(album)
         expect(response).to be_successful
       end

@@ -25,8 +25,28 @@ class AlbumDecorator
     end
   end
 
+  def purchased_button
+    if purchased?
+      v.album_purchased_button
+    else
+      v.album_unpurchased_button
+    end
+  end
+
+  def small_purchased_button
+    if purchased?
+      v.small_album_purchased_button
+    else
+      v.small_album_unpurchased_button
+    end
+  end
+
   def played?
     @album.album_status.try(:played?) && true
+  end
+
+  def purchased?
+    @album.album_status.try(:purchased?) && true
   end
 
   # Pundit policy object
