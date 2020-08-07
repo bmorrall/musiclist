@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Albums
   class RefreshesController < ::ApplicationController
     include PunditErrorHandling
@@ -30,8 +32,8 @@ module Albums
       authorize @album, :refresh?
     end
 
-    def authentication_failed_redirect_path_for(_resource)
-      album_url(_resource)
+    def authentication_failed_redirect_path_for(resource)
+      album_url(resource)
     end
 
     private

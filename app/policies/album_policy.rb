@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Policy for Albums.
+# Allows Admins to Update or override details using Last.fm
+# Full read access to all guests and users
 class AlbumPolicy < ApplicationPolicy
   def index?
     true
