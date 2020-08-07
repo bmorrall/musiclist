@@ -1,19 +1,19 @@
-<div class="md:flex md:items-start px-3 py-2 md:px-6 mdpy-4">
-  <div class="block mx-4 md:mx-0 flex flex-shrink-0">
+<div class="px-3 py-4 md:px-6 md:py-4">
+  <p class="text-4xl leading-tight"><%= @album.title %> <% if @album.year.present? %>(<%= @album.year %>)<% end %></p>
+  <p class="text-xl leading-tight text-gray-600">
+    <%= @album.artist.try(:name) %>
+    <% if @album.genre? -%>
+    &ndash; <%= @album.genre %>
+    <% end -%>
+  </p>
+</div>
+<div class="md:flex md:items-start px-3 pb-2 md:px-6 md:pb-4">
+  <div class="block md:mx-0 flex flex-col flex-shrink-0">
     <%= image_tag album_detail_image(@album), class: "block mx-auto flex-shrink-0 h-64 sm:w-64", alt: @album.title %>
   </div>
-  <div class="mt-0 ml-4 text-left">
-    <p class="text-4xl leading-tight"><%= @album.title %> <% if @album.year.present? %>(<%= @album.year %>)<% end %></p>
-    <p class="text-xl leading-tight text-gray-600">
-      <%= @album.artist.try(:name) %>
-      <% if @album.genre? -%>
-      &ndash; <%= @album.genre %>
-      <% end -%>
-    </p>
+  <div class="mt-2 md:mt-0 md:ml-4 text-left">
     <% if @album.description? %>
-    <div class="my-4">
-      <%= album_simple_format(@album.description) %>
-    </div>
+    <%= album_simple_format(@album.description) %>
     <% end %>
   </div>
 </div>
