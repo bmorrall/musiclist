@@ -9,6 +9,14 @@ class AlbumDecorator
 
   delegate :to_param, to: :album
 
+  def played_button
+    if played?
+      v.album_played_button
+    else
+      v.album_unplayed_button
+    end
+  end
+
   def small_played_button
     if played?
       v.small_album_played_button
