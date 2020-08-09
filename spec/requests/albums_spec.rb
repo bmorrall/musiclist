@@ -19,8 +19,8 @@ RSpec.describe "Albums", type: :request do
       end
 
       it "renders multiple albums" do
-        create(:album_status, purchased: true, played: true)
-        create(:album_status, purchased: false, played: false)
+        create(:album_status, purchased: true, played_on: Date.today)
+        create(:album_status, purchased: false, played_on: nil)
 
         get albums_url
         expect(response).to be_successful
@@ -82,14 +82,14 @@ RSpec.describe "Albums", type: :request do
       end
 
       it "renders played and purchased albums" do
-        album_status = create(:album_status, purchased: true, played: true)
+        album_status = create(:album_status, purchased: true, played_on: Date.today)
         album = album_status.album
         get album_url(album)
         expect(response).to be_successful
       end
 
       it "renders unplayed and unpurchased albums" do
-        album_status = create(:album_status, purchased: false, played: false)
+        album_status = create(:album_status, purchased: false, played_on: nil)
         album = album_status.album
         get album_url(album)
         expect(response).to be_successful
