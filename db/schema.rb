@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_040032) do
+ActiveRecord::Schema.define(version: 2020_08_09_060347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 2020_08_06_040032) do
 
   create_table "album_statuses", id: :serial, force: :cascade do |t|
     t.integer "album_id"
-    t.boolean "played"
     t.boolean "purchased"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date "played_on"
   end
 
   create_table "albums", id: :serial, force: :cascade do |t|
