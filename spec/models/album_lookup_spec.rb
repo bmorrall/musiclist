@@ -40,6 +40,11 @@ RSpec.describe AlbumLookup do
       expect(info.tags.first).to eq "acoustic"
       expect(info.year).to eq "2002"
     end
+
+    it "removes any citations", :vcr do
+      info = described_class.get_info(album: "Willy and the Poor Boys", artist: "Creedence Clearwater Revival")
+      expect(info.wiki.content).not_to include("[2]")
+    end
   end
 
   describe "#search" do

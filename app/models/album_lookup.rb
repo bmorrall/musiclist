@@ -27,7 +27,7 @@ class AlbumLookup
     res["image"] = OpenStruct.new(build_image_hash(res["image"]))
     res["year"] = filter_year(res_tags)
     res["tags"] = filter_tags(res_tags)
-    res["wiki"] = OpenStruct.new(res["wiki"])
+    res["wiki"] = OpenStruct.new(filter_wiki(res["wiki"]))
     OpenStruct.new(res)
   end
 
@@ -65,5 +65,10 @@ class AlbumLookup
         .reject { |t| t =~ /\A\d{2}s\z/ } # 50s, 60s, etc
         .reject { |t| t =~ /\A(19|20)\d{2}\z/ } # 1996, 2001, etc
         .reject { |t| USELESS_TAGS.include?(t) }
+  end
+
+  def filter_wiki(wiki)
+    wiki["content"] = wiki["content"].gsub(/\[\d\]/, "")
+    wiki
   end
 end
