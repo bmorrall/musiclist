@@ -60,10 +60,10 @@ RSpec.describe "Albums", type: :request do
       end
     end
 
-    it "does not allow access to guests" do
+    it "allow access to guests" do
       create(:album)
       get albums_url
-      expect(response).to redirect_to(url_for_authentication)
+      expect(response).to be_successful
     end
   end
 
@@ -129,10 +129,10 @@ RSpec.describe "Albums", type: :request do
       end
     end
 
-    it "does not allow access to guests" do
+    it "allows access to guests" do
       album = create(:album)
       get album_url(album)
-      expect(response).to redirect_to(url_for_authentication)
+      expect(response).to be_successful
     end
   end
 

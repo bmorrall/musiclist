@@ -3,7 +3,7 @@
 class AlbumsController < ApplicationController
   include PunditErrorHandling
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[index show]
   before_action :assign_album, only: %i[show edit update destroy]
   after_action :verify_authorized
   after_action :verify_policy_scoped, except: %i[new create]
