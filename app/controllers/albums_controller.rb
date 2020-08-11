@@ -13,7 +13,10 @@ class AlbumsController < ApplicationController
     authorize Album
     @albums = policy_scope(Album).includes(:artist, :album_status)
                                  .order("artists.name, title")
+                                 .page(params[:page])
     @albums = present(@albums, AlbumDecorator)
+    @albums = Kaminari.paginate_array(@albums, total_count: policy_scope(Album).count)
+                      .page(params[:page]).per(Album.default_per_page)
   end
 
   # GET /albums/1

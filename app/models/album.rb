@@ -1,4 +1,7 @@
 class Album < ApplicationRecord
+  # Allow Pagination of Testme collections
+  paginates_per 40
+
   audited only: %i[title year description]
 
   belongs_to :artist

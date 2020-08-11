@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  concern :paginatable do
+    get '(page/:page)', action: :index, on: :collection, as: ''
+  end
+
   resources :csp_violations, only: [:create]
   require "sidekiq/web"
   require "admin_constraint"
@@ -12,7 +16,7 @@ Rails.application.routes.draw do
   get "auth/failure" => "auth#failure"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :albums, only: [:index, :show, :edit, :update] do
+  resources :albums, concerns: :paginatable, only: [:index, :show, :edit, :update] do
     resource :refresh, module: :albums, only: [:show, :create]
   end
 
