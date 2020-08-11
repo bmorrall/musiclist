@@ -12,7 +12,7 @@ class AlbumsController < ApplicationController
   def index
     authorize Album
     @albums = policy_scope(Album).includes(:artist, :album_status)
-                                 .order("artists.name, title")
+                                 .order("artists.name, year, title")
                                  .page(params[:page])
     @albums = present(@albums, AlbumDecorator)
     @albums = Kaminari.paginate_array(@albums, total_count: policy_scope(Album).count)
