@@ -68,7 +68,14 @@ class AlbumLookup
   end
 
   def filter_wiki(wiki)
-    wiki["content"] = wiki["content"].gsub(/\[\d\]/, "")
+    wiki["content"] = format_content(wiki["content"])
     wiki
+  end
+
+  def format_content(content)
+    content.gsub(/\[\d\]/, "")
+           .sub(/.*\K\s+\<a\ href/, "\n\n<a href") # find the last link, and replace with newline
+           .sub(/.*\K\<a\ href/, "\n\n<a href") # find again without the preceeding newline
+           .gsub(/\n\n+/, "\n\n") # two newlines at most
   end
 end

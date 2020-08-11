@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?album=Willy%20and%20the%20Poor%20Boys&api_key=<LASTFM_API_KEY>&artist=Creedence%20Clearwater%20Revival&method=album.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Tue, 11 Aug 2020 02:55:38 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Connection:
+      - keep-alive
+      Cteonnt-Length:
+      - '6897'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '1409'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><album><name>Willy and the Poor Boys</name>
+        <artist>Creedence Clearwater Revival</artist>
+        <mbid>6d7a7eae-5b6d-482e-a81f-484681aee4ba</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/Willy+and+the+Poor+Boys</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/25873df9f5c9efc659b76e181716905e.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/25873df9f5c9efc659b76e181716905e.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/25873df9f5c9efc659b76e181716905e.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/25873df9f5c9efc659b76e181716905e.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/25873df9f5c9efc659b76e181716905e.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/25873df9f5c9efc659b76e181716905e.png</image>
+        <listeners>235507</listeners>
+        <playcount>2283427</playcount>
+        <tracks><track rank="1"><name>Down on the Corner</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/Down+on+the+Corner</url>
+        <duration>163</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        <track rank="2"><name>It Came Out of the Sky</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/It+Came+Out+of+the+Sky</url>
+        <duration>178</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        <track rank="3"><name>Cotton Fields</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/Cotton+Fields</url>
+        <duration>173</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        <track rank="4"><name>Poorboy Shuffle</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/Poorboy+Shuffle</url>
+        <duration>145</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        <track rank="5"><name>Feelin&apos; Blue</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/Feelin%27+Blue</url>
+        <duration>305</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        <track rank="6"><name>Fortunate Son</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/Fortunate+Son</url>
+        <duration>140</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        <track rank="7"><name>Don&apos;t Look Now</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/Don%27t+Look+Now</url>
+        <duration>128</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        <track rank="8"><name>The Midnight Special</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/The+Midnight+Special</url>
+        <duration>250</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        <track rank="9"><name>Side o&apos; the Road</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/Side+o%27+the+Road</url>
+        <duration>201</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        <track rank="10"><name>Effigy</name>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival/_/Effigy</url>
+        <duration>388</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Creedence Clearwater Revival</name>
+        <mbid>44c48a1b-defd-4222-bee6-03f9ee9a7be9</mbid>
+        <url>https://www.last.fm/music/Creedence+Clearwater+Revival</url>
+        </artist>
+        </track>
+        </tracks>
+        <tags><tag><name>classic rock</name>
+        <url>https://www.last.fm/tag/classic+rock</url>
+        </tag>
+        <tag><name>1969</name>
+        <url>https://www.last.fm/tag/1969</url>
+        </tag>
+        <tag><name>Southern Rock</name>
+        <url>https://www.last.fm/tag/Southern+Rock</url>
+        </tag>
+        <tag><name>rock</name>
+        <url>https://www.last.fm/tag/rock</url>
+        </tag>
+        <tag><name>60s</name>
+        <url>https://www.last.fm/tag/60s</url>
+        </tag>
+        </tags>
+        <wiki><published>05 Sep 2010, 07:40</published>
+        <summary>Willy and the Poor Boys is the fourth album by American band Creedence Clearwater Revival, released in 1969. The only mention of the album&apos;s title is in the chorus of &quot;Down on the Corner&quot;.&#10;&#10;In 2003, the album was ranked number 392 on Rolling Stone magazine&apos;s list of the 500 greatest albums of all time. A 40th Anniversary Edition CD with 3 bonus tracks was released in 2008. &quot;Willy and the Poorboys&quot; was the third CCR record to go platinum and went on to multi-platinum status. &lt;a href=&quot;http://www.last.fm/music/Creedence+Clearwater+Revival/Willy+and+the+Poor+Boys&quot;&gt;Read more on Last.fm&lt;/a&gt;.</summary>
+        <content>Willy and the Poor Boys is the fourth album by American band Creedence Clearwater Revival, released in 1969. The only mention of the album&apos;s title is in the chorus of &quot;Down on the Corner&quot;.&#10;&#10;In 2003, the album was ranked number 392 on Rolling Stone magazine&apos;s list of the 500 greatest albums of all time. A 40th Anniversary Edition CD with 3 bonus tracks was released in 2008. &quot;Willy and the Poorboys&quot; was the third CCR record to go platinum and went on to multi-platinum status.[2] The cover photograph was shot a couple blocks from the Fantasy Records studio, in front of Duck Kee Market in West Oakland, California. &lt;a href=&quot;http://www.last.fm/music/Creedence+Clearwater+Revival/Willy+and+the+Poor+Boys&quot;&gt;Read more on Last.fm&lt;/a&gt;. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.</content>
+        </wiki>
+        </album>
+        </lfm>
+  recorded_at: Tue, 11 Aug 2020 02:55:38 GMT
+recorded_with: VCR 6.0.0
