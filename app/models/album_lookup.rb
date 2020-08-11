@@ -68,6 +68,8 @@ class AlbumLookup
   end
 
   def filter_wiki(wiki)
+    return {} if wiki.nil?
+
     wiki["content"] = format_content(wiki["content"])
     wiki
   end

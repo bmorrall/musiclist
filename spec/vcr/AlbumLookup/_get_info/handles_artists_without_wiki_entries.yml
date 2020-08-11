@@ -1,0 +1,158 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?album=Call%20Me&api_key=<LASTFM_API_KEY>&artist=Al%20Green&method=album.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Tue, 11 Aug 2020 03:19:13 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Connection:
+      - keep-alive
+      Cteonnt-Length:
+      - '4370'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '914'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><album><name>Call Me</name>
+        <artist>Al Green</artist>
+        <mbid>6ac8a071-7ee6-4e25-a36e-237063ec7035</mbid>
+        <url>https://www.last.fm/music/Al+Green/Call+Me</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/efec79f0f58d4cc3a171165f7e92d8f6.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/efec79f0f58d4cc3a171165f7e92d8f6.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/efec79f0f58d4cc3a171165f7e92d8f6.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/efec79f0f58d4cc3a171165f7e92d8f6.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/efec79f0f58d4cc3a171165f7e92d8f6.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/efec79f0f58d4cc3a171165f7e92d8f6.png</image>
+        <listeners>84479</listeners>
+        <playcount>691103</playcount>
+        <tracks><track rank="1"><name>Call Me (Come Back Home)</name>
+        <url>https://www.last.fm/music/Al+Green/_/Call+Me+(Come+Back+Home)</url>
+        <duration>183</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Al Green</name>
+        <mbid>fb7272ba-f130-4f0a-934d-6eeea4c18c9a</mbid>
+        <url>https://www.last.fm/music/Al+Green</url>
+        </artist>
+        </track>
+        <track rank="2"><name>Have You Been Making Out O.K.</name>
+        <url>https://www.last.fm/music/Al+Green/_/Have+You+Been+Making+Out+O.K.</url>
+        <duration>222</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Al Green</name>
+        <mbid>fb7272ba-f130-4f0a-934d-6eeea4c18c9a</mbid>
+        <url>https://www.last.fm/music/Al+Green</url>
+        </artist>
+        </track>
+        <track rank="3"><name>Stand Up</name>
+        <url>https://www.last.fm/music/Al+Green/_/Stand+Up</url>
+        <duration>205</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Al Green</name>
+        <mbid>fb7272ba-f130-4f0a-934d-6eeea4c18c9a</mbid>
+        <url>https://www.last.fm/music/Al+Green</url>
+        </artist>
+        </track>
+        <track rank="4"><name>I&apos;m So Lonesome I Could Cry</name>
+        <url>https://www.last.fm/music/Al+Green/_/I%27m+So+Lonesome+I+Could+Cry</url>
+        <duration>190</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Al Green</name>
+        <mbid>fb7272ba-f130-4f0a-934d-6eeea4c18c9a</mbid>
+        <url>https://www.last.fm/music/Al+Green</url>
+        </artist>
+        </track>
+        <track rank="5"><name>Your Love Is Like The Morning Sun</name>
+        <url>https://www.last.fm/music/Al+Green/_/Your+Love+Is+Like+The+Morning+Sun</url>
+        <duration>189</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Al Green</name>
+        <mbid>fb7272ba-f130-4f0a-934d-6eeea4c18c9a</mbid>
+        <url>https://www.last.fm/music/Al+Green</url>
+        </artist>
+        </track>
+        <track rank="6"><name>Here I Am (Come and Take Me)</name>
+        <url>https://www.last.fm/music/Al+Green/_/Here+I+Am+(Come+and+Take+Me)</url>
+        <duration>189</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Al Green</name>
+        <mbid>fb7272ba-f130-4f0a-934d-6eeea4c18c9a</mbid>
+        <url>https://www.last.fm/music/Al+Green</url>
+        </artist>
+        </track>
+        <track rank="7"><name>Funny How Time Slips Away</name>
+        <url>https://www.last.fm/music/Al+Green/_/Funny+How+Time+Slips+Away</url>
+        <duration>333</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Al Green</name>
+        <mbid>fb7272ba-f130-4f0a-934d-6eeea4c18c9a</mbid>
+        <url>https://www.last.fm/music/Al+Green</url>
+        </artist>
+        </track>
+        <track rank="8"><name>You Ought to Be With Me</name>
+        <url>https://www.last.fm/music/Al+Green/_/You+Ought+to+Be+With+Me</url>
+        <duration>195</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Al Green</name>
+        <mbid>fb7272ba-f130-4f0a-934d-6eeea4c18c9a</mbid>
+        <url>https://www.last.fm/music/Al+Green</url>
+        </artist>
+        </track>
+        <track rank="9"><name>Jesus Is Waiting</name>
+        <url>https://www.last.fm/music/Al+Green/_/Jesus+Is+Waiting</url>
+        <duration>336</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>Al Green</name>
+        <mbid>fb7272ba-f130-4f0a-934d-6eeea4c18c9a</mbid>
+        <url>https://www.last.fm/music/Al+Green</url>
+        </artist>
+        </track>
+        </tracks>
+        <tags><tag><name>soul</name>
+        <url>https://www.last.fm/tag/soul</url>
+        </tag>
+        <tag><name>1973</name>
+        <url>https://www.last.fm/tag/1973</url>
+        </tag>
+        <tag><name>70s</name>
+        <url>https://www.last.fm/tag/70s</url>
+        </tag>
+        <tag><name>motown</name>
+        <url>https://www.last.fm/tag/motown</url>
+        </tag>
+        <tag><name>USA</name>
+        <url>https://www.last.fm/tag/USA</url>
+        </tag>
+        </tags>
+        </album>
+        </lfm>
+  recorded_at: Tue, 11 Aug 2020 03:19:13 GMT
+recorded_with: VCR 6.0.0

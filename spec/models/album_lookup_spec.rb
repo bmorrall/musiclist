@@ -58,6 +58,11 @@ RSpec.describe AlbumLookup do
       info = described_class.get_info(album: "Willy and the Poor Boys", artist: "Creedence Clearwater Revival")
       expect(info.wiki.content).to eq(expected)
     end
+
+    it "handles artists without wiki entries", :vcr do
+      info = described_class.get_info(album: "Call Me", artist: "Al Green")
+      expect(info.wiki.content).to be_blank
+    end
   end
 
   describe "#search" do
