@@ -23,8 +23,12 @@ module AlbumsHelper
     end
   end
 
-  def album_played_button
-    played_album_button_with_styles(PLAYED_BUTTON_STYLES, LARGE_BUTTON_STYLES)
+  def album_played_button(album)
+    styles = [PLAYED_BUTTON_STYLES, LARGE_BUTTON_STYLES]
+    content_tag(:span, class: ["inline-block font-semibold border rounded shadow", *styles].join(" ")) do
+      concat content_tag(:span, "", class: "fa fa-music mr-1")
+      concat album.album_status.played_on.strftime("Played on %b %Y")
+    end
   end
 
   def small_album_played_button

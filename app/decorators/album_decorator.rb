@@ -11,7 +11,7 @@ class AlbumDecorator
 
   def played_button
     if played?
-      v.album_played_button
+      v.album_played_button(@album)
     else
       v.album_unplayed_button
     end
