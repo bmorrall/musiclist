@@ -1,0 +1,25 @@
+<h1>Artists</h1>
+
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @artists.each do |artist| %>
+        <tr>
+          <td><%= artist.name %></td>
+          <td><%= link_to 'Show', artist %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+<div class="block my-2 text-center">
+  <%= paginate @artists, param_name: :page %>
+</div>

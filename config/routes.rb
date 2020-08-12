@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :albums, concerns: :paginatable, only: [:index, :show, :edit, :update] do
     resource :refresh, module: :albums, only: [:show, :create]
   end
+  resources :artists, concerns: :paginatable, except: [:new, :create]
 
   root to: "albums#index"
 end

@@ -22,7 +22,7 @@ class ArtistPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    super
+    user.admin? ? %i[name] : super
   end
 
   # Safe scope for Artist

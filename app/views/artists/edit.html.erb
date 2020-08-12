@@ -1,0 +1,15 @@
+
+<article class="px-3 py-2 md:px-6 mdpy-4">
+  <h1 class="text-4xl leading-tight">Editing <%= @artist %></h1>
+
+  <%= render 'form', artist: @artist %>
+</article>
+
+<div class="block my-2 text-center">
+  <% if policy(@artist).destroy? -%>
+    <%= link_to "Destroy", @artist, confirm: 'Are you sure?', method: :delete %>
+  <% else -%>
+    <%= pluralize @artist.albums.count, "Album" %>
+  <% end -%> |
+  <%= link_to 'Back', @artist %>
+</div>

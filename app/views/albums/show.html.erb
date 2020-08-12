@@ -26,14 +26,14 @@
       <%= @album.description %>
     </section>
   </div>
-
-  <div class="px-3 py-2 md:px-6 mdpy-4">
-    <% if @album.policy.edit? -%>
-    <%= link_to 'Edit', edit_album_path(@album) %> |
-    <% end -%>
-    <% if @album.policy.refresh? -%>
-    <%= link_to 'Refresh', album_refresh_path(@album) %> |
-    <% end -%>
-    <%= link_to 'Back', albums_path %>
-  </div>
 </article>
+
+<div class="block my-2 text-center">
+  <% if @album.policy.edit? -%>
+  <%= link_to 'Edit', edit_album_path(@album) %> |
+  <% end -%>
+  <% if @album.policy.refresh? -%>
+  <%= link_to 'Refresh', album_refresh_path(@album) %> |
+  <% end -%>
+  <%= link_to 'Back', albums_path %>
+</div>

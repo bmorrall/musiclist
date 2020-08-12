@@ -177,7 +177,7 @@ RSpec.describe "Albums", type: :request do
 
   describe "PATCH /albums/:id" do
     context "with valid parameters" do
-      let(:new_artist) { create(:artist) }
+      let!(:new_artist) { create(:artist) }
       let(:new_attributes) do
         attributes_for(:album).slice(:title, :year, :genre, :description).merge(
           artist_id: new_artist.id

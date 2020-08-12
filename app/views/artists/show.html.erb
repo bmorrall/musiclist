@@ -1,0 +1,42 @@
+<article>
+  <header class="px-3 py-4 md:px-6 md:py-4">
+    <h1 class="text-4xl leading-tight"><%= @artist.name %></h1>
+  </header>
+
+<div class="md:flex md:items-start px-3 pb-2 md:px-6 md:pb-4">
+  <aside class="flex flex-col flex-shrink-0">
+    <%= image_tag "https://via.placeholder.com/512", class: "block mx-auto flex-shrink-0 h-64 sm:w-64", alt: @artist.name %>
+  </aside>
+  <section class="flex-grow mt-2 md:mt-0 md:ml-4 text-left">
+    <h2 class="text-3xl leading-tight">Albums</h2>
+
+    <% @albums.each do |album| %>
+      <article class="flex items-center p-2 hover:bg-blue-200">
+        <%= link_to album_path(album) do %>
+          <%= album.small_album_image class: "block mx-0 flex-shrink-0 h-16 w-16 sm:h-24 sm:w-24" %>
+        <% end %>
+        <div class="mt-0 ml-4 text-left">
+          <h1 class="text-xl leading-tight">
+            <%= link_to album_path(album) do %>
+              <%= album.title %> <% if album.year.present? %>(<%= album.year %>)<% end %>
+            <% end -%>
+          </h1>
+          <p class="text-m leading-tight text-gray-600">
+            <%= album.genre %>
+          </p>
+          <div class="block mt-1">
+            <%= album.small_played_button %>
+            <%= album.small_purchased_button %>
+          </div>
+        </div>
+      </article>
+    <% end %>
+  </section>
+</div>
+
+</article>
+
+<div class="block my-2 text-center">
+  <%= link_to 'Edit', edit_artist_path(@artist) %> |
+  <%= link_to 'Back', artists_path %>
+</div>
