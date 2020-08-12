@@ -17,12 +17,16 @@ class ArtistPolicy < ApplicationPolicy
     user.admin?
   end
 
+  def refresh?
+    user.admin?
+  end
+
   def destroy?
     user.admin? && record.albums.none?
   end
 
   def permitted_attributes
-    user.admin? ? %i[name] : super
+    user.admin? ? %i[name description] : super
   end
 
   # Safe scope for Artist

@@ -16,6 +16,7 @@ RSpec.describe ArtistPolicy, type: :policy do
     it { is_expected.to permit_action(:show) }
     it { is_expected.to forbid_actions(%i[new create]) }
     it { is_expected.to forbid_actions(%i[edit update]) }
+    it { is_expected.to forbid_action(:refresh) }
     it { is_expected.to forbid_action(:destroy) }
 
     it "returns all items in scope" do
@@ -30,6 +31,7 @@ RSpec.describe ArtistPolicy, type: :policy do
     it { is_expected.to permit_action(:show) }
     it { is_expected.to forbid_actions(%i[new create]) }
     it { is_expected.to forbid_actions(%i[edit update]) }
+    it { is_expected.to forbid_action(:refresh) }
     it { is_expected.to forbid_action(:destroy) }
 
     it "returns all items in scope" do
@@ -44,6 +46,7 @@ RSpec.describe ArtistPolicy, type: :policy do
     it { is_expected.to permit_action(:show) }
     it { is_expected.to permit_actions(%i[new create]) }
     it { is_expected.to permit_actions(%i[edit update]) }
+    it { is_expected.to permit_action(:refresh) }
     it { is_expected.to permit_action(:destroy) }
 
     # it { is_expected.to permit_mass_assignment_of(:name).for_action(:create) }
