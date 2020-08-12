@@ -18,6 +18,7 @@ class ArtistsController < ApplicationController
     authorize @artist
     @albums = policy_scope(@artist.albums)
     @albums = present(@albums.includes(:album_status).order(:year, :title), AlbumDecorator)
+    @artist = present(@artist, ArtistDecorator)
   end
 
   # GET /artists/new

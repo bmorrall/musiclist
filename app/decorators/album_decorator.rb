@@ -61,7 +61,7 @@ class AlbumDecorator
   def description
     return unless album.description?
 
-    v.album_simple_format(album.description)
+    v.formatted_description(album.description)
   end
 
   def small_album_image(*args)
