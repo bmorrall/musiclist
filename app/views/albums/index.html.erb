@@ -13,7 +13,7 @@
         <% end -%>
       </h1>
       <p class="text-m leading-tight text-gray-600">
-        <%= album.artist_name %>
+        <%= link_to album.artist_name, artist_path(album.artist) %>
         <% if album.genre? -%>
         &ndash; <%= album.genre %>
         <% end -%>
