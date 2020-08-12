@@ -1,15 +1,17 @@
 <h1 class="max-w-5xl mx-auto text-4xl leading-tight">Albums</h1>
 
-<div class="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+<section class="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
 <% @albums.each do |album| %>
-  <div class="flex items-center px-3 py-2 md:px-6 mdpy-4 hover:bg-blue-200">
+  <article class="flex items-center px-3 py-2 md:px-6 mdpy-4 hover:bg-blue-200">
     <%= link_to album_path(album) do %>
       <%= album.small_album_image class: "block mx-0 flex-shrink-0 h-16 w-16 sm:h-24 sm:w-24" %>
     <% end %>
     <div class="mt-0 ml-4 text-left">
-      <%= link_to album_path(album), class: "text-xl leading-tight" do %>
-        <%= album.title %> <% if album.year.present? %>(<%= album.year %>)<% end %>
-      <% end -%>
+      <h1 class="text-xl leading-tight">
+        <%= link_to album_path(album) do %>
+          <%= album.title %> <% if album.year.present? %>(<%= album.year %>)<% end %>
+        <% end -%>
+      </h1>
       <p class="text-m leading-tight text-gray-600">
         <%= album.artist_name %>
         <% if album.genre? -%>
@@ -21,9 +23,9 @@
         <%= album.small_purchased_button %>
       </div>
     </div>
-  </div>
+  </article>
 <% end %>
-</div>
+</section>
 
 <div class="block my-2 text-center">
   <%= paginate @albums, param_name: :page %>
