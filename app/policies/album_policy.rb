@@ -29,7 +29,7 @@ class AlbumPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    user.admin? ? %i[title year genre description] : super
+    user.admin? ? %i[artist_id title year genre description] : super
   end
 
   # Safe scope for Album

@@ -177,8 +177,11 @@ RSpec.describe "Albums", type: :request do
 
   describe "PATCH /albums/:id" do
     context "with valid parameters" do
+      let(:new_artist) { create(:artist) }
       let(:new_attributes) do
-        attributes_for(:album).slice(:title, :year, :genre, :description)
+        attributes_for(:album).slice(:title, :year, :genre, :description).merge(
+          artist_id: new_artist.id
+        )
       end
 
       context "with an authenticated admin" do
@@ -197,6 +200,7 @@ RSpec.describe "Albums", type: :request do
           expect(album.year).to eq(new_attributes[:year])
           expect(album.genre).to eq(new_attributes[:genre])
           expect(album.description).to eq(new_attributes[:description])
+          expect(album.artist).to eq new_artist
         end
 
         it "audits the change", :aggregate_failures do
