@@ -1,0 +1,183 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?api_key=<LASTFM_API_KEY>&artist=Gang%20Of%20Four&method=artist.getCorrection
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 13 Aug 2020 08:24:27 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Cteonnt-Length:
+      - '272'
+      Connection:
+      - keep-alive
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '215'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><corrections><correction index="0"><artist><name>Gang of Four</name>
+        <mbid>d8661c02-f423-4d72-8044-40ff05daf7a1</mbid>
+        <url>https://www.last.fm/music/Gang+of+Four</url>
+        </artist>
+        </correction>
+        </corrections>
+        </lfm>
+  recorded_at: Thu, 13 Aug 2020 08:24:27 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?api_key=<LASTFM_API_KEY>&artist=Gang%20of%20Four&method=artist.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 13 Aug 2020 08:24:28 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Connection:
+      - keep-alive
+      Cteonnt-Length:
+      - '10379'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '2961'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><artist><name>Gang of Four</name>
+        <mbid>d8661c02-f423-4d72-8044-40ff05daf7a1</mbid>
+        <url>https://www.last.fm/music/Gang+of+Four</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <streamable>0</streamable>
+        <ontour>0</ontour>
+        <stats><listeners>611891</listeners>
+        <playcount>10364360</playcount>
+        </stats>
+        <similar><artist><name>Wire</name>
+        <url>https://www.last.fm/music/Wire</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>Mission of Burma</name>
+        <url>https://www.last.fm/music/Mission+of+Burma</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>Magazine</name>
+        <url>https://www.last.fm/music/Magazine</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>Television</name>
+        <url>https://www.last.fm/music/Television</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>Public Image Ltd.</name>
+        <url>https://www.last.fm/music/Public+Image+Ltd.</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        </similar>
+        <tags><tag><name>post-punk</name>
+        <url>https://www.last.fm/tag/post-punk</url>
+        </tag>
+        <tag><name>new wave</name>
+        <url>https://www.last.fm/tag/new+wave</url>
+        </tag>
+        <tag><name>punk</name>
+        <url>https://www.last.fm/tag/punk</url>
+        </tag>
+        <tag><name>80s</name>
+        <url>https://www.last.fm/tag/80s</url>
+        </tag>
+        <tag><name>indie</name>
+        <url>https://www.last.fm/tag/indie</url>
+        </tag>
+        </tags>
+        <bio><links><link rel="original" href="https://last.fm/music/Gang+of+Four/+wiki"></link>
+        </links>
+        <published>10 Feb 2006, 12:19</published>
+        <summary>Gang of Four are a British post-punk group from Leeds, England. Original personnel were singer Jon King, guitarist Andy Gill, bass guitarist Dave Allen and drummer Hugo Burnham. They were fully active from 1977 to 1984, and then re-emerged twice in the 1990s with King and Gill. In 2005, the original lineup reunited.&#10;&#10;The group had a single in the British Top 60 with &quot;At Home He&apos;s A Tourist&quot; in 1979, which was blacklisted by Top Of The Pops for its use of the relatively innocuous term &quot;rubbers&quot;. &lt;a href=&quot;https://www.last.fm/music/Gang+of+Four&quot;&gt;Read more on Last.fm&lt;/a&gt;</summary>
+        <content>Gang of Four are a British post-punk group from Leeds, England. Original personnel were singer Jon King, guitarist Andy Gill, bass guitarist Dave Allen and drummer Hugo Burnham. They were fully active from 1977 to 1984, and then re-emerged twice in the 1990s with King and Gill. In 2005, the original lineup reunited.&#10;&#10;The group had a single in the British Top 60 with &quot;At Home He&apos;s A Tourist&quot; in 1979, which was blacklisted by Top Of The Pops for its use of the relatively innocuous term &quot;rubbers&quot;. Storming, Doc Marten-booted and fueled by a heady cocktail of Gramsci, Marx and lager, out of the Leeds art-school scene that produced The Mekons and Delta 5, they played a stripped-to-the-wire, funk-fueled permutation of punk rock. This is best exemplified by the dry production and forceful polemic of debut effort Entertainment! - Gang of Four&apos;s later albums (Songs Of The Free and Hard) found them softening some of their more jarring qualities, and drifting towards disco.&#10;&#10;Critic Stewart Mason has called &quot;Love Like Anthrax&quot; (their first single, later re-recorded as &quot;Anthrax&quot;) not only the group&apos;s &quot;most notorious song&quot; but also &quot;one of the most unique and interesting songs of its time&quot;; it&apos;s also a good example of Gang of Four&apos;s social perspective. After a minute-long, droning, feedback-laced guitar intro, the rhythm section sets up a funky, churning beat, and the guitar drops out entirely. In one stereo channel, King sings a &quot;post-punk anti-love song&quot;, comparing himself to a beetle trapped on its back (&quot;and there&apos;s no way for me to get up&quot;) and equating love with &quot;a case of anthrax, and that&apos;s some thing I don&apos;t want to catch.&quot; Meanwhile in the other stereo channel (and slightly less prominent in the mix), Gill reads a deadpan monologue about public perception of love, and the prevalence of love songs in popular music: &quot;Love crops up quite a lot as something to sing about, &apos;cause most groups make most of their songs about falling in love, or how happy they are to be in love, and you occasionally wonder why these groups do sing about it all the time.&quot; The simultaneous vocals are more than a little disorienting, especially when Gill pauses in his examination of love songs to echo a few of King&apos;s sung lines.&#10;&#10;Allen left after Solid Gold and was replaced briefly by Buster Jones (who never recorded with the group), then by Sara Lee; Allen later co-founded Shriekback, Low Pop Suicide and The Elastic Purejoy.&#10;&#10;Their angular, slashing attack and liberal use of dissonance had a significant influence on their post-punk contemporaries in the States, including Mission Of Burma. Gang Of Four went on to influence a number of successful funk-tinged alternative rock acts throughout the 80s and 90s - even, arguably, many rap-rock and nu metal groups who were &quot;not in touch with their ancestry enough to realize it&quot; (Andy Kellman, on allmusic.com) - although few of their followers were as arty or political. Michael &quot;Flea&quot; Balzary of Red Hot Chili Peppers has stated Gang of Four were very influential on his band&apos;s early music.&#10;&#10;Gang of Four can also be credited as one of the early influences on techno or electronic music; they released dance remixes of several later singles.&#10;&#10;Recently the band has enjoyed a resurgence in popularity, initially due to emergence of new post-punk influenced bands such as The Rapture and Radio 4 and then the rise of Franz Ferdinand and Bloc Party, which led to the renewed patronage of the NME. The original Burnham/Allen/Gill/King lineup reformed in November 2004. In October of 2005, Gang of Four released a new LP featuring new recordings of past songs, entitled Return The Gift.&#10;&#10;Dave Allen also co-hosts a twice-weekly &quot;New Music Hour&quot; radio show with Portland, Oregon&apos;s 94.7 alternative radio station.&#10;&#10;Andy Gill died on 1st February, 2020 from, according to reports, a respiratory illness caught on the group&apos;s tour in Asia the preceding year.  He was the only original member still playing in the Gang Of Four. &lt;a href=&quot;https://www.last.fm/music/Gang+of+Four&quot;&gt;Read more on Last.fm&lt;/a&gt;. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.</content>
+        </bio>
+        </artist>
+        </lfm>
+  recorded_at: Thu, 13 Aug 2020 08:24:28 GMT
+recorded_with: VCR 6.0.0

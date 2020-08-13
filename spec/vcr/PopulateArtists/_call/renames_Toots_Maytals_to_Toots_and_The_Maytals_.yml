@@ -1,0 +1,183 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?api_key=<LASTFM_API_KEY>&artist=Toots%20%26%20Maytals&method=artist.getCorrection
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 13 Aug 2020 06:57:59 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Cteonnt-Length:
+      - '290'
+      Connection:
+      - keep-alive
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '224'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><corrections><correction index="0"><artist><name>Toots and The Maytals</name>
+        <mbid>29730ee3-e1c7-4e28-9ccd-3a0e6b0e8103</mbid>
+        <url>https://www.last.fm/music/Toots+and+The+Maytals</url>
+        </artist>
+        </correction>
+        </corrections>
+        </lfm>
+  recorded_at: Thu, 13 Aug 2020 06:58:00 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?api_key=<LASTFM_API_KEY>&artist=Toots%20and%20The%20Maytals&method=artist.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 13 Aug 2020 06:58:00 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Connection:
+      - keep-alive
+      Cteonnt-Length:
+      - '10395'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '2702'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><artist><name>Toots and The Maytals</name>
+        <mbid>29730ee3-e1c7-4e28-9ccd-3a0e6b0e8103</mbid>
+        <url>https://www.last.fm/music/Toots+and+The+Maytals</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <streamable>0</streamable>
+        <ontour>1</ontour>
+        <stats><listeners>631376</listeners>
+        <playcount>8713816</playcount>
+        </stats>
+        <similar><artist><name>Jimmy Cliff</name>
+        <url>https://www.last.fm/music/Jimmy+Cliff</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>Desmond Dekker</name>
+        <url>https://www.last.fm/music/Desmond+Dekker</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>The Maytals</name>
+        <url>https://www.last.fm/music/The+Maytals</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>The Ethiopians</name>
+        <url>https://www.last.fm/music/The+Ethiopians</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>Wailing Souls</name>
+        <url>https://www.last.fm/music/Wailing+Souls</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        </similar>
+        <tags><tag><name>reggae</name>
+        <url>https://www.last.fm/tag/reggae</url>
+        </tag>
+        <tag><name>ska</name>
+        <url>https://www.last.fm/tag/ska</url>
+        </tag>
+        <tag><name>rocksteady</name>
+        <url>https://www.last.fm/tag/rocksteady</url>
+        </tag>
+        <tag><name>roots reggae</name>
+        <url>https://www.last.fm/tag/roots+reggae</url>
+        </tag>
+        <tag><name>roots</name>
+        <url>https://www.last.fm/tag/roots</url>
+        </tag>
+        </tags>
+        <bio><links><link rel="original" href="https://last.fm/music/Toots+and+The+Maytals/+wiki"></link>
+        </links>
+        <published>09 Jul 2006, 10:48</published>
+        <summary>Jamaican ska vocal group The Maytals became a reggae band in 1971, renamed Toots and The Maytals with Frederick &quot;Toots&quot; Hibbert as front figure. The band won a 2005 Grammy award for the album True Love. Funky Kingston in early 70s is on Rolling Stone&apos;s list The Greatest Albums of All Time. The bass line in &quot;54-46&quot; is one of the most covered in pop music. Songs such as &quot;Monkey Man&quot;, &quot;Pressure Drop&quot;, &quot;Bam Bam&quot;, among others, made them favorites for the early skinhead movement of white working-class youth in UK.   &lt;a href=&quot;https://www.last.fm/music/Toots+and+The+Maytals&quot;&gt;Read more on Last.fm&lt;/a&gt;</summary>
+        <content>Jamaican ska vocal group The Maytals became a reggae band in 1971, renamed Toots and The Maytals with Frederick &quot;Toots&quot; Hibbert as front figure. The band won a 2005 Grammy award for the album True Love. Funky Kingston in early 70s is on Rolling Stone&apos;s list The Greatest Albums of All Time. The bass line in &quot;54-46&quot; is one of the most covered in pop music. Songs such as &quot;Monkey Man&quot;, &quot;Pressure Drop&quot;, &quot;Bam Bam&quot;, among others, made them favorites for the early skinhead movement of white working-class youth in UK.  &#10;&#10;Toots and The Maytals  are from Kingston, Jamaica. It was the producer Byron Lee who 1971 renamed them Toots &amp; the Maytals. Frederick &quot;Toots&quot; Hibbert, the leader of the group and the lead singer, was born in May Pen in the Parish of Clarendon, Jamaica. He was the youngest of seven children. He grew up singing gospel music in a church choir, but moved to Kingston in 1961 at the age of sixteen.&#10;&#10;In Kingston, he met Henry &quot;Raleigh&quot; Gordon and Nathaniel &quot;Jerry&quot; McCarthy, forming a group whose early recordings were attributed to &quot;The Flames&quot; and, possibly, &quot;The Vikings&quot;. Having renamed the group the Maytals, the vocal trio recorded their first album, &quot;Never Grow Old - presenting the Maytals&quot;, for producer Clement &quot;Coxsone&quot; Dodd at Studio One in 1962-63. With musical backing from Dodd&apos;s house band, the legendary Skatalites, the Maytals&apos; close-harmony gospel singing ensured instant success for the 1964 release, overshadowing Dodd&apos;s other up-and-coming gospel trio, The Wailers. The original album augmented by studio out-takes from the Studio One sessions was re-released by Heartbeat/Rounder Records in 1997, and is essential listening for Maytals and Skatalites fans.&#10;&#10;After staying at Studio One for about two years, the group moved on to do sessions for Prince Buster (released in 1974) before recording their second album produced by Byron Lee in 1965. However, the band&apos;s musical career was rudely interrupted in late 1966 when Hibbert was arrested and imprisoned on drug possession charges.&#10;&#10;Following Hibbert&apos;s release from jail towards the end of 1967, the band began working with Chinese-Jamaican producer Leslie Kong, a collaboration which produced three classic albums and a string of hits throughout the late sixties and early seventies -- &quot;Do the Reggay&quot;, a 1968 single widely credited with coining the word &quot;reggae&quot;, &quot;Pressure Drop&quot;, &quot;54-46&quot; and &quot;Monkey Man&quot;, the group&apos;s first international hit in 1970. The group was featured in one of reggae&apos;s greatest breakthrough events -- The Harder They Come, the 1972 film and soundtrack starring Jimmy Cliff.&#10;&#10;Following Kong&apos;s death in 1971, the group continued to record with Kong&apos;s former sound engineer, Warwick Lyn; produced by Lyn and Chris Blackwell of Island Records, the group released three best-selling albums, and enjoyed international hits with  Funky Kingston in 1973 and Reggae Got Soul in 1976.&#10;&#10;Toots and the Maytals&apos; compositions would be given a second airing in 1978-80 during the reggae-punk and ska revival period in the UK, when the Specials included &quot;Monkey Man&quot; on their 1979 debut album and the Clash produced their version of &quot;Pressure Drop&quot;, with other Maytals&apos; covers being recorded by Sublime. Having toured throughout the world for many years, Toots and the Maytals disbanded in the early 1980s, but reformed in the early 90s to continue touring and recording successfully.&#10;&#10;In 2005, the band won a Grammy award for best reggae album for True Love, consisting of re-recorded versions of their classics alongside legendary musicians such as Bonnie Raitt, Willie Nelson, Eric Clapton, and Keith Richards, as well as popular artists such as No Doubt, Ben Harper, The Roots, and Shaggy.&#10;&#10;They also contributed to the Easy Star All-Stars album &apos;Radiodread&apos; (a dub tribute to Radiohead&apos;s OK Computer). &lt;a href=&quot;https://www.last.fm/music/Toots+and+The+Maytals&quot;&gt;Read more on Last.fm&lt;/a&gt;. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.</content>
+        </bio>
+        </artist>
+        </lfm>
+  recorded_at: Thu, 13 Aug 2020 06:58:00 GMT
+recorded_with: VCR 6.0.0

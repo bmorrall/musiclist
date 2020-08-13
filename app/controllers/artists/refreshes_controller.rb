@@ -11,12 +11,7 @@ module Artists
 
     def create
       info = ArtistLookup.get_info(@artist.name)
-      @artist.update!(
-        name: info.name,
-        profile_image: info.image.default,
-        lastfm_url: info.url,
-        description: info.bio.content
-      )
+      UpdateArtistInfo.call(@artist, info)
       redirect_to @artist, notice: "Artist updated successfully."
     end
 

@@ -1,0 +1,183 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?api_key=<LASTFM_API_KEY>&artist=Rage%20Against%20The%20Machine&method=artist.getCorrection
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 13 Aug 2020 06:57:58 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Cteonnt-Length:
+      - '296'
+      Connection:
+      - keep-alive
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '229'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><corrections><correction index="0"><artist><name>Rage Against the Machine</name>
+        <mbid>3798b104-01cb-484c-a3b0-56adc6399b80</mbid>
+        <url>https://www.last.fm/music/Rage+Against+the+Machine</url>
+        </artist>
+        </correction>
+        </corrections>
+        </lfm>
+  recorded_at: Thu, 13 Aug 2020 06:57:58 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?api_key=<LASTFM_API_KEY>&artist=Rage%20Against%20the%20Machine&method=artist.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 13 Aug 2020 06:57:59 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Connection:
+      - keep-alive
+      Cteonnt-Length:
+      - '8171'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '1822'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><artist><name>Rage Against the Machine</name>
+        <mbid>3798b104-01cb-484c-a3b0-56adc6399b80</mbid>
+        <url>https://www.last.fm/music/Rage+Against+the+Machine</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <streamable>0</streamable>
+        <ontour>1</ontour>
+        <stats><listeners>2952239</listeners>
+        <playcount>96346686</playcount>
+        </stats>
+        <similar><artist><name>Audioslave</name>
+        <url>https://www.last.fm/music/Audioslave</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>One Day as a Lion</name>
+        <url>https://www.last.fm/music/One+Day+as+a+Lion</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>Soundgarden</name>
+        <url>https://www.last.fm/music/Soundgarden</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>Faith No More</name>
+        <url>https://www.last.fm/music/Faith+No+More</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        <artist><name>Red Hot Chili Peppers</name>
+        <url>https://www.last.fm/music/Red+Hot+Chili+Peppers</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
+        </artist>
+        </similar>
+        <tags><tag><name>rock</name>
+        <url>https://www.last.fm/tag/rock</url>
+        </tag>
+        <tag><name>alternative rock</name>
+        <url>https://www.last.fm/tag/alternative+rock</url>
+        </tag>
+        <tag><name>alternative</name>
+        <url>https://www.last.fm/tag/alternative</url>
+        </tag>
+        <tag><name>political</name>
+        <url>https://www.last.fm/tag/political</url>
+        </tag>
+        <tag><name>metal</name>
+        <url>https://www.last.fm/tag/metal</url>
+        </tag>
+        </tags>
+        <bio><links><link rel="original" href="https://last.fm/music/Rage+Against+the+Machine/+wiki"></link>
+        </links>
+        <published>12 Feb 2006, 18:34</published>
+        <summary>Rage Against the Machine is an American rock band from Los Angeles, California. Formed in 1991, the group consists of vocalist Zack de la Rocha, bassist and backing vocalist Tim Commerford, guitarist Tom Morello, and drummer Brad Wilk. Their songs express revolutionary left-wing political views. As of 2010, they had sold over 16 million records worldwide.&#10;&#10;Rage Against the Machine released its eponymous debut album in 1992 to commercial and critical success, leading to a slot in the 1993 Lollapalooza festival. &lt;a href=&quot;https://www.last.fm/music/Rage+Against+the+Machine&quot;&gt;Read more on Last.fm&lt;/a&gt;</summary>
+        <content>Rage Against the Machine is an American rock band from Los Angeles, California. Formed in 1991, the group consists of vocalist Zack de la Rocha, bassist and backing vocalist Tim Commerford, guitarist Tom Morello, and drummer Brad Wilk. Their songs express revolutionary left-wing political views. As of 2010, they had sold over 16 million records worldwide.&#10;&#10;Rage Against the Machine released its eponymous debut album in 1992 to commercial and critical success, leading to a slot in the 1993 Lollapalooza festival. Their second album, Evil Empire, was released in 1996. Their third, The Battle of Los Angeles, followed in 1999, and in 2003, it was ranked number 426 on the same list. During their initial nine-year run, they became one of the most popular and influential bands in music history. They were also ranked No. 33 on VH1&apos;s 100 Greatest Artists of Hard Rock.&#10;&#10;In 2000, Rage Against the Machine released the cover album Renegades and disbanded because of growing creative differences. Members formed the rock supergroup Audioslave with Chris Cornell, the former frontman of Soundgarden. The same year, Rage Against the Machine announced a reunion and performed together for the first time in seven years at the Coachella Valley Music and Arts Festival in April 2007. Until 2011, the band continued to perform at more live venues and festivals around the world. In 2016, Morello, Commerford and Wilk formed a new band, Prophets of Rage, with B-Real, Chuck D, and DJ Lord. Rage Against the Machine were nominated for induction into the Rock &amp; Roll Hall of Fame in their first year of eligibility in 2017 and 2018, although both bids failed. The band had a large influence on the nu metal genre which came to prominence during the second half of the 1990s. In 2003, their self-titled album was ranked number 368 on Rolling Stone&apos;s list of the 500 greatest albums of all time. &lt;a href=&quot;https://www.last.fm/music/Rage+Against+the+Machine&quot;&gt;Read more on Last.fm&lt;/a&gt;. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.</content>
+        </bio>
+        </artist>
+        </lfm>
+  recorded_at: Thu, 13 Aug 2020 06:57:59 GMT
+recorded_with: VCR 6.0.0

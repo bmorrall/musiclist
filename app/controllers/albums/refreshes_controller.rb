@@ -15,14 +15,7 @@ module Albums
 
     def create
       info = AlbumLookup.get_info(album: lookup_params[:album], artist: lookup_params[:artist])
-      @album.update!(
-        title: info.name,
-        genre: info.tags.first,
-        year: info.year,
-        album_art: info.image.default,
-        lastfm_url: info.url,
-        description: info.wiki.content
-      )
+      UpdateAlbumInfo.call(@album, info)
       redirect_to @album, notice: "Album updated successfully."
     end
 
