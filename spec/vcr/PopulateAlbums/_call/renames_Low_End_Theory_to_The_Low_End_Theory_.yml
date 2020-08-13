@@ -1,0 +1,253 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?album=Low%20End%20Theory&api_key=<LASTFM_API_KEY>&method=album.search
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 13 Aug 2020 09:24:56 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Cteonnt-Length:
+      - '22508'
+      Connection:
+      - keep-alive
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '2270'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiID8+CjxsZm0gc3RhdHVzPSJvayI+PHJlc3VsdHMgZm9yPSJMb3cgRW5kIFRoZW9yeSI+PG9wZW5zZWFyY2g6UXVlcnkgcm9sZT0icmVxdWVzdCIgc2VhcmNoVGVybXM9IkxvdyBFbmQgVGhlb3J5IiBzdGFydFBhZ2U9IjEiPjwvb3BlbnNlYXJjaDpRdWVyeT4KPG9wZW5zZWFyY2g6dG90YWxSZXN1bHRzPjI2ODE8L29wZW5zZWFyY2g6dG90YWxSZXN1bHRzPgo8b3BlbnNlYXJjaDpzdGFydEluZGV4PjA8L29wZW5zZWFyY2g6c3RhcnRJbmRleD4KPG9wZW5zZWFyY2g6aXRlbXNQZXJQYWdlPjUwPC9vcGVuc2VhcmNoOml0ZW1zUGVyUGFnZT4KPGFsYnVtbWF0Y2hlcz48YWxidW0+PG5hbWU+VGhlIExvdyBFbmQgVGhlb3J5PC9uYW1lPgo8YXJ0aXN0PkEgVHJpYmUgQ2FsbGVkIFF1ZXN0PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9BK1RyaWJlK0NhbGxlZCtRdWVzdC9UaGUrTG93K0VuZCtUaGVvcnk8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzM0cy8xZWQyYThiMDY4NzU0NDFmODUyNTZiMmYxNjJmZGY5Yi5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzY0cy8xZWQyYThiMDY4NzU0NDFmODUyNTZiMmYxNjJmZGY5Yi5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMTc0cy8xZWQyYThiMDY4NzU0NDFmODUyNTZiMmYxNjJmZGY5Yi5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zMDB4MzAwLzFlZDJhOGIwNjg3NTQ0MWY4NTI1NmIyZjE2MmZkZjliLnBuZzwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjYzNzQ3YjQ5LWM4MTctNDY4OC1hM2MzLWM2YjUzNDY3MmYzZTwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPkxvdyBFbmQgVGhlb3J5IFBvZGNhc3Q8L25hbWU+CjxhcnRpc3Q+TG93IEVuZCBUaGVvcnk8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0xvdytFbmQrVGhlb3J5L0xvdytFbmQrVGhlb3J5K1BvZGNhc3Q8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzM0cy82ZjkxMmUwZjk5MjQ0ZDQwYjY4OTVjZjc2NGVhNjg3My5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzY0cy82ZjkxMmUwZjk5MjQ0ZDQwYjY4OTVjZjc2NGVhNjg3My5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMTc0cy82ZjkxMmUwZjk5MjQ0ZDQwYjY4OTVjZjc2NGVhNjg3My5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zMDB4MzAwLzZmOTEyZTBmOTkyNDRkNDBiNjg5NWNmNzY0ZWE2ODczLnBuZzwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPkxpdmUgYXQgTG93IEVuZCBUaGVvcnk8L25hbWU+CjxhcnRpc3Q+RGFlZGVsdXM8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0RhZWRlbHVzL0xpdmUrYXQrTG93K0VuZCtUaGVvcnk8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzM0cy8wYWI1NjA4ODU3NTA0MjFmODk1YTMzYjZkM2YxZjA2YS5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzY0cy8wYWI1NjA4ODU3NTA0MjFmODk1YTMzYjZkM2YxZjA2YS5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMTc0cy8wYWI1NjA4ODU3NTA0MjFmODk1YTMzYjZkM2YxZjA2YS5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zMDB4MzAwLzBhYjU2MDg4NTc1MDQyMWY4OTVhMzNiNmQzZjFmMDZhLnBuZzwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjI2MTA2YTA2LWYyYTgtNDdiNi04YjQ3LWIxMzY0MTE2MWExNjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPlRoZSBMb3cgRW5kIFRoZW9yeSBbSmFwYW4gRWRpdGlvbl0gYnkgSGlsbHNpZGU8L25hbWU+CjxhcnRpc3Q+QSBUcmliZSBDYWxsZWQgUXVlc3Q8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0ErVHJpYmUrQ2FsbGVkK1F1ZXN0L1RoZStMb3crRW5kK1RoZW9yeSslNUJKYXBhbitFZGl0aW9uJTVEK2J5K0hpbGxzaWRlPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvZmZiZjIxNThhYjNhNDBlNzg0ZmZkMDM2MTM2ZTY0N2YucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvZmZiZjIxNThhYjNhNDBlNzg0ZmZkMDM2MTM2ZTY0N2YucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvZmZiZjIxNThhYjNhNDBlNzg0ZmZkMDM2MTM2ZTY0N2YucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC9mZmJmMjE1OGFiM2E0MGU3ODRmZmQwMzYxMzZlNjQ3Zi5wbmc8L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5UaGUgTG93IEVuZCBUaGVvcnk8L25hbWU+CjxhcnRpc3Q+44Ki44O744OI44Op44Kk44OW44O744Kz44O844Or44OJ44O744Kv44Ko44K544OIPC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy8lRTMlODIlQTIlRTMlODMlQkIlRTMlODMlODglRTMlODMlQTklRTMlODIlQTQlRTMlODMlOTYlRTMlODMlQkIlRTMlODIlQjMlRTMlODMlQkMlRTMlODMlQUIlRTMlODMlODklRTMlODMlQkIlRTMlODIlQUYlRTMlODIlQTglRTMlODIlQjklRTMlODMlODgvVGhlK0xvdytFbmQrVGhlb3J5PC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvNzU4Nzg2Yzc5OTVlNjJlYTU0ZmJjMDA3YTQ3ZmFkMWYucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvNzU4Nzg2Yzc5OTVlNjJlYTU0ZmJjMDA3YTQ3ZmFkMWYucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvNzU4Nzg2Yzc5OTVlNjJlYTU0ZmJjMDA3YTQ3ZmFkMWYucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC83NTg3ODZjNzk5NWU2MmVhNTRmYmMwMDdhNDdmYWQxZi5wbmc8L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5Mb3cgRW5kIFRoZW9yeTwvbmFtZT4KPGFydGlzdD5IdXNoIEh1c2g8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0h1c2grSHVzaC9Mb3crRW5kK1RoZW9yeTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzRzLzU2ODgwNDJiYTBhYTNjYzZlMWE3NjM1ODU2OWEwMGZhLnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvNjRzLzU2ODgwNDJiYTBhYTNjYzZlMWE3NjM1ODU2OWEwMGZhLnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8xNzRzLzU2ODgwNDJiYTBhYTNjYzZlMWE3NjM1ODU2OWEwMGZhLnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzMwMHgzMDAvNTY4ODA0MmJhMGFhM2NjNmUxYTc2MzU4NTY5YTAwZmEucG5nPC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+TG93IEVuZCBUaGVvcnk8L25hbWU+CjxhcnRpc3Q+QSBUcmliZSBDYWxsZWQgUXVlc3Q8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0ErVHJpYmUrQ2FsbGVkK1F1ZXN0L0xvdytFbmQrVGhlb3J5PC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvMzFkYjcyMGU5NWRhNzAxYzg1YzVjMmQ1NmVkNmE4YmUucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvMzFkYjcyMGU5NWRhNzAxYzg1YzVjMmQ1NmVkNmE4YmUucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvMzFkYjcyMGU5NWRhNzAxYzg1YzVjMmQ1NmVkNmE4YmUucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC8zMWRiNzIwZTk1ZGE3MDFjODVjNWMyZDU2ZWQ2YThiZS5wbmc8L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5Mb3cgRW5kIFRoZW9yeTwvbmFtZT4KPGFydGlzdD5CbHU8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0JsdS9Mb3crRW5kK1RoZW9yeTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzRzLzBjYmEyYzZlYjJkNDYyNzFlZWU0MmJmZTlmZjRkNTY2LnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvNjRzLzBjYmEyYzZlYjJkNDYyNzFlZWU0MmJmZTlmZjRkNTY2LnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8xNzRzLzBjYmEyYzZlYjJkNDYyNzFlZWU0MmJmZTlmZjRkNTY2LnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzMwMHgzMDAvMGNiYTJjNmViMmQ0NjI3MWVlZTQyYmZlOWZmNGQ1NjYucG5nPC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+VGhlIExvdyBFbmQgVGhlb3J5IFtKYXBhbiBCb251cyBUcmFja3NdPC9uYW1lPgo8YXJ0aXN0PkEgVHJpYmUgQ2FsbGVkIFF1ZXN0PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9BK1RyaWJlK0NhbGxlZCtRdWVzdC9UaGUrTG93K0VuZCtUaGVvcnkrJTVCSmFwYW4rQm9udXMrVHJhY2tzJTVEPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+VGhlIExvdyBFbmQgVGhlb3J5ICgxOTkxKTwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvVGhlK0xvdytFbmQrVGhlb3J5KygxOTkxKTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzRzL2RjNWFkYzUwZGIzYzQ5ODk4NzA1MzA0MmFlYmNhYmM5LnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvNjRzL2RjNWFkYzUwZGIzYzQ5ODk4NzA1MzA0MmFlYmNhYmM5LnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8xNzRzL2RjNWFkYzUwZGIzYzQ5ODk4NzA1MzA0MmFlYmNhYmM5LnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzMwMHgzMDAvZGM1YWRjNTBkYjNjNDk4OTg3MDUzMDQyYWViY2FiYzkucG5nPC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+TGl2ZSBBdCBMb3cgRW5kIFRoZW9yeSAoU3BlY2lhbCBFZGl0aW9uKTwvbmFtZT4KPGFydGlzdD5EYWVkZWx1czwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvRGFlZGVsdXMvTGl2ZStBdCtMb3crRW5kK1RoZW9yeSsoU3BlY2lhbCtFZGl0aW9uKTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPlVudGl0bGVkIEFsYnVtPC9uYW1lPgo8YXJ0aXN0PkxvdyBFbmQgVGhlb3J5PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9Mb3crRW5kK1RoZW9yeS9VbnRpdGxlZCtBbGJ1bTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzRzL2Y3MzA3YzFmZTY3NmUzZDZkYzFiZTgyYmZjZGJlOTEwLnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvNjRzL2Y3MzA3YzFmZTY3NmUzZDZkYzFiZTgyYmZjZGJlOTEwLnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8xNzRzL2Y3MzA3YzFmZTY3NmUzZDZkYzFiZTgyYmZjZGJlOTEwLnBuZzwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzMwMHgzMDAvZjczMDdjMWZlNjc2ZTNkNmRjMWJlODJiZmNkYmU5MTAucG5nPC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+VGhlIExvdyBFbmQgVGhlb3J5IChSZW1hc3RlcmVkIFZpbnlsKTwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvVGhlK0xvdytFbmQrVGhlb3J5KyhSZW1hc3RlcmVkK1ZpbnlsKTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPlRoZSBMb3cgRW5kIFRoZW9yeTogT3JpZ2luYWwgU2FtcGxlczwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvVGhlK0xvdytFbmQrVGhlb3J5OitPcmlnaW5hbCtTYW1wbGVzPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+TG93IEVuZCBUaGVvcnk8L25hbWU+CjxhcnRpc3Q+U2NvdHQgQnJvd248L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL1Njb3R0K0Jyb3duL0xvdytFbmQrVGhlb3J5PC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvMTc3ODk2ZjcwMmRmZTMxYjY0MmVhNDhhN2JmMGFkYWIucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvMTc3ODk2ZjcwMmRmZTMxYjY0MmVhNDhhN2JmMGFkYWIucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvMTc3ODk2ZjcwMmRmZTMxYjY0MmVhNDhhN2JmMGFkYWIucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC8xNzc4OTZmNzAyZGZlMzFiNjQyZWE0OGE3YmYwYWRhYi5wbmc8L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5UaGUgTG93IEVuZCBUaGVvcnkgKEV4cGxpY2l0KTwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvVGhlK0xvdytFbmQrVGhlb3J5KyhFeHBsaWNpdCk8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT4oMTk5MSkgVGhlIExvdyBFbmQgVGhlb3J5PC9uYW1lPgo8YXJ0aXN0PkEgVHJpYmUgQ2FsbGVkIFF1ZXN0PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9BK1RyaWJlK0NhbGxlZCtRdWVzdC8oMTk5MSkrVGhlK0xvdytFbmQrVGhlb3J5PC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+VGhlIExvdyBFbmQgVGhlb3J5IFtKYXBhbiBFZGl0aW9uXTwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvVGhlK0xvdytFbmQrVGhlb3J5KyU1QkphcGFuK0VkaXRpb24lNUQ8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5Mb3cgRW5kIFRoZW9yeSBQb2RjYXN0PC9uYW1lPgo8YXJ0aXN0PlRoZSBHbGl0Y2ggTW9iPC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9UaGUrR2xpdGNoK01vYi9Mb3crRW5kK1RoZW9yeStQb2RjYXN0PC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvMTQ4ZTEwY2Y5YmU0NDE0Mzk4MmMzYzRlZGVmODNhNTEucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvMTQ4ZTEwY2Y5YmU0NDE0Mzk4MmMzYzRlZGVmODNhNTEucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvMTQ4ZTEwY2Y5YmU0NDE0Mzk4MmMzYzRlZGVmODNhNTEucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC8xNDhlMTBjZjliZTQ0MTQzOTgyYzNjNGVkZWY4M2E1MS5wbmc8L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5UaGUgTG93IEVuZCBUaGVvcnkgW0V4cGxpY2l0XTwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvVGhlK0xvdytFbmQrVGhlb3J5KyU1QkV4cGxpY2l0JTVEPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+TG93IEVuZCBUaGVvcnkgT3duIEN1dCBFcGlzb2RlIDEwPC9uYW1lPgo8YXJ0aXN0PkxvdyBFbmQgVGhlb3J5PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9Mb3crRW5kK1RoZW9yeS9Mb3crRW5kK1RoZW9yeStPd24rQ3V0K0VwaXNvZGUrMTA8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5Mb3cgRW5kIFRoZW9yeSBPd24gQ3V0IEVwaXNvZGUgMTE8L25hbWU+CjxhcnRpc3Q+TG93IEVuZCBUaGVvcnk8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0xvdytFbmQrVGhlb3J5L0xvdytFbmQrVGhlb3J5K093bitDdXQrRXBpc29kZSsxMTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPlRoZSBMb3cgRW5kIFRoZW9yeTwvbmFtZT4KPGFydGlzdD5UaGUgTG93IEVuZCBUaGVvcnk8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL1RoZStMb3crRW5kK1RoZW9yeS9UaGUrTG93K0VuZCtUaGVvcnk8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzM0cy9hNTgwZTcyZTQzZTU2MzI0MDI4MThmOTBlZWQzMDQxMi5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzY0cy9hNTgwZTcyZTQzZTU2MzI0MDI4MThmOTBlZWQzMDQxMi5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMTc0cy9hNTgwZTcyZTQzZTU2MzI0MDI4MThmOTBlZWQzMDQxMi5wbmc8L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zMDB4MzAwL2E1ODBlNzJlNDNlNTYzMjQwMjgxOGY5MGVlZDMwNDEyLnBuZzwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPkxvdyBFbmQgVGhlb3J5IE93biBDdXQgRXBpc29kZSA4PC9uYW1lPgo8YXJ0aXN0PkxvdyBFbmQgVGhlb3J5PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9Mb3crRW5kK1RoZW9yeS9Mb3crRW5kK1RoZW9yeStPd24rQ3V0K0VwaXNvZGUrODwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPkxvdyBFbmQgVGhlb3J5IE93biBDdXQgRXBpc29kZSAzPC9uYW1lPgo8YXJ0aXN0PkxvdyBFbmQgVGhlb3J5PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9Mb3crRW5kK1RoZW9yeS9Mb3crRW5kK1RoZW9yeStPd24rQ3V0K0VwaXNvZGUrMzwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPkxvdyBFbmQgVGhlb3J5IE93biBDdXQgRXBpc29kZSAxODwvbmFtZT4KPGFydGlzdD5Mb3cgRW5kIFRoZW9yeTwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvTG93K0VuZCtUaGVvcnkvTG93K0VuZCtUaGVvcnkrT3duK0N1dCtFcGlzb2RlKzE4PC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+MTU0ICMgVGhlIExvdyBFbmQgVGhlb3J5PC9uYW1lPgo8YXJ0aXN0PkEgVHJpYmUgQ2FsbGVkIFF1ZXN0PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9BK1RyaWJlK0NhbGxlZCtRdWVzdC8xNTQrJTIzK1RoZStMb3crRW5kK1RoZW9yeTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPlRoZSBMb3cgRW5kIFRoZW9yeShKYXBhbiBJbXBvcnQpPC9uYW1lPgo8YXJ0aXN0PkEgVHJpYmUgQ2FsbGVkIFF1ZXN0PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9BK1RyaWJlK0NhbGxlZCtRdWVzdC9UaGUrTG93K0VuZCtUaGVvcnkoSmFwYW4rSW1wb3J0KTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPltSUzUwMC0xNTRdIFRoZSBMb3cgRW5kIFRoZW9yeTwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvJTVCUlM1MDAtMTU0JTVEK1RoZStMb3crRW5kK1RoZW9yeTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPlRoZSBMb3cgRW5kIFRoZW9yeTwvbmFtZT4KPGFydGlzdD5IZWxsb2dvb2RiedC1PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9IZWxsb2dvb2RieSVEMCVCNS9UaGUrTG93K0VuZCtUaGVvcnk8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5HYW1lIFRoZW9yeTwvbmFtZT4KPGFydGlzdD5Mb3cgRW5kIEFjdGl2aXN0PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9Mb3crRW5kK0FjdGl2aXN0L0dhbWUrVGhlb3J5PC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvMzUwYmRkY2I4NDkwN2Y4MjU2NTdkYmU1YTZkYzE1MDAucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvMzUwYmRkY2I4NDkwN2Y4MjU2NTdkYmU1YTZkYzE1MDAucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvMzUwYmRkY2I4NDkwN2Y4MjU2NTdkYmU1YTZkYzE1MDAucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC8zNTBiZGRjYjg0OTA3ZjgyNTY1N2RiZTVhNmRjMTUwMC5wbmc8L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5Mb3cgRW5kIFRoZW9yeSBPd24gQ3V0IEVwaXNvZGUgMTc8L25hbWU+CjxhcnRpc3Q+TG93IEVuZCBUaGVvcnk8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0xvdytFbmQrVGhlb3J5L0xvdytFbmQrVGhlb3J5K093bitDdXQrRXBpc29kZSsxNzwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPkxvdyBFbmQgVGhlb3J5IE93biBDdXQgRXBpc29kZSAxNjwvbmFtZT4KPGFydGlzdD5Mb3cgRW5kIFRoZW9yeTwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvTG93K0VuZCtUaGVvcnkvTG93K0VuZCtUaGVvcnkrT3duK0N1dCtFcGlzb2RlKzE2PC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+VGhlIExvdyBFbmQgVGhlb3J5IChQcm9tbyBWaW55bCk8L25hbWU+CjxhcnRpc3Q+QSBUcmliZSBDYWxsZWQgUXVlc3Q8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0ErVHJpYmUrQ2FsbGVkK1F1ZXN0L1RoZStMb3crRW5kK1RoZW9yeSsoUHJvbW8rVmlueWwpPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+TG93IEVuZCBUaGVvcnkgT3duIEN1dCBFcGlzb2RlIDE8L25hbWU+CjxhcnRpc3Q+TG93IEVuZCBUaGVvcnk8L2FydGlzdD4KPHVybD5odHRwczovL3d3dy5sYXN0LmZtL211c2ljL0xvdytFbmQrVGhlb3J5L0xvdytFbmQrVGhlb3J5K093bitDdXQrRXBpc29kZSsxPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+TG93IEVuZCBUaGVvcnk8L25hbWU+CjxhcnRpc3Q+TWF0ZHVrZTwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvTWF0ZHVrZS9Mb3crRW5kK1RoZW9yeTwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPkxvdyBFbmQgVGhlb3J5IE93biBDdXQgRXBpc29kZSA0PC9uYW1lPgo8YXJ0aXN0PkxvdyBFbmQgVGhlb3J5PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9Mb3crRW5kK1RoZW9yeS9Mb3crRW5kK1RoZW9yeStPd24rQ3V0K0VwaXNvZGUrNDwvdXJsPgo8aW1hZ2Ugc2l6ZT0ic21hbGwiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJtZWRpdW0iPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJsYXJnZSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPjwvaW1hZ2U+CjxzdHJlYW1hYmxlPjA8L3N0cmVhbWFibGU+CjxtYmlkPjwvbWJpZD4KPC9hbGJ1bT4KPGFsYnVtPjxuYW1lPkxvdyBFbmQgVGhlb3J5IE93biBDdXQgRXBpc29kZSAxMjwvbmFtZT4KPGFydGlzdD5Mb3cgRW5kIFRoZW9yeTwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvTG93K0VuZCtUaGVvcnkvTG93K0VuZCtUaGVvcnkrT3duK0N1dCtFcGlzb2RlKzEyPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+TG93IEVuZCBUaGVvcnkgT3duIEN1dCBFcGlzb2RlIDE1PC9uYW1lPgo8YXJ0aXN0PkxvdyBFbmQgVGhlb3J5PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9Mb3crRW5kK1RoZW9yeS9Mb3crRW5kK1RoZW9yeStPd24rQ3V0K0VwaXNvZGUrMTU8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5Mb3cgRW5kIFRoZW9yeSBQb2RjYXN0PC9uYW1lPgo8YXJ0aXN0PlRoZSBHYXNsYW1wIEtpbGxlcjwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvVGhlK0dhc2xhbXArS2lsbGVyL0xvdytFbmQrVGhlb3J5K1BvZGNhc3Q8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5Mb3cgRW5kIFRoZW9yeTwvbmFtZT4KPGFydGlzdD5Mb3cgRW5kIFRoZW9yeTwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvTG93K0VuZCtUaGVvcnkvTG93K0VuZCtUaGVvcnk8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5UaGUgTG93IEVuZCBUaGVvcnkgRkxBQzwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvVGhlK0xvdytFbmQrVGhlb3J5K0ZMQUM8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT4yIFRoZSBMb3cgRW5kIFRoZW9yeTwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvMitUaGUrTG93K0VuZCtUaGVvcnk8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5UaGUgTG93IEVuZCBUaGVvcnk8L25hbWU+CjxhcnRpc3Q+QSBUcmliZSBDYWxsZWQuIFF1ZXN0PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9BK1RyaWJlK0NhbGxlZC4rUXVlc3QvVGhlK0xvdytFbmQrVGhlb3J5PC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+VGhlIExvdyBFbmQgVGhlb3J5IFtKYXBhbmVzZSBFZGl0aW9uXTwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvVGhlK0xvdytFbmQrVGhlb3J5KyU1QkphcGFuZXNlK0VkaXRpb24lNUQ8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5BIFRyaWJlIENhbGxlZCBRdWVzdCAtIFRoZSBMb3cgZW5kIHRoZW9yeTwvbmFtZT4KPGFydGlzdD5BIFRyaWJlIENhbGxlZCBRdWVzdDwvYXJ0aXN0Pgo8dXJsPmh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvQStUcmliZStDYWxsZWQrUXVlc3QvQStUcmliZStDYWxsZWQrUXVlc3QrLStUaGUrTG93K2VuZCt0aGVvcnk8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5UaGUgTG93IEVuZCBUaGVvcnkgKEphcGFuIEVkaXRpb24pPC9uYW1lPgo8YXJ0aXN0PkEgVHJpYmUgQ2FsbGVkIFF1ZXN0PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9BK1RyaWJlK0NhbGxlZCtRdWVzdC9UaGUrTG93K0VuZCtUaGVvcnkrKEphcGFuK0VkaXRpb24pPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+PC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+PC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0iZXh0cmFsYXJnZSI+PC9pbWFnZT4KPHN0cmVhbWFibGU+MDwvc3RyZWFtYWJsZT4KPG1iaWQ+PC9tYmlkPgo8L2FsYnVtPgo8YWxidW0+PG5hbWU+VGhlIExvdyBFbmQgVGhlb3J5OiBPcmlnaW5hbCBTYW1wbGVzPC9uYW1lPgo8YXJ0aXN0PlRoZSBMYXN0IFBvZXRzPC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9UaGUrTGFzdCtQb2V0cy9UaGUrTG93K0VuZCtUaGVvcnk6K09yaWdpbmFsK1NhbXBsZXM8L3VybD4KPGltYWdlIHNpemU9InNtYWxsIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibWVkaXVtIj48L2ltYWdlPgo8aW1hZ2Ugc2l6ZT0ibGFyZ2UiPjwvaW1hZ2U+CjxpbWFnZSBzaXplPSJleHRyYWxhcmdlIj48L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5Mb3cgRW5kIFRoZW9yeSBQdC4gMTwvbmFtZT4KPGFydGlzdD5NYXJrIE5pY2hvbGFzIE8uPC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9NYXJrK05pY2hvbGFzK08uL0xvdytFbmQrVGhlb3J5K1B0LisxPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvZmFkN2RiYzk4MmI3NDM3NWMzMDA4MjA3MDYzM2FkYzgucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvZmFkN2RiYzk4MmI3NDM3NWMzMDA4MjA3MDYzM2FkYzgucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvZmFkN2RiYzk4MmI3NDM3NWMzMDA4MjA3MDYzM2FkYzgucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC9mYWQ3ZGJjOTgyYjc0Mzc1YzMwMDgyMDcwNjMzYWRjOC5wbmc8L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjxhbGJ1bT48bmFtZT5HYW1lIFRoZW9yeSBmdC4gRmxvd2RhbjwvbmFtZT4KPGFydGlzdD5Mb3cgRW5kIEFjdGl2aXN0PC9hcnRpc3Q+Cjx1cmw+aHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9Mb3crRW5kK0FjdGl2aXN0L0dhbWUrVGhlb3J5K2Z0LitGbG93ZGFuPC91cmw+CjxpbWFnZSBzaXplPSJzbWFsbCI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvMWM5YjU5NzNjYTJlMTRjMTA2NmU0OWI4MzZlYThmODAucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9Im1lZGl1bSI+aHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvMWM5YjU5NzNjYTJlMTRjMTA2NmU0OWI4MzZlYThmODAucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImxhcmdlIj5odHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvMWM5YjU5NzNjYTJlMTRjMTA2NmU0OWI4MzZlYThmODAucG5nPC9pbWFnZT4KPGltYWdlIHNpemU9ImV4dHJhbGFyZ2UiPmh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC8xYzliNTk3M2NhMmUxNGMxMDY2ZTQ5YjgzNmVhOGY4MC5wbmc8L2ltYWdlPgo8c3RyZWFtYWJsZT4wPC9zdHJlYW1hYmxlPgo8bWJpZD48L21iaWQ+CjwvYWxidW0+CjwvYWxidW1tYXRjaGVzPgo8L3Jlc3VsdHM+CjwvbGZtPgo=
+  recorded_at: Thu, 13 Aug 2020 09:24:57 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?album=The%20Low%20End%20Theory&api_key=<LASTFM_API_KEY>&artist=A%20Tribe%20Called%20Quest&method=album.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 13 Aug 2020 09:24:58 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Connection:
+      - keep-alive
+      Cteonnt-Length:
+      - '10639'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - private
+      Content-Length:
+      - '2717'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <lfm status="ok"><album><name>The Low End Theory</name>
+        <artist>A Tribe Called Quest</artist>
+        <mbid>63747b49-c817-4688-a3c3-c6b534672f3e</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/The+Low+End+Theory</url>
+        <image size="small">https://lastfm.freetls.fastly.net/i/u/34s/1ed2a8b06875441f85256b2f162fdf9b.png</image>
+        <image size="medium">https://lastfm.freetls.fastly.net/i/u/64s/1ed2a8b06875441f85256b2f162fdf9b.png</image>
+        <image size="large">https://lastfm.freetls.fastly.net/i/u/174s/1ed2a8b06875441f85256b2f162fdf9b.png</image>
+        <image size="extralarge">https://lastfm.freetls.fastly.net/i/u/300x300/1ed2a8b06875441f85256b2f162fdf9b.png</image>
+        <image size="mega">https://lastfm.freetls.fastly.net/i/u/300x300/1ed2a8b06875441f85256b2f162fdf9b.png</image>
+        <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/1ed2a8b06875441f85256b2f162fdf9b.png</image>
+        <listeners>601209</listeners>
+        <playcount>11012085</playcount>
+        <tracks><track rank="1"><name>Excursions</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Excursions</url>
+        <duration>233</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="2"><name>Buggin&apos; Out</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Buggin%27+Out</url>
+        <duration>218</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="3"><name>Rap Promoter</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Rap+Promoter</url>
+        <duration>133</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="4"><name>Butter</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Butter</url>
+        <duration>219</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="5"><name>Verses from the Abstract</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Verses+from+the+Abstract</url>
+        <duration>239</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="6"><name>Show Business</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Show+Business</url>
+        <duration>233</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="7"><name>Vibes and Stuff</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Vibes+and+Stuff</url>
+        <duration>258</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="8"><name>The Infamous Date Rape</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/The+Infamous+Date+Rape</url>
+        <duration>174</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="9"><name>Check the Rhime</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Check+the+Rhime</url>
+        <duration>216</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="10"><name>Everything Is Fair</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Everything+Is+Fair</url>
+        <duration>179</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="11"><name>Jazz (We&apos;ve Got)</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Jazz+(We%27ve+Got)</url>
+        <duration>249</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="12"><name>Skypager</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Skypager</url>
+        <duration>133</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="13"><name>What?</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/What%3F</url>
+        <duration>149</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        <track rank="14"><name>Scenario</name>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest/_/Scenario</url>
+        <duration>250</duration>
+        <streamable fulltrack="0">0</streamable>
+        <artist><name>A Tribe Called Quest</name>
+        <mbid>9689aa5a-4471-4fb4-9721-07cecda0fa9f</mbid>
+        <url>https://www.last.fm/music/A+Tribe+Called+Quest</url>
+        </artist>
+        </track>
+        </tracks>
+        <tags><tag><name>Hip-Hop</name>
+        <url>https://www.last.fm/tag/Hip-Hop</url>
+        </tag>
+        <tag><name>1991</name>
+        <url>https://www.last.fm/tag/1991</url>
+        </tag>
+        <tag><name>hip hop</name>
+        <url>https://www.last.fm/tag/hip+hop</url>
+        </tag>
+        <tag><name>albums I own</name>
+        <url>https://www.last.fm/tag/albums+I+own</url>
+        </tag>
+        <tag><name>rap</name>
+        <url>https://www.last.fm/tag/rap</url>
+        </tag>
+        </tags>
+        <wiki><published>09 Dec 2009, 11:38</published>
+        <summary>The Low End Theory is the second album by American hip hop group A Tribe Called Quest. Released on September 24, 1991 through Jive Records, the album produced three singles; &quot;Check the Rhime&quot;, &quot;Jazz (We&apos;ve Got)&quot;, and &quot;Scenario&quot;.&#10;&#10;After A Tribe Called Quest&apos;s debut album, People&apos;s Instinctive Travels and the Paths of Rhythm (1990), Jarobi White left the group to study culinary art. Phife Dawg learned that he was diabetic a month after the album&apos;s release and after a discussion with fellow member Q-Tip &lt;a href=&quot;http://www.last.fm/music/A+Tribe+Called+Quest/The+Low+End+Theory&quot;&gt;Read more on Last.fm&lt;/a&gt;.</summary>
+        <content>The Low End Theory is the second album by American hip hop group A Tribe Called Quest. Released on September 24, 1991 through Jive Records, the album produced three singles; &quot;Check the Rhime&quot;, &quot;Jazz (We&apos;ve Got)&quot;, and &quot;Scenario&quot;.&#10;&#10;After A Tribe Called Quest&apos;s debut album, People&apos;s Instinctive Travels and the Paths of Rhythm (1990), Jarobi White left the group to study culinary art. Phife Dawg learned that he was diabetic a month after the album&apos;s release and after a discussion with fellow member Q-Tip, they agreed to increase his participation on their second album and to &quot;step it up in general as a group.&quot;Q-Tip credited N.W.A&apos;s album Straight Outta Compton (1988) as an inspiration for the record. The group hired double bassist Ron Carter on the track &quot;Verses from the Abstract&quot;. Q-Tip stated, &quot;We wanted that straight bass sound, and Ron Carter is one of the premier bassists of the century.&quot; Carter agreed to record tracks on the condition that the group avoid profanity, to which Q-tip assured they were addressing &quot;real issues&quot;.&#10;&#10;The Low End Theory is stylistically reminiscent of mid-1980s hip hop. Producer Ali Shaheed Muhammad and rappers Q-Tip and Phife Dawg showcase how rap was done before commercial success influenced many rappers&apos; creativity. The album&apos;s minimalist sound is &quot;stripped to the essentials: vocals, drums, and bass.&quot; The bass drum and vocals emphasize the downbeat on every track.&#10;&#10;The Low End Theory helped shape alternative hip hop in the 1990s. It established the musical, cultural, and historical link between hip hop and jazz. Writer Oliver Wang called the album &quot;a consummate link between generations&quot;, which took the essence of jazz and hip hop, and &quot;showing they originated from the same black center.&quot; The group&apos;s &quot;mellow innovations&quot; helped jazz rap gain significant exposure from 1992 to 1993. Rolling Stone ranked the album at number 154 in &quot;The 500 Greatest Albums of All Time&quot;, stating that &quot;people connected the dots between hip-hop and jazz -- both were revolutionary forms of black music based in improvisation and flow -- but A Tribe Called Quest&apos;s second album drew the entire picture.&quot;&#10;&#10;In Time magazine&apos;s &quot;ALL-TIME 100&quot; albums, Josh Tyrangiel called the record an exception to jazz rap often being &quot;wishful thinking on the part of critics&quot;. He described the album as &quot;socially conscious without being dull&quot; and likened a few tracks to &quot;smoky rooms where cool guys ... say cool things.&quot;Pitchfork Media listed the album at number fifty-six in its &quot;Top 100 Albums of the 1990s&quot;. The Low End Theory was voted at number thirty-two in The Village Voice&apos;s 1991 Pazz &amp; Jop critics poll. Allmusic writer John Bush, who declared it &quot;the most consistent and flowing hip-hop album ever recorded&quot;, summed up the record as &quot;an unqualified success, the perfect marriage of intelligent, flowing raps to nuanced, groove-centered productions.&quot; On February 1, 1995, the Recording Industry Association of America (RIAA) certified the album platinum. &lt;a href=&quot;http://www.last.fm/music/A+Tribe+Called+Quest/The+Low+End+Theory&quot;&gt;Read more on Last.fm&lt;/a&gt;. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.</content>
+        </wiki>
+        </album>
+        </lfm>
+  recorded_at: Thu, 13 Aug 2020 09:24:58 GMT
+recorded_with: VCR 6.0.0
