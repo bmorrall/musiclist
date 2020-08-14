@@ -24,7 +24,7 @@ RSpec.describe "Albums::Refresh", type: :request do
   describe "POST /create" do
     context "with valid parameters", :vcr do
       let(:artist) { create(:artist, name: "The Beatles") }
-      let(:album) { create(:album, title: "The White Album", artist: artist) }
+      let(:album) { create(:album, title: "The White Album", year: nil, artist: artist) }
       let(:valid_attributes) do
         {
           album: "The Beatles (White Album)",

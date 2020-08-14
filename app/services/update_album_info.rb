@@ -15,10 +15,10 @@ class UpdateAlbumInfo
     album.update!(
       title: info.name,
       genre: info.tags.first,
-      year: info.year,
+      year: info.year || album.year,
       album_art: info.image.default,
       lastfm_url: info.url,
-      description: info.wiki.content
+      description: info.wiki.content.presence || album.description
     )
   end
 

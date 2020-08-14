@@ -16,7 +16,7 @@ class UpdateArtistInfo
       name: info.name,
       profile_image: info.image.default,
       lastfm_url: info.url,
-      description: info.bio.content
+      description: info.bio.content.presence || artist.description
     )
   end
 
