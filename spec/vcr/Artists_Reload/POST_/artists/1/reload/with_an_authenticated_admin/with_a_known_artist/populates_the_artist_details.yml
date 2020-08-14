@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Wed, 12 Aug 2020 10:47:28 GMT
+      - Fri, 14 Aug 2020 02:02:53 GMT
       Content-Type:
       - text/xml; charset=UTF-8
       Cteonnt-Length:
@@ -52,7 +52,7 @@ http_interactions:
         </correction>
         </corrections>
         </lfm>
-  recorded_at: Wed, 12 Aug 2020 10:47:28 GMT
+  recorded_at: Fri, 14 Aug 2020 02:02:53 GMT
 - request:
     method: get
     uri: http://ws.audioscrobbler.com/2.0/?api_key=<LASTFM_API_KEY>&artist=The%20Beatles&method=artist.getInfo
@@ -74,7 +74,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Wed, 12 Aug 2020 10:47:29 GMT
+      - Fri, 14 Aug 2020 02:02:54 GMT
       Content-Type:
       - text/xml; charset=UTF-8
       Connection:
@@ -90,7 +90,7 @@ http_interactions:
       Cache-Control:
       - private
       Content-Length:
-      - '4698'
+      - '4697'
     body:
       encoding: ASCII-8BIT
       string: |
@@ -106,8 +106,8 @@ http_interactions:
         <image size="">https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png</image>
         <streamable>0</streamable>
         <ontour>0</ontour>
-        <stats><listeners>3888568</listeners>
-        <playcount>555428522</playcount>
+        <stats><listeners>3889188</listeners>
+        <playcount>555524092</playcount>
         </stats>
         <similar><artist><name>George Harrison</name>
         <url>https://www.last.fm/music/George+Harrison</url>
@@ -179,5 +179,5 @@ http_interactions:
         </bio>
         </artist>
         </lfm>
-  recorded_at: Wed, 12 Aug 2020 10:47:29 GMT
+  recorded_at: Fri, 14 Aug 2020 02:02:54 GMT
 recorded_with: VCR 6.0.0

@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "Artists::Refresh", type: :request do
-  describe "POST /artists/1/refresh" do
+RSpec.describe "Artists::Reload", type: :request do
+  describe "POST /artists/1/reload" do
     context "with an authenticated admin" do
       let(:authenticated_admin) { create(:user, :admin) }
 
@@ -13,7 +13,7 @@ RSpec.describe "Artists::Refresh", type: :request do
         let(:artist) { create(:artist, name: "Beatles") }
 
         it "populates the artist details", :aggregate_failures  do
-          post artist_refresh_url(artist)
+          post artist_reload_url(artist)
 
           artist.reload
           expect(artist.name).to eq "The Beatles"
@@ -23,7 +23,7 @@ RSpec.describe "Artists::Refresh", type: :request do
         end
 
         it "redirects back to the artist" do
-          post artist_refresh_url(artist)
+          post artist_reload_url(artist)
           expect(response).to redirect_to(artist_url(artist))
         end
       end

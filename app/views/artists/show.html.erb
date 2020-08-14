@@ -47,7 +47,7 @@
 <div class="block my-2 text-center">
   <%= link_to 'Edit', edit_artist_path(@artist) %> |
   <% if @artist.policy.refresh? -%>
-  <%= link_to 'Refresh', artist_refresh_path(@artist), method: :post %> |
+  <%= link_to 'Reload', artist_reload_path(@artist), method: :post %> |
   <% end -%>
   <%= link_to 'Back', artists_path %>
 </div>

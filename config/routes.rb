@@ -18,9 +18,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :albums, concerns: :paginatable, only: [:index, :show, :edit, :update] do
     resource :refresh, module: :albums, only: [:show, :create]
+    resource :reload, module: :albums, only: [:create]
   end
   resources :artists, concerns: :paginatable, except: [:new, :create] do
-    resource :refresh, module: :artists, only: [:create]
+    resource :reload, module: :artists, only: [:create]
   end
 
   root to: "albums#index"

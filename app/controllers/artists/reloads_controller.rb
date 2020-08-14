@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Artists
-  class RefreshesController < ::ApplicationController
+  class ReloadsController < ::ApplicationController
     include PunditErrorHandling
 
     before_action :authenticate_user!
