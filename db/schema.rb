@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_102623) do
+ActiveRecord::Schema.define(version: 2020_08_16_024603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -90,16 +90,6 @@ ActiveRecord::Schema.define(version: 2020_08_12_102623) do
     t.index ["request_uuid"], name: "index_audits_on_request_uuid"
     t.index ["user_type", "user_id"], name: "user_index"
     t.index ["user_uid"], name: "user_uid_index"
-  end
-
-  create_table "meta_data", id: :serial, force: :cascade do |t|
-    t.string "source", limit: 255
-    t.text "data"
-    t.integer "item_id"
-    t.string "item_type", limit: 255
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_meta_data_on_item_id"
   end
 
   create_table "playlist_albums", id: :serial, force: :cascade do |t|
