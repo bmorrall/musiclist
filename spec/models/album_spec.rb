@@ -30,7 +30,7 @@ RSpec.describe Album, type: :model do
         lastfm_url: Faker::Internet.url
       )
       album.save
-      expect(album.slug).to eq "captain-fantastic-and-the-brown-dirt-cowboy"
+      expect(album.slug).to eq "elton-john-captain-fantastic-and-the-brown-dirt-cowboy"
     end
 
     it "includes the artist name for Greatest Hits" do
@@ -41,6 +41,58 @@ RSpec.describe Album, type: :model do
       )
       album.save
       expect(album.slug).to eq "elton-john-greatest-hits"
+    end
+
+    it "includes the artist name for Live" do
+      album = described_class.new(
+        title: "Live 1984",
+        artist: artist,
+        lastfm_url: Faker::Internet.url
+      )
+      album.save
+      expect(album.slug).to eq "elton-john-live-1984"
+    end
+
+    it "does not include the artist name if already present" do
+      album = described_class.new(
+        title: "Live with Elton John",
+        artist: artist,
+        lastfm_url: Faker::Internet.url
+      )
+      album.save
+      expect(album.slug).to eq "live-with-elton-john"
+    end
+
+    it "handles abbreviations" do
+      album = described_class.new(
+        title: "Superfly - O.S.T.",
+        artist: artist,
+        lastfm_url: Faker::Internet.url
+      )
+      album.save
+      expect(album.slug).to eq "elton-john-superfly-ost"
+    end
+
+    it "handles names starting with the" do
+      artist.name = "The Clash"
+      album = described_class.new(
+        title: "Clash: UK Edition.",
+        artist: artist,
+        lastfm_url: Faker::Internet.url
+      )
+      album.save
+      expect(album.slug).to eq "clash-uk-edition"
+    end
+
+    it "ignores the 'Various Artists' artist" do
+      artist.name = "Various Artists"
+      album = described_class.new(
+        title: "Nuggets: Original Artyfacts from the First Psychedelic Era, 1965-1968",
+        artist: artist,
+        lastfm_url: Faker::Internet.url
+      )
+      album.save
+      expect(album.slug).to eq "nuggets-original-artyfacts-from-the-first-psychedelic-era-1965-1968"
     end
   end
 end

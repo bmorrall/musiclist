@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require "slug_helper"
+
 class Album < ApplicationRecord
   # Allow Pagination of Testme collections
   paginates_per 40
@@ -22,20 +26,16 @@ class Album < ApplicationRecord
 
   private
 
-  COMMON_ALBUM_TITLES = [
-    "collection",
-    "greatest hits",
-    "anthology"
-  ]
 
   def title_candidate
-    return unless title? && lastfm_url?
+    return unless title? # && lastfm_url?
 
-    title_candidate = title
-    if COMMON_ALBUM_TITLES.any? { |common_title| title.downcase.include?(common_title) }
+    title_candidate = title.downcase
+    unless title_candidate.include?(artist.name.downcase.sub(/\Athe\ /, "")) ||
+        artist.name.downcase == "various artists"
       title_candidate = [artist.name, title_candidate].join(" ")
     end
 
-    title_candidate.gsub("&", "and")
+    SlugHelper.filter_slug(title_candidate)
   end
 end

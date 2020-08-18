@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require "slug_helper"
+
 class Artist < ApplicationRecord
   audited only: %i[name]
 
@@ -10,7 +14,7 @@ class Artist < ApplicationRecord
 
   def slug_candidates
     [
-      -> { name && name.gsub("&", "and") }
+      -> { SlugHelper.filter_slug(name) }
     ]
   end
 

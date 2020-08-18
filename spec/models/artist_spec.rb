@@ -18,5 +18,11 @@ RSpec.describe Artist, type: :model do
       artist.save
       expect(artist.slug).to eq "bob-marley-and-the-wailers"
     end
+
+    it "removes single quotes" do
+      artist = described_class.new(name: "Dexy's Midnight Runners")
+      artist.save
+      expect(artist.slug).to eq "dexys-midnight-runners"
+    end
   end
 end
