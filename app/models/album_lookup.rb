@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "content_utils"
+
 # Looks up details of an Album from Last.fm
 class AlbumLookup
   def self.get_info(album)
@@ -25,9 +27,9 @@ class AlbumLookup
     res = lastfm.album.get_info(album: album, artist: artist)
     res_tags = res.dig("tags", "tag") || []
     res["image"] = OpenStruct.new(build_image_hash(res["image"]))
-    res["year"] = filter_year(res_tags)
     res["tags"] = filter_tags(res_tags)
     res["wiki"] = OpenStruct.new(filter_wiki(res["wiki"]))
+    res["year"] = ContentUtils.extract_year(res["wiki"].content) || filter_year(res_tags)
     OpenStruct.new(res)
   end
 
@@ -35,6 +37,8 @@ class AlbumLookup
     res = lastfm.album.search(album_name)
     res.dig("results", "albummatches", "album").map { |o| OpenStruct.new(o) }
   end
+
+
 
   private
 
