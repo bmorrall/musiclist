@@ -16,8 +16,6 @@ RSpec.describe Album, type: :model do
   it { is_expected.not_to allow_value("99").for(:year) }
   it { is_expected.to allow_value(nil).for(:year) }
 
-  it { is_expected.to have_db_column(:editions) }
-
   describe "audited" do
     it { should be_audited.only(%i[title year description]) }
   end

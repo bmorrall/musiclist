@@ -5,6 +5,5 @@ FactoryBot.define do
     genre { Faker::Music.genre }
     album_art { nil }
     year { Faker::Time.backward(days: 100_000, format: "%Y") }
-    editions { nil }
   end
 end
