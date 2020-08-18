@@ -7,7 +7,7 @@ class ArtistDecorator
     @view_context = view_context
   end
 
-  delegate :to_param, to: :artist
+  delegate :to_param, :to_s, to: :artist
 
   # Pundit policy object
   def policy
@@ -29,7 +29,7 @@ class ArtistDecorator
   end
 
   def respond_to_missing?(method_name, include_private = false)
-    @artist.respond_to_missing?(method_name, false) || super
+    @artist.respond_to?(method_name, false) || super
   end
 
   private

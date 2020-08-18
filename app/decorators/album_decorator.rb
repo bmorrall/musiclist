@@ -7,7 +7,7 @@ class AlbumDecorator
     @view_context = view_context
   end
 
-  delegate :to_param, to: :album
+  delegate :to_param, :to_s, to: :album
 
   def played_button
     if played?
@@ -77,7 +77,7 @@ class AlbumDecorator
   end
 
   def respond_to_missing?(method_name, include_private = false)
-    @album.respond_to_missing?(method_name, false) || super
+    @album.respond_to?(method_name, false) || super
   end
 
   private

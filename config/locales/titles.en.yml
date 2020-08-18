@@ -3,3 +3,11 @@ en:
     # titles.application defaults to the sigficant portion of
     # Musiclist::Application, which would be:
     application: Musiclist
+    artists:
+      index: "Artists | Musiclist"
+      show: '%{artist} | Musiclist'
+      edit: 'Editing %{artist} | Musiclist'
+    albums:
+      index: "Albums | Musiclist"
+      show: '%{album} | Musiclist'
+      edit: 'Editing %{album} | Musiclist'

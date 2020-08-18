@@ -21,7 +21,7 @@ class Album < ApplicationRecord
   validates :year, format: /([12]\d{3})/, allow_blank: true
 
   def to_s
-    title_was # use previous title for labels
+    [artist.try(:name), title_was].reject(&:blank?).join(" - ") # use previous title for labels
   end
 
   private
