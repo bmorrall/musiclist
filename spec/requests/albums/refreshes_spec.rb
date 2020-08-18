@@ -53,7 +53,7 @@ RSpec.describe "Albums::Refresh", type: :request do
 
         it "redirects to the album" do
           post album_refresh_url(album), params: { lookup: valid_attributes }
-          expect(response).to redirect_to(album_url(album))
+          expect(response).to redirect_to(album_url(album.reload))
         end
       end
 

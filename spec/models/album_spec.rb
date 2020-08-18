@@ -19,4 +19,28 @@ RSpec.describe Album, type: :model do
   describe "audited" do
     it { should be_audited.only(%i[title year description]) }
   end
+
+  describe "#slug" do
+    let(:artist) { create(:artist, name: "Elton John") }
+
+    it "replaces & with and" do
+      album = described_class.new(
+        title: "Captain Fantastic & The Brown Dirt Cowboy",
+        artist: artist,
+        lastfm_url: Faker::Internet.url
+      )
+      album.save
+      expect(album.slug).to eq "captain-fantastic-and-the-brown-dirt-cowboy"
+    end
+
+    it "includes the artist name for Greatest Hits" do
+      album = described_class.new(
+        title: "Greatest Hits",
+        artist: artist,
+        lastfm_url: Faker::Internet.url
+      )
+      album.save
+      expect(album.slug).to eq "elton-john-greatest-hits"
+    end
+  end
 end

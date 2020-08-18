@@ -24,7 +24,7 @@ RSpec.describe "Albums::Reload", type: :request do
 
         it "redirects back to the album" do
           post album_reload_url(album)
-          expect(response).to redirect_to(album_url(album))
+          expect(response).to redirect_to(album_url(album.reload))
         end
       end
     end

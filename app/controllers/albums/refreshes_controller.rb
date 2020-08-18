@@ -32,7 +32,7 @@ module Albums
     private
 
     def assign_album
-      @album = policy_scope(Album).find(params[:album_id])
+      @album = policy_scope(Album).friendly.find(params[:album_id])
     end
 
     def lookup_params

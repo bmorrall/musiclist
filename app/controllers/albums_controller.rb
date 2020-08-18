@@ -57,7 +57,7 @@ class AlbumsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def assign_album
-    @album = policy_scope(Album).find(params[:id])
+    @album = policy_scope(Album).friendly.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
