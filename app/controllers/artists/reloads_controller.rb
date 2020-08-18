@@ -28,7 +28,7 @@ module Artists
     private
 
     def assign_artist
-      @artist = policy_scope(Artist).find(params[:artist_id])
+      @artist = policy_scope(Artist).friendly.find(params[:artist_id])
     end
   end
 end

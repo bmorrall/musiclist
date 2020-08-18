@@ -78,7 +78,7 @@ class ArtistsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def assign_artist
-      @artist = policy_scope(Artist).find(params[:id])
+      @artist = policy_scope(Artist).friendly.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

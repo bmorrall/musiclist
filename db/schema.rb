@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_023405) do
+ActiveRecord::Schema.define(version: 2020_08_18_024535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2020_08_18_023405) do
     t.string "lastfm_url"
     t.string "profile_image"
     t.text "description"
+    t.string "slug"
+    t.index ["slug"], name: "index_artists_on_slug", unique: true
   end
 
   create_table "audits", force: :cascade do |t|
