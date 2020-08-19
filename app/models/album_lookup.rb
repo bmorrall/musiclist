@@ -4,6 +4,48 @@ require "content_utils"
 
 # Looks up details of an Album from Last.fm
 class AlbumLookup
+  USELESS_TAGS = [
+    "1001 Albums You Must Hear Before You Die",
+    "1979",
+    "albums I own",
+    "albums I own",
+    "ambient",
+    "beatles",
+    "bibibi",
+    "BLUEZZZ",
+    "british",
+    "cuba",
+    "dark",
+    "elton john",
+    "favorite albums",
+    "favourite albums",
+    "female vocalists",
+    "golden age hip hop",
+    "gotanygoodmusic",
+    "John Frusciante",
+    "kinks",
+    "Linda Rondstat",
+    "old school rap",
+    "oldies",
+    "Otis Redding",
+    "piano",
+    "rod stewart",
+    "role certo",
+    "rolling stone 500 greatest albums of all time",
+    "Rolling Stone 500 Greatest Albums",
+    "rs500 album",
+    "RS500best",
+    "singer-songwriter",
+    "steely dan",
+    "stuzzie",
+    "the best",
+    "U2",
+    "UK",
+    "various artists",
+    "vh1 100 greatest albums",
+    "Vocal"
+  ].map(&:downcase).freeze
+
   def self.get_info(album)
     new.get_info(**album)
   end
@@ -38,18 +80,7 @@ class AlbumLookup
     res.dig("results", "albummatches", "album").map { |o| OpenStruct.new(o) }
   end
 
-
-
   private
-
-  USELESS_TAGS = [
-    "albums I own",
-    "favorite albums",
-    "gotanygoodmusic",
-    "role certo",
-    "rs500 album",
-    "singer-songwriter"
-  ].freeze
 
   attr_reader :lastfm
 
@@ -65,7 +96,7 @@ class AlbumLookup
   end
 
   def filter_tags(tags)
-    tags.map { |tag| tag["name"] }
+    tags.map { |tag| tag["name"].downcase }
         .reject { |t| t =~ /\A\d{2}s\z/ } # 50s, 60s, etc
         .reject { |t| t =~ /\A(19|20)\d{2}\z/ } # 1996, 2001, etc
         .reject { |t| USELESS_TAGS.include?(t) }
