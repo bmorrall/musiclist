@@ -1,0 +1,9 @@
+<h1 class="max-w-5xl mx-auto text-4xl leading-tight">Albums from <%= @year %></h1>
+
+<div class="block max-w-5xl mx-auto">
+  <%= render "albums/albums", albums: @albums %>
+</div>
+
+<div class="block my-2 text-center">
+  <%= link_to 'Back', albums_years_path %>
+</div>

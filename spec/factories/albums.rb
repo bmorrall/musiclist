@@ -4,6 +4,6 @@ FactoryBot.define do
     artist
     genre { Faker::Music.genre }
     album_art { nil }
-    year { Faker::Time.backward(days: 100_000, format: "%Y") }
+    year { (1950..2020).to_a.sample.to_s }
   end
 end

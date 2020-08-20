@@ -16,10 +16,14 @@ Rails.application.routes.draw do
   get "auth/failure" => "auth#failure"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :albums do
+    resources :years, only: [:index, :show], constraints: { id: /(19[5-9]|20[0-2])[0-9]/ }
+  end
   resources :albums, concerns: :paginatable, only: [:index, :show, :edit, :update] do
     resource :refresh, module: :albums, only: [:show, :create]
     resource :reload, module: :albums, only: [:create]
   end
+
   resources :artists, concerns: :paginatable, except: [:new, :create] do
     resource :reload, module: :artists, only: [:create]
   end
