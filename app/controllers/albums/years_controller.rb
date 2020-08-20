@@ -24,7 +24,7 @@ module Albums
     private
 
     def all_years
-      @all_years ||= policy_scope(Album).where.not(year: [nil, ""]).pluck(:year).sort
+      @all_years ||= policy_scope(Album).where.not(year: [nil, ""]).group(:year).pluck(:year).sort
     end
   end
 end
