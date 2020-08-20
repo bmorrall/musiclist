@@ -5,5 +5,11 @@
 </div>
 
 <div class="block my-2 text-center">
+  <% if @previous_year -%>
+  <%= link_to  albums_year_path(@previous_year) do %>&lt; <%= @previous_year %><% end %> |
+  <% end -%>
   <%= link_to 'Back', albums_years_path %>
+  <% if @next_year -%>
+  | <%= link_to albums_year_path(@next_year) do %><%= @next_year %> &gt;<% end %>
+  <% end -%>
 </div>
