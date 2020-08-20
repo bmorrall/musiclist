@@ -41,6 +41,10 @@ class AlbumDecorator
     end
   end
 
+  def year_button
+    v.album_year_button(@album.year) if @album.year?
+  end
+
   def played?
     @album.album_status.try(:played_on?) && true
   end
