@@ -1,7 +1,7 @@
 module TableHelper
 
   def r_table(&block)
-    content_tag(:div, class: "flex flex-col") do
+    content_tag(:div, class: "flex flex-col overflow-x-hidden") do
       content_tag(:div, class: "-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8") do
         content_tag(:div, class: "py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8") do
           content_tag(:div, class: "shadow overflow-hidden border-b border-gray-200 sm:rounded-lg") do

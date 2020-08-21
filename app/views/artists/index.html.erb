@@ -1,25 +1,44 @@
 <h1>Artists</h1>
 
-<section>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th></th>
-      </tr>
-    </thead>
-
+<div class="p-6">
+  <%= r_table do %>
     <tbody>
-      <% @artists.each do |artist| %>
-        <tr>
-          <td><%= artist.name %></td>
-          <td><%= link_to 'Show', artist %></td>
-        </tr>
+      <% @artists.each_with_index do |artist, index| %>
+        <%= r_table_row(index) do %>
+          <%= r_primary_table_cell artist do %>
+            <%= artist.name %>
+          <% end %>
+          <%= r_actions_table_cell do %>
+            <%= r_table_cell_action "Show", artist %>
+          <% end %>
+        <% end %>
       <% end %>
     </tbody>
-  </table>
-</section>
+  <% end %>
 
-<div class="block my-2 text-center">
-  <%= paginate @artists, param_name: :page %>
+  <%= r_pagination do %>
+    <%= r_previous_nav_button "#" %>
+    <%= r_nav_links do %>
+      <%= r_nav_link "#" do %>
+        1
+      <% end %>
+      <%= r_active_nav_link "#" do %>
+        2
+      <% end %>
+      <%= r_nav_link "#" do %>
+        3
+      <% end %>
+      <%= r_nav_link_spacer %>
+      <%= r_nav_link "#" do %>
+        8
+      <% end %>
+      <%= r_nav_link "#" do %>
+        9
+      <% end %>
+      <%= r_nav_link "#" do %>
+        10
+      <% end %>
+    <% end %>
+    <%= r_next_nav_button "#" %>
+  <% end %>
 </div>

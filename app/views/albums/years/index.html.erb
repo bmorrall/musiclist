@@ -1,21 +1,16 @@
 <h1 class="max-w-5xl mx-auto text-4xl leading-tight">Albums by Year</h1>
 
-<div class="block max-w-5xl mx-auto">
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @years.each do |year| %>
-        <tr>
-          <td>
-            <%= link_to albums_year_path(year.first) do %><%= year.first %> (<%= year.last %>)<% end %>
-          </td>
-        </tr>
+<%= r_table do %>
+  <tbody>
+    <% @years.each_with_index do |year, index| %>
+      <%= r_table_row(index) do %>
+        <%= r_primary_table_cell albums_year_path(year.first) do %>
+          <%= year.first %> (<%= year.last %>)
+        <% end %>
+        <%= r_actions_table_cell do %>
+          <%= r_table_cell_action "Show", albums_year_path(year.first) %>
+        <% end %>
       <% end %>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+<% end %>
