@@ -1,15 +1,23 @@
 module TableHelper
+  def r_table(collection = nil, &block)
+    r_table_wrapper do
+      concat r_table_tag(&block)
+      concat paginate(collection, param_name: :page) if collection
+    end
+  end
 
-  def r_table(&block)
+  def r_table_wrapper(&block)
     content_tag(:div, class: "flex flex-col overflow-x-hidden") do
       content_tag(:div, class: "-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8") do
         content_tag(:div, class: "py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8") do
-          content_tag(:div, class: "shadow overflow-hidden border-b border-gray-200 sm:rounded-lg") do
-            content_tag(:table, class: "min-w-full divide-y divide-gray-200", &block)
-          end
+          content_tag(:div, class: "shadow overflow-hidden border-b border-gray-200 sm:rounded-lg", &block)
         end
       end
     end
+  end
+
+  def r_table_tag(&block)
+    content_tag(:table, class: "lg:table-fixed min-w-full divide-y divide-gray-200", &block)
   end
 
   # Table -> Header
@@ -19,15 +27,15 @@ module TableHelper
   end
 
   def r_primary_table_header_cell(&block)
-    content_tag(:th, class: "px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider", &block)
+    content_tag(:th, class: "lg:w-1/4 px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider", &block)
   end
 
   def r_table_header_cell(&block)
-    content_tag(:th, class: "hidden md:table-cell px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider", &block)
+    content_tag(:th, class: "hidden md:table-cell px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider", &block)
   end
 
-  def r_actions_table_header_cell(&block)
-    content_tag(:th, nil, class: "px-6 py-3 bg-gray-50")
+  def r_actions_table_header_cell
+    content_tag(:th, nil, class: "px-6 py-3 bg-gray-100")
   end
 
   # Table -> Body
@@ -38,7 +46,7 @@ module TableHelper
   end
 
   def r_even_table_row(&block)
-    content_tag(:tr, class: "bg-gray-50", &block)
+    content_tag(:tr, class: "bg-gray-100", &block)
   end
 
   def r_odd_table_row(&block)

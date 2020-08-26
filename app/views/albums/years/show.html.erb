@@ -1,15 +1,12 @@
-<h1 class="max-w-5xl mx-auto text-4xl leading-tight">Albums from <%= @year %></h1>
+<%= r_page_wrapper do %>
+  <%= r_page_header "Albums from #{@year}" %>
 
-<div class="block max-w-5xl mx-auto">
-  <%= render "albums/albums", albums: @albums %>
-</div>
-
-<div class="block my-2 text-center">
-  <% if @previous_year -%>
-  <%= link_to  albums_year_path(@previous_year) do %>&lt; <%= @previous_year %><% end %> |
-  <% end -%>
-  <%= link_to 'Back', albums_years_path %>
-  <% if @next_year -%>
-  | <%= link_to albums_year_path(@next_year) do %><%= @next_year %> &gt;<% end %>
-  <% end -%>
-</div>
+  <%= r_table_wrapper do %>
+    <%= render "albums/albums", albums: @albums %>
+    <%= r_pagination_wrapper do %>
+      <%= r_previous_nav_button @previous_year, @previous_year && albums_year_path(@previous_year) %>
+      <%= r_nav_link "Index", albums_years_path %>
+      <%= r_next_nav_button @next_year, @next_year && albums_year_path(@next_year) %>
+    <% end %>
+  <% end %>
+<% end %>

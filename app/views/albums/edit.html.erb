@@ -1,5 +1,7 @@
 <div class="px-3 py-2 md:px-6 mdpy-4">
-  <h1 class="text-4xl leading-tight">Editing <%= @album %></h1>
+  <%= r_page_header do %>
+    Editing <%= @album %>
+  <% end %>
 
   <%= render 'form', album: @album %>
 </div>

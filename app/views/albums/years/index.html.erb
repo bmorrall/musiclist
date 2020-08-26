@@ -1,16 +1,18 @@
-<h1 class="max-w-5xl mx-auto text-4xl leading-tight">Albums by Year</h1>
+<%= r_page_wrapper do %>
+  <%= r_page_header "Albums by Year" %>
 
-<%= r_table do %>
-  <tbody>
-    <% @years.each_with_index do |year, index| %>
-      <%= r_table_row(index) do %>
-        <%= r_primary_table_cell albums_year_path(year.first) do %>
-          <%= year.first %> (<%= year.last %>)
-        <% end %>
-        <%= r_actions_table_cell do %>
-          <%= r_table_cell_action "Show", albums_year_path(year.first) %>
+  <%= r_table do %>
+    <tbody>
+      <% @years.each_with_index do |year, index| %>
+        <%= r_table_row(index) do %>
+          <%= r_primary_table_cell albums_year_path(year.first) do %>
+            <%= year.first %> (<%= year.last %>)
+          <% end %>
+          <%= r_actions_table_cell do %>
+            <%= r_table_cell_action "Show", albums_year_path(year.first) %>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </tbody>
+    </tbody>
+  <% end %>
 <% end %>

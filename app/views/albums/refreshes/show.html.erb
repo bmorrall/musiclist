@@ -1,5 +1,5 @@
 <div class="px-3 py-2 md:px-6 mdpy-4">
-  <h1 class="text-4xl leading-tight"><%= @album.artist.name %> - <%= @album.title %></h1>
+  <%= r_page_header do %><%= @album.artist.name %> - <%= @album.title %><% end %>
 
   <table>
     <thead>

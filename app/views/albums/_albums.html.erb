@@ -1,15 +1,15 @@
-<section class="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+<section class="min-w-full grid grid-cols-1 md:grid-cols-2 overflow-hidden">
 <% albums.each do |album| %>
-  <article class="flex items-center px-3 py-2 md:px-6 mdpy-4 hover:bg-blue-200">
+  <article class="flex items-center px-3 py-2 hover:bg-blue-200">
     <%= link_to album_path(album) do %>
-      <%= album.small_album_image class: "block mx-0 flex-shrink-0 h-16 w-16 sm:h-24 sm:w-24" %>
+      <%= album.small_album_image class: "block mx-0 flex-shrink-0 h-24 w-24" %>
     <% end %>
-    <div class="mt-0 ml-4 text-left">
-      <h1 class="text-xl leading-tight">
+    <div class="mt-0 ml-3 text-left">
+      <h2 class="text-xl leading-tight">
         <%= link_to album_path(album) do %>
           <%= album.title %> <% if album.year.present? %>(<%= album.year %>)<% end %>
         <% end -%>
-      </h1>
+      </h2>
       <p class="text-m leading-tight text-gray-600">
         <%= link_to album.artist_name, artist_path(album.artist) %>
         <% if album.genre? -%>

@@ -1,6 +1,8 @@
 
 <article class="px-3 py-2 md:px-6 mdpy-4">
-  <h1 class="text-4xl leading-tight">Editing <%= @artist %></h1>
+  <%= r_page_header do %>
+    Editing <%= @artist %>
+  <% end %>
 
   <%= render 'form', artist: @artist %>
 </article>

@@ -1,7 +1,8 @@
-<h1 class="max-w-5xl mx-auto text-4xl leading-tight">Albums</h1>
+<%= r_page_wrapper do %>
+  <%= r_page_header "Albums" %>
 
-<%= render "albums", albums: @albums %>
-
-<div class="block my-2 text-center">
-  <%= paginate @albums, param_name: :page %>
-</div>
+  <%= r_table_wrapper do %>
+    <%= render "albums", albums: @albums %>
+    <%= paginate @albums, param_name: :page %>
+  <% end %>
+<% end %>

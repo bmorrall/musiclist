@@ -2,13 +2,13 @@
 
 # Helpers for displaying Albums
 module AlbumsHelper
-  BUTTON_STYLES = "block md:inline-block mb-2 md:mb-0 font-semibold border rounded shadow"
+  BUTTON_STYLES = "mb-2 md:mb-0 font-semibold border rounded shadow"
   INACTIVE_BUTTON_STYLES = "bg-white text-gray-400 border-gray-400"
   PLAYED_BUTTON_STYLES = "bg-orange-400 text-white border-orange-400"
   PURCHASED_BUTTON_STYLES = "bg-green-800 text-white border-green-800"
 
-  LARGE_BUTTON_STYLES = "text-lg py-1 px-4"
-  SMALL_BUTTON_STYLES = "text-sm py-0 px-2"
+  LARGE_BUTTON_STYLES = "block md:inline-block text-lg py-1 px-4"
+  SMALL_BUTTON_STYLES = "inline-block text-sm py-0 px-2"
 
   def album_list_image(album)
     (album.lastfm_url? && album.album_art) || "https://via.placeholder.com/100"

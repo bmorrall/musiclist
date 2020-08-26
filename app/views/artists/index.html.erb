@@ -1,12 +1,25 @@
-<h1>Artists</h1>
+<%= r_page_wrapper do %>
+  <%= r_page_header "Artists" %>
 
-<div class="p-6">
-  <%= r_table do %>
+  <%= r_table(@artists) do %>
+    <thead>
+      <%= r_table_header_row do %>
+        <%= r_primary_table_header_cell do %>
+          Artist
+        <% end %>
+        <%= r_table_header_cell do %>
+          Albums
+        <% end %>
+      <% end %>
+    </thead>
     <tbody>
       <% @artists.each_with_index do |artist, index| %>
         <%= r_table_row(index) do %>
           <%= r_primary_table_cell artist do %>
             <%= artist.name %>
+          <% end %>
+          <%= r_table_cell do %>
+            <%= pluralize artist.album_count, "Album" %>
           <% end %>
           <%= r_actions_table_cell do %>
             <%= r_table_cell_action "Show", artist %>
@@ -15,30 +28,4 @@
       <% end %>
     </tbody>
   <% end %>
-
-  <%= r_pagination do %>
-    <%= r_previous_nav_button "#" %>
-    <%= r_nav_links do %>
-      <%= r_nav_link "#" do %>
-        1
-      <% end %>
-      <%= r_active_nav_link "#" do %>
-        2
-      <% end %>
-      <%= r_nav_link "#" do %>
-        3
-      <% end %>
-      <%= r_nav_link_spacer %>
-      <%= r_nav_link "#" do %>
-        8
-      <% end %>
-      <%= r_nav_link "#" do %>
-        9
-      <% end %>
-      <%= r_nav_link "#" do %>
-        10
-      <% end %>
-    <% end %>
-    <%= r_next_nav_button "#" %>
-  <% end %>
-</div>
+<% end %>

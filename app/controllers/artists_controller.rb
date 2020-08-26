@@ -10,7 +10,9 @@ class ArtistsController < ApplicationController
   # GET /artists/page/1
   def index
     authorize Artist
-    @artists = policy_scope(Artist).order(:name).page params[:page]
+    @artists = policy_scope(Artist).left_outer_joins(:albums)
+                .select('artists.*, COUNT(albums.*) as album_count').group("artists.id")
+                .order(:name).page params[:page]
   end
 
   # GET /artists/1
