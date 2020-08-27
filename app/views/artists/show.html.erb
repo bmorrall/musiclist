@@ -1,53 +1,64 @@
-<article>
-  <header class="px-3 py-4 md:px-6 md:py-4">
-    <%= r_page_header @artist.name %>
-  </header>
-
-<div class="md:flex md:items-start px-3 pb-2 md:px-6 md:pb-4">
-  <aside class="flex flex-col flex-shrink-0">
-    <%= image_tag artist_detail_image(@artist), class: "block mx-auto flex-shrink-0 h-64 sm:w-64", alt: @artist.name %>
-    <% if @artist.lastfm_url? -%>
-        <%= link_to @artist.lastfm_url, class: "block mt-2 flex-shrink-0 md:w-64 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline", rel: :external, target: :_blank do %>
-          <span class="fa fa-lastfm mr-1"></span>
-          Read more on Last.fm
-        <% end -%>
-      <% end -%>
-  </aside>
-  <section class="flex-grow mt-2 md:mt-0 md:ml-4 text-left">
-    <%= @artist.description %>
-
-    <h2 class="text-3xl leading-tight">Albums</h2>
-
-    <% @albums.each do |album| %>
-      <article class="flex items-center p-2 hover:bg-blue-200">
-        <%= link_to album_path(album) do %>
-          <%= album.small_album_image class: "block mx-0 flex-shrink-0 h-16 w-16 sm:h-24 sm:w-24" %>
+<%= r_page_wrapper do %>
+  <%= r_page_header_wrapper do %>
+    <%= r_breadcrumbs do %>
+      <%= r_mobile_breadcrumbs_nav artists_url %>
+      <%= r_breadcrumbs_nav do %>
+        <%= r_breadcrumbs_link artists_url do %>
+          Artists
         <% end %>
-        <div class="mt-0 ml-4 text-left">
-          <h2 class="text-xl leading-tight">
-            <%= link_to album_path(album) do %>
-              <%= album.title %> <% if album.year.present? %>(<%= album.year %>)<% end %>
-            <% end -%>
-          </h2>
-          <p class="text-m leading-tight text-gray-600">
-            <%= album.genre %>
-          </p>
-          <div class="block mt-1">
-            <%= album.small_played_button %>
-            <%= album.small_purchased_button %>
-          </div>
-        </div>
-      </article>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link @artist do %>
+          <%= @artist %>
+        <% end %>
+      <% end %>
     <% end %>
-  </section>
-</div>
+    <%= r_page_header_body do %>
+      <%= r_page_header_title @artist %>
+      <% if @artist.policy.edit? %>
+        <%= r_page_header_actions do %>
+          <%= r_page_header_action "Edit", edit_artist_path(@artist) %>
+          <%= r_primary_page_header_action "Reload", artist_reload_path(@artist), method: :post %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
 
-</article>
+  <div class="md:flex md:items-start">
+    <aside class="flex flex-col flex-shrink-0">
+      <%= image_tag artist_detail_image(@artist), class: "block mx-auto flex-shrink-0 h-64 sm:w-64", alt: @artist.name %>
+      <% if @artist.lastfm_url? -%>
+          <%= link_to @artist.lastfm_url, class: "block mt-2 flex-shrink-0 md:w-64 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline", rel: :external, target: :_blank do %>
+            <span class="fa fa-lastfm mr-1"></span>
+            Read more on Last.fm
+          <% end -%>
+        <% end -%>
+    </aside>
+    <section class="flex-grow mt-2 md:mt-0 md:ml-4 text-left">
+      <%= @artist.description %>
 
-<div class="block my-2 text-center">
-  <%= link_to 'Edit', edit_artist_path(@artist) %> |
-  <% if @artist.policy.refresh? -%>
-  <%= link_to 'Reload', artist_reload_path(@artist), method: :post %> |
-  <% end -%>
-  <%= link_to 'Back', artists_path %>
-</div>
+      <h2 class="text-3xl leading-tight">Albums</h2>
+
+      <% @albums.each do |album| %>
+        <article class="flex items-center p-2 hover:bg-blue-200 rounded-lg">
+          <%= link_to album_path(album) do %>
+            <%= album.small_album_image class: "block mx-0 flex-shrink-0 h-16 w-16 sm:h-24 sm:w-24 rounded-lg" %>
+          <% end %>
+          <div class="mt-0 ml-4 text-left">
+            <h2 class="text-xl leading-tight">
+              <%= link_to album_path(album) do %>
+                <%= album.title %> <% if album.year.present? %>(<%= album.year %>)<% end %>
+              <% end -%>
+            </h2>
+            <p class="text-m leading-tight text-gray-600">
+              <%= album.genre %>
+            </p>
+            <div class="block mt-1">
+              <%= album.small_played_button %>
+              <%= album.small_purchased_button %>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    </section>
+  </div>
+<% end %>

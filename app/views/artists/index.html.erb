@@ -1,5 +1,21 @@
 <%= r_page_wrapper do %>
-  <%= r_page_header "Artists" %>
+  <%= r_page_header_wrapper do %>
+    <%= r_breadcrumbs do %>
+      <%= r_breadcrumbs_nav do %>
+        <%= r_breadcrumbs_link artists_url do %>
+          Artists
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= r_page_header_body do %>
+      <%= r_page_header_title "Artists" %>
+      <% if policy(Artist).create? %>
+        <%= r_page_header_actions do %>
+          <%= r_primary_page_header_action "Create new artist", new_artist_path %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
 
   <%= r_table(@artists) do %>
     <thead>
