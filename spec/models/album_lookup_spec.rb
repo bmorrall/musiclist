@@ -48,11 +48,11 @@ RSpec.describe AlbumLookup do
 
     it "separates the copyrighted content", :vcr do
       expected = <<~EXPECTED.strip
-      Willy and the Poor Boys is the fourth album by American band Creedence Clearwater Revival, released in 1969. The only mention of the album's title is in the chorus of "Down on the Corner".
+        Willy and the Poor Boys is the fourth album by American band Creedence Clearwater Revival, released in 1969. The only mention of the album's title is in the chorus of "Down on the Corner".
 
-      In 2003, the album was ranked number 392 on Rolling Stone magazine's list of the 500 greatest albums of all time. A 40th Anniversary Edition CD with 3 bonus tracks was released in 2008. "Willy and the Poorboys" was the third CCR record to go platinum and went on to multi-platinum status. The cover photograph was shot a couple blocks from the Fantasy Records studio, in front of Duck Kee Market in West Oakland, California.
+        In 2003, the album was ranked number 392 on Rolling Stone magazine's list of the 500 greatest albums of all time. A 40th Anniversary Edition CD with 3 bonus tracks was released in 2008. "Willy and the Poorboys" was the third CCR record to go platinum and went on to multi-platinum status. The cover photograph was shot a couple blocks from the Fantasy Records studio, in front of Duck Kee Market in West Oakland, California.
 
-      <a href="http://www.last.fm/music/Creedence+Clearwater+Revival/Willy+and+the+Poor+Boys">Read more on Last.fm</a>. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.
+        <a href="http://www.last.fm/music/Creedence+Clearwater+Revival/Willy+and+the+Poor+Boys">Read more on Last.fm</a>. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.
       EXPECTED
 
       info = described_class.get_info(album: "Willy and the Poor Boys", artist: "Creedence Clearwater Revival")

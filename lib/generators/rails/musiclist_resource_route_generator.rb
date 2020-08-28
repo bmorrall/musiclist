@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module Rails
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   class MusiclistResourceRouteGenerator < Rails::Generators::NamedBase # :nodoc:
     # Properly nests namespaces passed into a generator
     #
@@ -50,5 +49,5 @@ module Rails
       PAGINATABLE
     end
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+  # rubocop:enable
 end

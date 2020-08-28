@@ -26,13 +26,12 @@ class Album < ApplicationRecord
 
   private
 
-
   def title_candidate
     return unless title? # && lastfm_url?
 
     title_candidate = title.downcase
     unless title_candidate.include?(artist.name.downcase.sub(/\Athe\ /, "")) ||
-        artist.name.downcase == "various artists"
+           artist.name.downcase == "various artists"
       title_candidate = [artist.name, title_candidate].join(" ")
     end
 

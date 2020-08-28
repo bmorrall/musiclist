@@ -2,17 +2,17 @@ class ArtistsController < ApplicationController
   include PunditErrorHandling
 
   before_action :authenticate_user!, except: %i[index show]
-  before_action :assign_artist, only: [:show, :edit, :update, :destroy]
+  before_action :assign_artist, only: %i[show edit update destroy]
   after_action :verify_authorized
-  after_action :verify_policy_scoped, except: [:new, :create]
+  after_action :verify_policy_scoped, except: %i[new create]
 
   # GET /artists
   # GET /artists/page/1
   def index
     authorize Artist
     @artists = policy_scope(Artist).left_outer_joins(:albums)
-                .select('artists.*, COUNT(albums.*) as album_count').group("artists.id")
-                .order(:name).page params[:page]
+                                   .select("artists.*, COUNT(albums.*) as album_count").group("artists.id")
+                                   .order(:name).page params[:page]
   end
 
   # GET /artists/1
@@ -40,7 +40,7 @@ class ArtistsController < ApplicationController
     authorize @artist
 
     if @artist.save
-      redirect_to @artist, notice: 'Artist was successfully created.'
+      redirect_to @artist, notice: "Artist was successfully created."
     else
       render :new
     end
@@ -51,7 +51,7 @@ class ArtistsController < ApplicationController
     authorize @artist
 
     if @artist.update(artist_params)
-      redirect_to @artist, notice: 'Artist was successfully updated.'
+      redirect_to @artist, notice: "Artist was successfully updated."
     else
       render :edit
     end
@@ -62,7 +62,7 @@ class ArtistsController < ApplicationController
     authorize @artist
 
     @artist.destroy
-    redirect_to artists_url, notice: 'Artist was successfully destroyed.'
+    redirect_to artists_url, notice: "Artist was successfully destroyed."
   end
 
   protected
@@ -78,13 +78,14 @@ class ArtistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def assign_artist
-      @artist = policy_scope(Artist).friendly.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def artist_params
-      permitted_attributes(@artist || Artist)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def assign_artist
+    @artist = policy_scope(Artist).friendly.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def artist_params
+    permitted_attributes(@artist || Artist)
+  end
 end

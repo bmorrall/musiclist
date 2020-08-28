@@ -13,7 +13,7 @@ module LogrageUtil
       format_rack_attack_event(name, start, finish, request_id, payload, status: 403)
     end
 
-    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/ParameterLists
+    # rubocop:disable Metrics/AbcSize, Metrics/ParameterLists
     def format_rack_attack_event(name, start, finish, request_id, payload, status:)
       req = payload[:request]
       matched_rule = req.env["rack.attack.matched"]
@@ -37,6 +37,6 @@ module LogrageUtil
       }
       Lograge.lograge_config.formatter.call(message_payload)
     end
-    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength, Metrics/ParameterLists
+    # rubocop:enable Metrics/AbcSize, Metrics/ParameterLists
   end
 end

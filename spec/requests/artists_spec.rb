@@ -111,7 +111,7 @@ RSpec.describe "Artists", type: :request do
 
       it "renders any albums belonging to the artist" do
         artist = create(:artist)
-        album = create(:album, artist: artist);
+        album = create(:album, artist: artist)
         get artist_url(artist)
         expect(response).to be_successful
         expect(response.body).to have_content(album.title)

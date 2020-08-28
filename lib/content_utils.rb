@@ -17,11 +17,11 @@ module ContentUtils
     # released in the United States on October 10, 1966
     /released in the united states on \b\w+\b ([1-3]?[0-9])(st|nd|th)?, (?<year>(19[5-9]|20[0-1])[0-9])\b/,
     # released on Warner Bros. Records on 28 February 1970
-    /released (on |by )(\s?[\w\/]+\.?){1,3} (in|on ([1-3]?[0-9])(st|nd|th)?) \b\w+\b (?<year>(19[5-9]|20[0-1])[0-9])\b/,
+    %r{released (on |by )(\s?[\w/]+\.?){1,3} (in|on ([1-3]?[0-9])(st|nd|th)?) \b\w+\b (?<year>(19[5-9]|20[0-1])[0-9])\b},
     # released by Elektra Records on March 3, 1986
-    /released (on |by )(\s?[\w\/]+\.?){1,3} on \b\w+\b ([1-3]?[0-9])(st|nd|th)?, (?<year>(19[5-9]|20[0-1])[0-9])\b/,
+    %r{released (on |by )(\s?[\w/]+\.?){1,3} on \b\w+\b ([1-3]?[0-9])(st|nd|th)?, (?<year>(19[5-9]|20[0-1])[0-9])\b},
     # released by Capitol Records in 2012
-    /released (on |by )(\s?[\w\/]+\.?){1,3} in (?<year>(19[5-9]|20[0-1])[0-9])\b/
+    %r{released (on |by )(\s?[\w/]+\.?){1,3} in (?<year>(19[5-9]|20[0-1])[0-9])\b}
   ].freeze
 
   def extract_year(content)

@@ -41,7 +41,6 @@ class AlbumDecorator
     end
   end
 
-
   def played?
     @album.album_status.try(:played_on?) && true
   end

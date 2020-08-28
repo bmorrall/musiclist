@@ -36,7 +36,7 @@ class PopulateAlbums
   end
 
   def filter_candidates(candidates, album, titles)
-    candidates.reject { |a| a.artist != album.artist.name}
+    candidates.reject { |a| a.artist != album.artist.name }
               .detect { |a| titles.include?(a.name) }
   end
 

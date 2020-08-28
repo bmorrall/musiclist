@@ -13,7 +13,7 @@ RSpec.describe "Albums::Reload", type: :request do
         let(:artist) { create(:artist, name: "The Beatles") }
         let(:album) { create(:album, artist: artist, title: "White Album", description: nil) }
 
-        it "populates the album details", :aggregate_failures  do
+        it "populates the album details", :aggregate_failures do
           post album_reload_url(album)
 
           album.reload
