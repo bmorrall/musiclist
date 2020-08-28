@@ -1,5 +1,5 @@
 module PageHelper
-  def r_page_header_wrapper(&block)
+  def r_page_header(&block)
     content_tag(:header, &block)
   end
 
