@@ -34,14 +34,12 @@
 
   <div class="md:flex md:items-start">
     <aside class="block md:mx-0 flex flex-col flex-shrink-0">
-      <%= image_tag album_detail_image(@album), class: "block mx-auto flex-shrink-0 h-64 sm:w-64", alt: @album.title %>
+      <%= image_tag album_detail_image(@album), class: "block mx-auto mb-2 flex-shrink-0 h-64 sm:w-64", alt: @album.title %>
       <% if @album.lastfm_url? -%>
-        <%= link_to @album.lastfm_url, class: "block mt-2 flex-shrink-0 md:w-64 bg-red-600 hover:bg-red-700 text-white font-semibold text-lg py-1 px-2 rounded focus:outline-none focus:shadow-outline", rel: :external, target: :_blank do %>
-          <span class="fa fa-lastfm mr-2"></span>Read more on Last.fm
-        <% end -%>
+        <%= wide_red_button "Read more on Last.fm", @album.lastfm_url, "fa fa-lastfm", rel: :external, target: :_blank %>
       <% end -%>
     </aside>
-    <section class="mt-2 md:mt-0 md:ml-4 text-left">
+    <section class="md:ml-4 text-left">
       <div class="mb-2">
         <%= @album.played_button %>
         <%= @album.purchased_button %>

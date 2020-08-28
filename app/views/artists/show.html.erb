@@ -27,15 +27,12 @@
 
   <div class="md:flex md:items-start">
     <aside class="flex flex-col flex-shrink-0">
-      <%= image_tag artist_detail_image(@artist), class: "block mx-auto flex-shrink-0 h-64 sm:w-64", alt: @artist.name %>
+      <%= image_tag artist_detail_image(@artist), class: "block mx-auto mb-2 flex-shrink-0 h-64 sm:w-64", alt: @artist.name %>
       <% if @artist.lastfm_url? -%>
-          <%= link_to @artist.lastfm_url, class: "block mt-2 flex-shrink-0 md:w-64 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline", rel: :external, target: :_blank do %>
-            <span class="fa fa-lastfm mr-2"></span>
-            Read more on Last.fm
-          <% end -%>
-        <% end -%>
+        <%= wide_red_button "Read more on Last.fm", @artist.lastfm_url, "fa fa-lastfm", rel: :external, target: :_blank %>
+      <% end %>
     </aside>
-    <section class="flex-grow mt-2 md:mt-0 md:ml-4 text-left">
+    <section class="flex-grow md:ml-4 text-left">
       <%= @artist.description %>
 
       <h2 class="text-3xl leading-tight">Albums</h2>
