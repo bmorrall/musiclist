@@ -3,6 +3,8 @@
     <%= r_breadcrumbs do %>
       <%= r_mobile_breadcrumbs_nav artists_url %>
       <%= r_breadcrumbs_nav do %>
+        <%= r_home_breadcrumbs_link root_url %>
+        <%= r_breadcrumbs_separator %>
         <%= r_breadcrumbs_link artists_url do %>
           Artists
         <% end %>

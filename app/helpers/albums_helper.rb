@@ -60,12 +60,6 @@ module AlbumsHelper
     purchased_album_button_with_styles(INACTIVE_BUTTON_STYLES, LARGE_BUTTON_STYLES)
   end
 
-  def album_year_button(year)
-    link_to(albums_year_path(year), class: [BUTTON_STYLES, "bg-blue-600 hover:bg-blue-800 text-white border-blue-600", LARGE_BUTTON_STYLES].join(" ")) do
-      "Year: #{year}"
-    end
-  end
-
   def small_album_unpurchased_button
     purchased_album_button_with_styles(INACTIVE_BUTTON_STYLES, SMALL_BUTTON_STYLES)
   end

@@ -1,11 +1,33 @@
-<div class="px-3 py-2 md:px-6 mdpy-4">
-  <%= r_page_header do %>
-    Editing <%= @album %>
+<%= r_page_wrapper do %>
+  <%= r_page_header_wrapper do %>
+    <%= r_breadcrumbs do %>
+      <%= r_mobile_breadcrumbs_nav @album %>
+      <%= r_breadcrumbs_nav do %>
+        <%= r_home_breadcrumbs_link root_url %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link @album.artist do %>
+          <%= @album.artist %>
+        <% end %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link @album do %>
+          <%= @album.title %>
+        <% end %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link edit_album_url(@album) do %>
+          Edit
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= r_page_header_body do %>
+      <%= r_page_header_title "Editing #{@album.title}" %>
+
+      <% if policy(@album).refresh? %>
+        <%= r_page_header_actions do %>
+          <%= r_page_header_action "Refresh", album_refresh_path(@album) %>
+        <% end %>
+      <% end %>
+    <% end %>
   <% end %>
 
   <%= render 'form', album: @album %>
-</div>
-
-<div class="block my-2 text-center">
-  <%= link_to 'Back', @album %>
-</div>
+<% end %>

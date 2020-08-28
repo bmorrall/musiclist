@@ -1,11 +1,33 @@
+
 <%= r_page_wrapper do %>
-  <%= r_page_header "Albums from #{@year}" %>
+  <%= r_page_header_wrapper do %>
+    <%= r_breadcrumbs do %>
+      <%= r_mobile_breadcrumbs_nav @album %>
+      <%= r_breadcrumbs_nav do %>
+        <%= r_home_breadcrumbs_link root_url %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link albums_url do %>
+          Albums
+        <% end %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link albums_years_url do %>
+          By Year
+        <% end %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link albums_year_url(@year) do %>
+          <%= @year %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= r_page_header_body do %>
+      <%= r_page_header_title "Albums", "From #{@year}" %>
+    <% end %>
+  <% end %>
 
   <%= r_table_wrapper do %>
     <%= render "albums/albums", albums: @albums %>
     <%= r_pagination_wrapper do %>
       <%= r_previous_nav_button @previous_year, @previous_year && albums_year_path(@previous_year) %>
-      <%= r_nav_link "Index", albums_years_path %>
       <%= r_next_nav_button @next_year, @next_year && albums_year_path(@next_year) %>
     <% end %>
   <% end %>

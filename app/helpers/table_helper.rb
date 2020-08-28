@@ -40,27 +40,31 @@ module TableHelper
 
   # Table -> Body
 
-  def r_table_row(index, &block)
+  def r_table_row(index, highlight: false, &block)
     # index starts at 0, we want to start with an odd row
-    index.even? ? r_odd_table_row(&block) : r_even_table_row(&block)
+    if index.even?
+      r_odd_table_row(highlight: highlight, &block)
+    else
+      r_even_table_row(highlight: highlight, &block)
+    end
   end
 
-  def r_even_table_row(&block)
-    content_tag(:tr, class: "bg-gray-100", &block)
+  def r_even_table_row(highlight: false, &block)
+    content_tag(:tr, class: highlight ? "bg-blue-200" : "bg-gray-100", &block)
   end
 
-  def r_odd_table_row(&block)
-    content_tag(:tr, class: "bg-white", &block)
+  def r_odd_table_row(highlight: false, &block)
+    content_tag(:tr, class: highlight ? "bg-blue-300" : "bg-white", &block)
   end
 
-  def r_primary_table_cell(link, &block)
+  def r_primary_table_cell(link, link_options = {}, &block)
     content_tag(:td, class: "px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900") do
-      link_to(link, class: "hover:text-gray-600", &block)
+      link_to(link, link_options.merge(class: "hover:text-gray-600"), &block)
     end
   end
 
   def r_table_cell(&block)
-    content_tag(:td, class: "hidden md:table-cell px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500", &block)
+    content_tag(:td, class: "hidden md:table-cell px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-600", &block)
   end
 
   def r_actions_table_cell(&block)
@@ -69,7 +73,7 @@ module TableHelper
 
   # Table -> Body -> Action
 
-  def r_table_cell_action(label, link)
-    link_to(label, link, class: "text-indigo-600 hover:text-indigo-900")
+  def r_table_cell_action(label, link, link_options = {})
+    link_to(label, link, link_options.merge(class: "text-indigo-600 hover:text-indigo-900"))
   end
 end

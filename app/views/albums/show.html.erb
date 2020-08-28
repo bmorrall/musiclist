@@ -1,17 +1,38 @@
-<article>
-  <header class="px-3 py-4 md:px-6 md:py-4">
-    <%= r_page_header do %>
-      <%= @album.title %> <% if @album.year.present? %>(<%= @album.year %>)<% end %>
+<%= r_page_wrapper do %>
+  <%= r_page_header_wrapper do %>
+    <%= r_breadcrumbs do %>
+      <%= r_mobile_breadcrumbs_nav @album.artist %>
+      <%= r_breadcrumbs_nav do %>
+        <%= r_home_breadcrumbs_link root_url %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link @album.artist do %>
+          <%= @album.artist_name %>
+        <% end %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link @artist do %>
+          <%= @album.title %>
+        <% end %>
+      <% end %>
     <% end %>
+    <%= r_page_header_body do %>
+      <%= r_page_header_title @album.title, @album.artist_name do %>
+        <%= r_page_header_categories do %>
+          <%= r_page_header_category_link @album.artist_name, @album.artist, "fas fa-user" %>
+          <%= r_page_header_category_tag @album.genre, "fas fa-tag" if @album.genre? %>
+          <%= r_page_header_category_link @album.year, albums_year_path(@album.year), "far fa-calendar" if @album.year? %>
+        <% end %>
+      <% end %>
 
-    <p class="text-xl leading-tight text-gray-600">
-      <%= link_to @album.artist_name, @album.artist %>
-      <% if @album.genre? -%>
-      &ndash; <%= @album.genre %>
-      <% end -%>
-    </p>
-  </header>
-  <div class="md:flex md:items-start px-3 pb-2 md:px-6 md:pb-4">
+      <% if @album.policy.edit? %>
+        <%= r_page_header_actions do %>
+          <%= r_page_header_action "Edit", edit_album_path(@album) %>
+          <%= r_primary_page_header_action "Reload", album_reload_path(@album), method: :post %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <div class="md:flex md:items-start">
     <aside class="block md:mx-0 flex flex-col flex-shrink-0">
       <%= image_tag album_detail_image(@album), class: "block mx-auto flex-shrink-0 h-64 sm:w-64", alt: @album.title %>
       <% if @album.lastfm_url? -%>
@@ -25,20 +46,8 @@
       <div class="mb-2">
         <%= @album.played_button %>
         <%= @album.purchased_button %>
-        <%= @album.year_button %>
       </div>
       <%= @album.description %>
     </section>
   </div>
-</article>
-
-<div class="block my-2 text-center">
-  <% if @album.policy.edit? -%>
-  <%= link_to 'Edit', edit_album_path(@album) %> |
-  <% end -%>
-  <% if @album.policy.refresh? -%>
-  <%= link_to 'Refresh', album_refresh_path(@album) %> |
-  <%= link_to 'Reload', album_reload_path(@album), method: :post %> |
-  <% end -%>
-  <%= link_to 'Back', albums_path %>
-</div>
+<% end %>

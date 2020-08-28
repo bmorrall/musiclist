@@ -1,23 +1,59 @@
-<div class="px-3 py-2 md:px-6 mdpy-4">
-  <%= r_page_header do %><%= @album.artist.name %> - <%= @album.title %><% end %>
+<%= r_page_wrapper do %>
+  <%= r_page_header_wrapper do %>
+    <%= r_breadcrumbs do %>
+      <%= r_mobile_breadcrumbs_nav @album %>
+      <%= r_breadcrumbs_nav do %>
+        <%= r_home_breadcrumbs_link root_url %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link @album.artist do %>
+          <%= @album.artist %>
+        <% end %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link @album do %>
+          <%= @album.title %>
+        <% end %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link edit_album_url(@album) do %>
+          Edit
+        <% end %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link album_refresh_url(@album) do %>
+          Refresh
+        <% end %>
 
-  <table>
+      <% end %>
+    <% end %>
+    <%= r_page_header_body do %>
+      <%= r_page_header_title "Refreshing #{@album.title}" %>
+    <% end %>
+  <% end %>
+
+  <%= r_table do %>
     <thead>
-      <tr>
-        <th>Name</th>
-        <th>Artist</th>
-        <td>&nbsp;</td>
-      </tr>
+      <%= r_table_header_row do %>
+        <%= r_primary_table_header_cell do %>
+          Album
+        <% end %>
+        <%= r_table_header_cell do %>
+          Artist
+        <% end %>
+        <%= r_actions_table_header_cell %>
+      <% end %>
     </thead>
-
     <tbody>
-      <% @albums.each do |album| %>
-        <tr class="<%= album.artist == @album.artist.name ? 'bg-blue-200' : '' %>">
-          <td><%= link_to album.name, album.url, rel: :external, target: :_blank, class: "font-semibold text-gray-900 hover:underline" %></td>
-          <td><%= album.artist %></td>
-          <td><%= link_to "Update", album_refresh_path(@album, lookup: { artist: album.artist, album: album.name }), method: :post %></td>
-        </tr>
+      <% @albums.each_with_index do |album, index| %>
+        <%= r_table_row(index, highlight: album.artist == @album.artist.name) do %>
+          <%= r_primary_table_cell album.url, rel: :external, target: :_blank do %>
+            <%= album.name %>
+          <% end %>
+          <%= r_table_cell do %>
+            <%= album.artist %>
+          <% end %>
+          <%= r_actions_table_cell do %>
+            <%= r_table_cell_action "Update", album_refresh_path(@album, lookup: { artist: album.artist, album: album.name }), method: :post %>
+          <% end %>
+        <% end %>
       <% end %>
     </tbody>
-  </table>
-</div>
+  <% end %>
+<% end %>

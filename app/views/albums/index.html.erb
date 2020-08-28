@@ -1,5 +1,19 @@
 <%= r_page_wrapper do %>
-  <%= r_page_header "Albums" %>
+  <%= r_page_header_wrapper do %>
+    <%= r_breadcrumbs do %>
+      <%= r_mobile_breadcrumbs_nav @album %>
+      <%= r_breadcrumbs_nav do %>
+        <%= r_home_breadcrumbs_link root_url %>
+        <%= r_breadcrumbs_separator %>
+        <%= r_breadcrumbs_link albums_url do %>
+          Albums
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= r_page_header_body do %>
+      <%= r_page_header_title "Albums" %>
+    <% end %>
+  <% end %>
 
   <%= r_table_wrapper do %>
     <%= render "albums", albums: @albums %>

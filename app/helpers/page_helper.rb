@@ -54,9 +54,9 @@ module PageHelper
 
   # Page Header -> Page Header Body -> Page Header Title
 
-  HEADER_TITLE_STYLES = "text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate"
+  HEADER_TITLE_STYLES = "text-2xl font-semibold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate"
 
-  def r_page_header_title(title, subtitle = "Foo Bar", &block)
+  def r_page_header_title(title, subtitle = nil, &block)
     content_tag(:div, class: "pb-1 flex-1 min-w-0") do
       if subtitle.blank?
         concat content_tag(:h1, title, class: HEADER_TITLE_STYLES)
@@ -70,7 +70,27 @@ module PageHelper
   def _r_page_header_title_block(title, subtitle)
     content_tag(:div, class: "-ml-2 -mt-2 flex flex-wrap items-baseline") do
       concat content_tag(:h3, title, class: "ml-2 mt-2 #{HEADER_TITLE_STYLES}")
-      concat content_tag(:p, subtitle, class: "hidden ml-2 mt-1 text-lg leading-5 text-gray-500 truncate sm:block")
+      concat content_tag(:p, subtitle, class: "hidden ml-2 mt-1 text-lg leading-5 text-gray-600 truncate sm:block")
+    end
+  end
+
+  def r_page_header_categories(&block)
+    content_tag(:div, class: "mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap", &block)
+  end
+
+  PAGE_HEADER_CATEGORY_STYLES = "mt-2 flex items-center text-sm leading-5 text-gray-600 sm:mr-6"
+
+  def r_page_header_category_link(text, url, icon)
+    link_to url, class: "#{PAGE_HEADER_CATEGORY_STYLES} hover:text-indigo-400 transition duration-150 ease-in-out" do
+      concat content_tag(:i, nil, class: "#{icon} mr-2")
+      concat text
+    end
+  end
+
+  def r_page_header_category_tag(text,icon)
+    content_tag(:div, class: PAGE_HEADER_CATEGORY_STYLES) do
+      concat content_tag(:i, nil, class: "#{icon} mr-2")
+      concat text
     end
   end
 

@@ -11,3 +11,8 @@ en:
       index: "Albums | Musiclist"
       show: '%{album} | Musiclist'
       edit: 'Editing %{album} | Musiclist'
+      refreshes:
+        show: "Refreshing %{album} | Musiclist"
+      years:
+        index: "Albums by Year | Musiclist"
+        show: "Albums from %{year} | Musiclist"
