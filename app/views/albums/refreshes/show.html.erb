@@ -1,7 +1,7 @@
 <%= r_page_wrapper do %>
   <%= r_page_header do %>
     <%= r_breadcrumbs do %>
-      <%= r_mobile_breadcrumbs_nav @album %>
+      <%= r_mobile_breadcrumbs_nav edit_album_url(@album) %>
       <%= r_breadcrumbs_nav do %>
         <%= r_home_breadcrumbs_link root_url %>
         <%= r_breadcrumbs_separator %>
