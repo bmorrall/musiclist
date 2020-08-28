@@ -30,12 +30,18 @@ module PageHelper
 
   # Page Header -> Breadcrumbs -> Breadcrumbs Nav -> Link/Separator
 
+  def r_home_breadcrumbs_link(url)
+    link_to(url, class: "text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out") do
+      content_tag(:i, nil, class: "fas fa-home")
+    end
+  end
+
   def r_breadcrumbs_link(url, &block)
     link_to(url, class: "text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out", &block)
   end
 
   def r_breadcrumbs_separator
-    content_tag(:svg, class: "flex-shrink-0 mx-2 h-5 w-5 text-gray-400", viewBox: "0 0 20 20", fill: "currentColor") do
+    content_tag(:svg, class: "flex-shrink-0 mx-1 h-5 w-5 text-gray-400", viewBox: "0 0 20 20", fill: "currentColor") do
       tag(:path, :"fill-rule" => "evenodd", d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z", :"clip-rule" => "evenodd")
     end
   end
