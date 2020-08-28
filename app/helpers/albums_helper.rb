@@ -7,7 +7,7 @@ module AlbumsHelper
   PLAYED_BUTTON_STYLES = "bg-orange-400 text-white border-orange-400"
   PURCHASED_BUTTON_STYLES = "bg-green-800 text-white border-green-800"
 
-  LARGE_BUTTON_STYLES = "block md:inline-block text-lg py-1 px-4"
+  LARGE_BUTTON_STYLES = "block md:inline-block text-lg py-1 px-2"
   SMALL_BUTTON_STYLES = "inline-block text-sm py-0 px-2"
 
   def album_list_image(album)
@@ -31,7 +31,7 @@ module AlbumsHelper
   def album_played_button(album)
     styles = [PLAYED_BUTTON_STYLES, LARGE_BUTTON_STYLES]
     content_tag(:span, class: [BUTTON_STYLES, *styles].join(" ")) do
-      concat content_tag(:span, "", class: "fa fa-music mr-1")
+      concat content_tag(:span, "", class: "fa fa-music mr-2")
       concat album.album_status.played_on.strftime("Played on %b %Y")
     end
   end
@@ -68,14 +68,14 @@ module AlbumsHelper
 
   def played_album_button_with_styles(*styles)
     content_tag(:span, class: [BUTTON_STYLES, *styles].join(" ")) do
-      concat content_tag(:span, "", class: "fa fa-music mr-1")
+      concat content_tag(:span, "", class: "fa fa-music mr-2")
       concat "Played"
     end
   end
 
   def purchased_album_button_with_styles(*styles)
     content_tag(:span, class: [BUTTON_STYLES, *styles].join(" ")) do
-      concat content_tag(:span, "", class: "fa fa-compact-disc mr-1")
+      concat content_tag(:span, "", class: "fa fa-compact-disc mr-2")
       concat "Purchased"
     end
   end
