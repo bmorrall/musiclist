@@ -54,9 +54,23 @@ module PageHelper
 
   # Page Header -> Page Header Body -> Page Header Title
 
-  def r_page_header_title(title)
+  HEADER_TITLE_STYLES = "text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate"
+
+  def r_page_header_title(title, subtitle = "Foo Bar", &block)
     content_tag(:div, class: "pb-1 flex-1 min-w-0") do
-      content_tag(:h1, title, class: "text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate")
+      if subtitle.blank?
+        concat content_tag(:h1, title, class: HEADER_TITLE_STYLES)
+      else
+        concat _r_page_header_title_block(title, subtitle)
+      end
+      concat content_tag(:div, &block) if block_given?
+    end
+  end
+
+  def _r_page_header_title_block(title, subtitle)
+    content_tag(:div, class: "-ml-2 -mt-2 flex flex-wrap items-baseline") do
+      concat content_tag(:h3, title, class: "ml-2 mt-2 #{HEADER_TITLE_STYLES}")
+      concat content_tag(:p, subtitle, class: "hidden ml-2 mt-1 text-lg leading-5 text-gray-500 truncate sm:block")
     end
   end
 
