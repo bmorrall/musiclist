@@ -70,7 +70,7 @@ module PageHelper
   def _r_page_header_title_block(title, subtitle)
     content_tag(:div, class: "-ml-2 -mt-2 flex flex-wrap items-baseline") do
       concat content_tag(:"h1", title, class: "ml-2 mt-2 #{HEADER_TITLE_STYLES}")
-      concat content_tag(:"p", subtitle, class: "hidden ml-2 mt-1 text-lg leading-5 text-gray-600 truncate sm:block")
+      concat content_tag(:"p", subtitle, class: "ml-2 mt-1 text-lg leading-5 text-gray-600 truncate")
     end
   end
 
