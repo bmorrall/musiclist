@@ -18,3 +18,5 @@ require("channels")
 
 import '../musiclist/application.css';
 import '../musiclist/fonts.scss';
+
+import "controllers"

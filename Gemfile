@@ -87,3 +87,5 @@ gem 'bundler-audit', github: 'rubysec/bundler-audit', group: [:development, :tes
 gem 'ip_anonymizer'
 gem 'rack-attack'
 gem 'capybara', '>= 2.15', group: :test
+
+gem "stimulus_reflex", "~> 3.2"
