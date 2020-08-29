@@ -28,17 +28,29 @@ class AlbumDecorator
 
   def purchased_button
     if purchased?
-      v.large_green_button("Purchased", "fa fa-compact-disc")
+      v.large_green_button("Purchased", "fa fa-compact-disc", data: {
+        reflex: "click->PurchasedAlbumReflex#decrement",
+        album_id: @album.to_param
+      })
     else
-      v.large_disabled_button("Purchased", "fa fa-compact-disc")
+      v.large_disabled_button("Purchased", "fa fa-compact-disc", data: {
+        reflex: "click->PurchasedAlbumReflex#increment",
+        album_id: @album.to_param
+      })
     end
   end
 
   def small_purchased_button
     if purchased?
-      v.small_green_button("Purchased", "fa fa-compact-disc")
+      v.small_green_button("Purchased", "fa fa-compact-disc", data: {
+        reflex: "click->PurchasedAlbumReflex#decrement",
+        album_id: @album.to_param
+      })
     else
-      v.small_disabled_button("Purchased", "fa fa-compact-disc")
+      v.small_disabled_button("Purchased", "fa fa-compact-disc", data: {
+        reflex: "click->PurchasedAlbumReflex#increment",
+        album_id: @album.to_param
+      })
     end
   end
 
