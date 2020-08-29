@@ -12,33 +12,33 @@ class AlbumDecorator
   def played_button
     if played?
       label = @album.album_status.played_on.strftime("Played on %b %Y")
-      v.large_orange_button(label, "#", "fa fa-music")
+      v.large_orange_button(label, "fa fa-music")
     else
-      v.large_disabled_button("Played", "#", "fa fa-music")
+      v.large_disabled_button("Played", "fa fa-music")
     end
   end
 
   def small_played_button
     if played?
-      v.small_orange_button("Played", "#", "fa fa-music")
+      v.small_orange_button("Played", "fa fa-music")
     else
-      v.small_disabled_button("Played", "#", "fa fa-music")
+      v.small_disabled_button("Played", "fa fa-music")
     end
   end
 
   def purchased_button
     if purchased?
-      v.large_green_button("Purchased", "#", "fa fa-compact-disc")
+      v.large_green_button("Purchased", "fa fa-compact-disc")
     else
-      v.large_disabled_button("Purchased", "#", "fa fa-compact-disc")
+      v.large_disabled_button("Purchased", "fa fa-compact-disc")
     end
   end
 
   def small_purchased_button
     if purchased?
-      v.small_green_button("Purchased", "#", "fa fa-compact-disc")
+      v.small_green_button("Purchased", "fa fa-compact-disc")
     else
-      v.small_disabled_button("Purchased", "#", "fa fa-compact-disc")
+      v.small_disabled_button("Purchased", "fa fa-compact-disc")
     end
   end
 

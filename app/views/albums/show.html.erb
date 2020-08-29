@@ -36,7 +36,7 @@
     <aside class="block md:mx-0 flex flex-col flex-shrink-0">
       <%= image_tag album_detail_image(@album), class: "block mx-auto mb-2 flex-shrink-0 h-64 sm:w-64", alt: @album.title %>
       <% if @album.lastfm_url? -%>
-        <%= wide_red_button "Read more on Last.fm", @album.lastfm_url, "fa fa-lastfm", rel: :external, target: :_blank %>
+        <%= wide_red_link "Read more on Last.fm", @album.lastfm_url, "fa fa-lastfm", rel: :external, target: :_blank %>
       <% end -%>
     </aside>
     <section class="md:ml-4 text-left">

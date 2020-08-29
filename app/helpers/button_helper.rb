@@ -10,38 +10,45 @@ module ButtonHelper
   LARGE_BUTTON_STYLES = "#{SIDEBAR_BUTTON_STYLES} md:inline-block"
   SMALL_BUTTON_STYLES = "inline-block text-sm py-0 px-2"
 
-  def large_disabled_button(text, url, icon, link_args = {})
-    button_with_icon(text, url, icon, [LARGE_BUTTON_STYLES, DISABLED_BUTTON_STYLES], link_args)
+  def large_disabled_button(text, icon, link_args = {})
+    button_with_icon(text, icon, [LARGE_BUTTON_STYLES, DISABLED_BUTTON_STYLES], link_args)
   end
 
-  def large_green_button(text, url, icon, link_args = {})
-    button_with_icon(text, url, icon, [LARGE_BUTTON_STYLES, GREEN_BUTTON_STYLES], link_args)
+  def large_green_button(text, icon, link_args = {})
+    button_with_icon(text, icon, [LARGE_BUTTON_STYLES, GREEN_BUTTON_STYLES], link_args)
   end
 
-  def large_orange_button(text, url, icon, link_args = {})
-    button_with_icon(text, url, icon, [LARGE_BUTTON_STYLES, ORANGE_BUTTON_STYLES], link_args)
+  def large_orange_button(text, icon, link_args = {})
+    button_with_icon(text, icon, [LARGE_BUTTON_STYLES, ORANGE_BUTTON_STYLES], link_args)
   end
 
-  def wide_red_button(text, url, icon, link_args = {})
-    button_with_icon(text, url, icon, [SIDEBAR_BUTTON_STYLES, RED_BUTTON_STYLES], link_args)
+  def wide_red_link(text, url, icon, link_args = {})
+    link_with_icon(text, url, icon, [SIDEBAR_BUTTON_STYLES, RED_BUTTON_STYLES], link_args)
   end
 
-  def small_disabled_button(text, url, icon, link_args = {})
-    button_with_icon(text, url, icon, [SMALL_BUTTON_STYLES, DISABLED_BUTTON_STYLES], link_args)
+  def small_disabled_button(text, icon, link_args = {})
+    button_with_icon(text, icon, [SMALL_BUTTON_STYLES, DISABLED_BUTTON_STYLES], link_args)
   end
 
-  def small_green_button(text, url, icon, link_args = {})
-    button_with_icon(text, url, icon, [SMALL_BUTTON_STYLES, GREEN_BUTTON_STYLES], link_args)
+  def small_green_button(text, icon, link_args = {})
+    button_with_icon(text, icon, [SMALL_BUTTON_STYLES, GREEN_BUTTON_STYLES], link_args)
   end
 
-  def small_orange_button(text, url, icon, link_args = {})
-      button_with_icon(text, url, icon, [SMALL_BUTTON_STYLES, ORANGE_BUTTON_STYLES], link_args)
+  def small_orange_button(text, icon, link_args = {})
+    button_with_icon(text, icon, [SMALL_BUTTON_STYLES, ORANGE_BUTTON_STYLES], link_args)
   end
 
   private
 
-  def button_with_icon(text, url, icon, styles, link_args = {})
-    link_to(url, class: [COMMON_STYLES, *styles].join(" ")) do
+  def button_with_icon(text, icon, styles, link_args = {})
+    content_tag(:button, link_args.merge(class: [COMMON_STYLES, *styles].join(" "))) do
+      concat content_tag(:i, "", class: "#{icon} mr-2")
+      concat text
+    end
+  end
+
+  def link_with_icon(text, url, icon, styles, link_args = {})
+    link_to(url, link_args.merge(class: [COMMON_STYLES, *styles].join(" "))) do
       concat content_tag(:i, "", class: "#{icon} mr-2")
       concat text
     end
