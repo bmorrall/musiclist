@@ -8,49 +8,70 @@ class AlbumDecorator
   end
 
   delegate :to_param, :to_s, to: :album
+  delegate :dom_id, to: :v
 
   def played_button
-    if played?
-      label = @album.album_status.played_on.strftime("Played on %b %Y")
-      v.large_orange_button(label, "fa fa-music")
-    else
-      v.large_disabled_button("Played", "fa fa-music")
+    v.content_tag("span", data: { controller: "album-status" }) do
+      if played?
+        label = @album.album_status.played_on.strftime("Played on %b %Y")
+        v.large_orange_button(label, "fa fa-music", id: dom_id(album, :played), data: {
+          action: "click->album-status#removePlayed",
+          album_id: @album.to_param
+        })
+      else
+        v.large_disabled_button("Played", "fa fa-music", id: dom_id(album, :played), data: {
+          action: "click->album-status#markPlayed",
+          album_id: @album.to_param
+        })
+      end
     end
   end
 
   def small_played_button
-    if played?
-      v.small_orange_button("Played", "fa fa-music")
-    else
-      v.small_disabled_button("Played", "fa fa-music")
+    v.content_tag("span", data: { controller: "album-status" }) do
+      if played?
+        v.small_orange_button("Played", "fa fa-music", id: dom_id(album, :played), data: {
+          action: "click->album-status#removePlayed",
+          album_id: @album.to_param
+        })
+      else
+        v.small_disabled_button("Played", "fa fa-music", id: dom_id(album, :played), data: {
+          action: "click->album-status#markPlayed",
+          album_id: @album.to_param
+        })
+      end
     end
   end
 
   def purchased_button
-    if purchased?
-      v.large_green_button("Purchased", "fa fa-compact-disc", data: {
-        reflex: "click->PurchasedAlbumReflex#decrement",
-        album_id: @album.to_param
-      })
-    else
-      v.large_disabled_button("Purchased", "fa fa-compact-disc", data: {
-        reflex: "click->PurchasedAlbumReflex#increment",
-        album_id: @album.to_param
-      })
+    v.content_tag("span",  data: { controller: "album-status" }) do
+      if purchased?
+        v.large_green_button("Purchased", "fa fa-compact-disc", id: dom_id(album, :purchased), data: {
+          action: "click->album-status#removePurchased",
+          album_id: @album.to_param
+        })
+      else
+        v.large_disabled_button("Purchased", "fa fa-compact-disc", id: dom_id(album, :purchased), data: {
+          action: "click->album-status#markPurchased",
+          album_id: @album.to_param
+        })
+      end
     end
   end
 
   def small_purchased_button
-    if purchased?
-      v.small_green_button("Purchased", "fa fa-compact-disc", data: {
-        reflex: "click->PurchasedAlbumReflex#decrement",
-        album_id: @album.to_param
-      })
-    else
-      v.small_disabled_button("Purchased", "fa fa-compact-disc", data: {
-        reflex: "click->PurchasedAlbumReflex#increment",
-        album_id: @album.to_param
-      })
+    v.content_tag("span", data: { controller: "album-status" }) do
+      if purchased?
+        v.small_green_button("Purchased", "fa fa-compact-disc", id: dom_id(album, :purchased), data: {
+          action: "click->album-status#removePurchased",
+          album_id: @album.to_param,
+        })
+      else
+        v.small_disabled_button("Purchased", "fa fa-compact-disc", id: dom_id(album, :purchased), data: {
+          action: "click->album-status#markPurchased",
+          album_id: @album.to_param
+        })
+      end
     end
   end
 

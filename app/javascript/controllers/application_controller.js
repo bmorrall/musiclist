@@ -14,6 +14,7 @@ import StimulusReflex from 'stimulus_reflex'
  */
 export default class extends Controller {
   connect () {
+    console.log("Registering", this);
     StimulusReflex.register(this)
   }
 
