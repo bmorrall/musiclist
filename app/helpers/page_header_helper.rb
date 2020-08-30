@@ -1,4 +1,6 @@
-module PageHelper
+module PageHeaderHelper
+  HOVER_ANIMATION = "transition duration-150 ease-in-out"
+
   def r_page_header(&block)
     content_tag("header", &block)
   end
@@ -13,8 +15,8 @@ module PageHelper
 
   def r_mobile_breadcrumbs_nav(url)
     content_tag("nav", class: "sm:hidden") do
-      link_to(url, class: "flex items-center text-sm leading-5 font-medium text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out") do
-        concat(content_tag("svg", class: "flex-shrink-0 -ml-1 mr-1 h-5 w-5 text-gray-400", viewBox: "0 0 20 20", fill: "currentColor") do
+      link_to(url, class: "flex items-center text-sm leading-5 font-medium text-gray-500 hover:text-gray-700 #{HOVER_ANIMATION}") do
+        concat(content_tag("svg", class: "flex-shrink-0 -ml-1 mr-1 h-5 w-5 text-gray-400", "viewBox": "0 0 20 20", "fill": "currentColor") do
           tag("path", "fill-rule": "evenodd", d: "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z", "clip-rule": "evenodd")
         end)
         concat "Back"
@@ -31,17 +33,17 @@ module PageHelper
   # Page Header -> Breadcrumbs -> Breadcrumbs Nav -> Link/Separator
 
   def r_home_breadcrumbs_link(url)
-    link_to(url, class: "text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out") do
+    link_to(url, class: "text-gray-500 hover:text-gray-700 #{HOVER_ANIMATION}") do
       content_tag("i", nil, class: "fas fa-home")
     end
   end
 
   def r_breadcrumbs_link(url, &block)
-    link_to(url, class: "text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out", &block)
+    link_to(url, class: "text-gray-500 hover:text-gray-700 #{HOVER_ANIMATION}", &block)
   end
 
   def r_breadcrumbs_separator
-    content_tag("svg", class: "flex-shrink-0 mx-1 h-5 w-5 text-gray-400", viewBox: "0 0 20 20", fill: "currentColor") do
+    content_tag("svg", class: "flex-shrink-0 mx-1 h-5 w-5 text-gray-400", "viewBox": "0 0 20 20", fill: "currentColor") do
       tag("path", "fill-rule": "evenodd", d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z", "clip-rule": "evenodd")
     end
   end
@@ -81,7 +83,7 @@ module PageHelper
   PAGE_HEADER_CATEGORY_STYLES = "mt-2 flex items-center text-sm leading-5 text-gray-600 sm:mr-6".freeze
 
   def r_page_header_category_link(text, url, icon)
-    link_to url, class: "#{PAGE_HEADER_CATEGORY_STYLES} hover:text-indigo-400 transition duration-150 ease-in-out" do
+    link_to url, class: "#{PAGE_HEADER_CATEGORY_STYLES} hover:text-indigo-400 #{HOVER_ANIMATION}" do
       concat content_tag("i", nil, class: "#{icon} mr-2")
       concat text
     end
@@ -102,13 +104,13 @@ module PageHelper
 
   def r_page_header_action(text, link, link_options = {})
     content_tag("span", class: "shadow-sm rounded-md") do
-      link_to(text, link, link_options.merge(class: "inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:text-gray-800 active:bg-gray-50 transition duration-150 ease-in-out"))
+      link_to(text, link, link_options.merge(class: "inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:text-gray-800 active:bg-gray-50 #{HOVER_ANIMATION}"))
     end
   end
 
   def r_primary_page_header_action(text, link, link_options = {})
     content_tag("span", class: "ml-3 shadow-sm rounded-md") do
-      link_to(text, link, link_options.merge(class: "inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out"))
+      link_to(text, link, link_options.merge(class: "inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 #{HOVER_ANIMATION}"))
     end
   end
 end
