@@ -1,6 +1,15 @@
 # frozen_string_literal: true
 
 class ApplicationReflex < StimulusReflex::Reflex
+  # Handle exceptions with Rollbar
+  rescue_from StandardError do |exception|
+    Rollbar.error(exception)
+  end
+  rescue_from Pundit::NotAuthorizedError do |exception|
+    Rollbar.info(exception)
+    throw :abort
+  end
+
   delegate :current_user, to: :connection
 
   # Put application wide Reflex behavior in this file.

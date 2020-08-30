@@ -8,7 +8,7 @@ class AlbumDecorator
   end
 
   delegate :to_param, :to_s, to: :album
-  delegate :dom_id, to: :v
+  delegate :current_user, :dom_id, to: :v
 
   def played_button
     v.content_tag("span", data: { controller: "album-status" }) do
