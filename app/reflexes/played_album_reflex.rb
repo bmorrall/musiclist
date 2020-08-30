@@ -24,11 +24,13 @@ class PlayedAlbumReflex < ApplicationReflex
 
   def create
     album_status = AlbumStatus.where(album: album).first_or_initialize
+    authorize(album_status, :update?)
     album_status.update(played_on: Date.today)
   end
 
   def destroy
     album_status = AlbumStatus.where(album: album).first_or_initialize
+    authorize(album_status, :update?)
     album_status.update(played_on: nil)
   end
 
