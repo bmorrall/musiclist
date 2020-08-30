@@ -15,12 +15,12 @@ class AlbumDecorator
       if played?
         label = @album.album_status.played_on.strftime("Played on %b %Y")
         v.large_orange_button(label, "fa fa-music", id: dom_id(album, :played), data: {
-          action: "click->album-status#removePlayed",
+          action: current_user.admin? && "click->album-status#removePlayed",
           album_id: @album.to_param
         })
       else
         v.large_disabled_button("Played", "fa fa-music", id: dom_id(album, :played), data: {
-          action: "click->album-status#markPlayed",
+          action: current_user.admin? && "click->album-status#markPlayed",
           album_id: @album.to_param
         })
       end
@@ -31,12 +31,12 @@ class AlbumDecorator
     v.content_tag("span", data: { controller: "album-status" }) do
       if played?
         v.small_orange_button("Played", "fa fa-music", id: dom_id(album, :played), data: {
-          action: "click->album-status#removePlayed",
+          action: current_user.admin? && "click->album-status#removePlayed",
           album_id: @album.to_param
         })
       else
         v.small_disabled_button("Played", "fa fa-music", id: dom_id(album, :played), data: {
-          action: "click->album-status#markPlayed",
+          action: current_user.admin? && "click->album-status#markPlayed",
           album_id: @album.to_param
         })
       end
@@ -47,12 +47,12 @@ class AlbumDecorator
     v.content_tag("span",  data: { controller: "album-status" }) do
       if purchased?
         v.large_green_button("Purchased", "fa fa-compact-disc", id: dom_id(album, :purchased), data: {
-          action: "click->album-status#removePurchased",
+          action: current_user.admin? && "click->album-status#removePurchased",
           album_id: @album.to_param
         })
       else
         v.large_disabled_button("Purchased", "fa fa-compact-disc", id: dom_id(album, :purchased), data: {
-          action: "click->album-status#markPurchased",
+          action: current_user.admin? && "click->album-status#markPurchased",
           album_id: @album.to_param
         })
       end
@@ -63,12 +63,12 @@ class AlbumDecorator
     v.content_tag("span", data: { controller: "album-status" }) do
       if purchased?
         v.small_green_button("Purchased", "fa fa-compact-disc", id: dom_id(album, :purchased), data: {
-          action: "click->album-status#removePurchased",
+          action: current_user.admin? && "click->album-status#removePurchased",
           album_id: @album.to_param,
         })
       else
         v.small_disabled_button("Purchased", "fa fa-compact-disc", id: dom_id(album, :purchased), data: {
-          action: "click->album-status#markPurchased",
+          action: current_user.admin? && "click->album-status#markPurchased",
           album_id: @album.to_param
         })
       end

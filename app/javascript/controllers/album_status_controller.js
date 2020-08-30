@@ -30,10 +30,10 @@ export default class extends ApplicationController {
   //   element.innerText = 'Updated Successfully.'
   // }
 
-  // updateError(element, reflex, error) {
-  //   console.error('updateError', error);
+  updateError(element, reflex, error) {
+    console.error('updateError', reflex, error);
   //   element.innerText = 'Update Failed!'
-  // }
+  }
 
   ///////////////////////////////
   // Album Played Status

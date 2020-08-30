@@ -14,7 +14,6 @@ import StimulusReflex from 'stimulus_reflex'
  */
 export default class extends Controller {
   connect () {
-    console.log("Registering", this);
     StimulusReflex.register(this)
   }
 
@@ -41,6 +40,7 @@ export default class extends Controller {
   }
 
   reflexError (element, reflex, error) {
+    console.error('reflexError', reflex, error);
     // show error message etc...
   }
 
