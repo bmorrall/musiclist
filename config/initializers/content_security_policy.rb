@@ -21,6 +21,13 @@ if (asset_host = ENV["ASSET_HOST"].presence)
   csp_style_sources.append(asset_host)
 end
 
+# Ensure secure websockets are used when requested
+if (ENV["ALLOW_INSECURE_HTTP"].to_i != 1 && app_host = ENV["APP_HOST"].presence)
+  csp_connect_sources += ["wss://#{app_host}"]
+else
+  csp_connect_sources += [:self]
+end
+
 # Allow webpacker to render styles inline
 if Rails.env.development?
   csp_connect_sources += %w[http://localhost:3035 ws://localhost:3035]
@@ -29,7 +36,7 @@ end
 
 Rails.application.config.content_security_policy do |policy|
   policy.default_src :none
-  policy.connect_src :self, *csp_connect_sources
+  policy.connect_src *csp_connect_sources
   policy.font_src    :self, *csp_font_sources
   policy.img_src     :self, :data, :https, *csp_image_sources
   policy.object_src  :none
